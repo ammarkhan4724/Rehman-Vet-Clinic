@@ -3,13 +3,13 @@ import Logo from "./components/Logo";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "How It Works", href: "#how" },
-  { label: "Services", href: "#services" },
-  { label: "Book", href: "#book" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Emergency 24/7", href: "/services/emergency-veterinary-care.html" },
+  { label: "Vaccinations", href: "/services/pet-vaccination-center.html" },
+  { label: "Home Visits", href: "/services/home-visit-veterinary.html" },
+  { label: "DHA Lahore", href: "/locations/dha-lahore-veterinary-clinic.html" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "About", href: "/#about" },
 ];
 
 // Deterministic pseudo-random based on a seed (stable per date+type+time)
@@ -818,17 +818,16 @@ function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
+          {/* Col 2: Clinical Services & Silos */}
           <div>
-            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Navigation</div>
-            <ul className="space-y-2.5 text-sm text-slate-600">
-              {NAV.map((n) => (
-                <li key={n.href}>
-                  <a href={n.href} className="hover:text-emerald-700 transition-colors">
-                    {n.label}
-                  </a>
-                </li>
-              ))}
+            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Clinical Services</div>
+            <ul className="space-y-2 text-xs text-slate-600">
+              <li><a href="/services/emergency-veterinary-care.html" className="hover:text-emerald-700 transition-colors">24/7 Emergency Care</a></li>
+              <li><a href="/services/24-hour-vet-clinic-lahore.html" className="hover:text-emerald-700 transition-colors">24 Hour Animal Hospital</a></li>
+              <li><a href="/services/pet-vaccination-center.html" className="hover:text-emerald-700 transition-colors">Pet Vaccination Center</a></li>
+              <li><a href="/services/home-visit-veterinary.html" className="hover:text-emerald-700 transition-colors">Mobile Vet House Calls</a></li>
+              <li><a href="/locations/dha-lahore-veterinary-clinic.html" className="hover:text-emerald-700 transition-colors">Vet in DHA Lahore</a></li>
+              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan.html" className="hover:text-emerald-700 transition-colors">Parvovirus Protocol</a></li>
             </ul>
           </div>
 
