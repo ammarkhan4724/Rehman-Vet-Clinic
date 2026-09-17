@@ -7,7 +7,7 @@ interface WhatsAppFloatingButtonProps {
 
 export default function WhatsAppFloatingButton({
   phoneNumber = "923114899904",
-  defaultMessage = "Hello Dr. Rehman, I need an urgent veterinary consultation for my pet in Lahore.",
+  defaultMessage = "Hello Dr. Saif, I need an urgent veterinary consultation for my pet in Lahore.",
 }: WhatsAppFloatingButtonProps) {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
@@ -16,7 +16,7 @@ export default function WhatsAppFloatingButton({
       {/* Tooltip Pill */}
       <div className="hidden sm:flex items-center gap-2 mr-3 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md text-slate-800 text-xs font-bold shadow-2xl border border-emerald-100 opacity-0 group-hover:opacity-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">
         <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-        <span>Chat with Dr. Rehman (24/7)</span>
+        <span>Chat with Dr. Saif (24/7)</span>
       </div>
 
       {/* Floating Action Button */}
@@ -24,7 +24,7 @@ export default function WhatsAppFloatingButton({
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp with Dr. Rehman (+92 311 4899904)"
+        aria-label="Chat on WhatsApp with Dr. Saif (+92 311 4899904)"
         className="relative w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white grid place-items-center shadow-2xl shadow-[#25D366]/40 hover:scale-110 active:scale-95 transition-all duration-300 ring-4 ring-white/80"
       >
         {/* Subtle glowing radar ping effect */}

@@ -71,7 +71,7 @@ def render_footer():
             <span class="text-white font-black text-lg tracking-tight">Rehman Veterinary Clinic</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-5">
-            Lahore's premier 24/7 mobile veterinary practice and emergency trauma clinic. Dr. Rehman Ahmed, DVM brings hospital-grade diagnostics, urgent treatments, and gentle doorstep pet care across all major sectors of Lahore.
+            Lahore's premier 24/7 mobile veterinary practice and emergency trauma clinic. Dr. Saif Ur Rehman, DVM brings hospital-grade diagnostics, urgent treatments, and gentle doorstep pet care across all major sectors of Lahore.
           </p>
           <div class="text-xs font-semibold text-emerald-400 flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -139,7 +139,7 @@ def render_footer():
     <aside aria-label="WhatsApp quick contact" class="fixed bottom-6 right-6 z-50 flex items-center group">
       <div class="hidden sm:flex items-center gap-2 mr-3 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md text-slate-800 text-xs font-bold shadow-2xl border border-emerald-100 opacity-0 group-hover:opacity-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">
         <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
-        <span>Chat with Dr. Rehman (24/7)</span>
+        <span>Chat with Dr. Saif (24/7)</span>
       </div>
       <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20an%20urgent%20veterinary%20consultation%20for%20my%20pet%20in%20Lahore." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="relative w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white grid place-items-center shadow-2xl shadow-[#25D366]/40 hover:scale-110 active:scale-95 transition-all duration-300 ring-4 ring-white/80">
         <span class="absolute -inset-1.5 rounded-full bg-[#25D366] opacity-35 animate-ping -z-10"></span>
@@ -169,6 +169,7 @@ def render_page(title, description, keywords, body_content, schema_json, breadcr
     return f"""<!doctype html>
 <html lang="en">
   <head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RT8KMREC6"></script>
     <script>
@@ -186,7 +187,7 @@ def render_page(title, description, keywords, body_content, schema_json, breadcr
     <!-- Core SEO Meta Tags -->
     <meta name="description" content="{description}" />
     <meta name="keywords" content="{keywords}" />
-    <meta name="author" content="Dr. Rehman Ahmed, DVM" />
+    <meta name="author" content="Dr. Saif Ur Rehman, DVM" />
     <meta name="geo.region" content="PK-PB" />
     <meta name="geo.placename" content="Lahore" />
 

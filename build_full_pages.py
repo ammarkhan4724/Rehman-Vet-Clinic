@@ -14,7 +14,7 @@ def render_author_box():
       </div>
       <div>
         <div class="flex items-center gap-2 flex-wrap mb-1">
-          <span class="font-extrabold text-base text-slate-900">Medically Reviewed by Dr. Rehman Ahmed, DVM</span>
+          <span class="font-extrabold text-base text-slate-900">Medically Reviewed by Dr. Saif Ur Rehman, DVM</span>
           <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">PVMC Registered</span>
         </div>
         <p class="text-xs text-slate-600 leading-relaxed mb-2">
@@ -39,7 +39,7 @@ def render_emergency_cta():
         </span>
         <h2 class="text-2xl md:text-3xl font-black tracking-tight mb-3">Pet Experiencing a Medical Emergency?</h2>
         <p class="text-xs md:text-sm text-slate-300 mb-6 leading-relaxed">
-          Do not wait. From acute vomiting and bloat to accident trauma and respiratory distress, Dr. Rehman is on standby for immediate emergency clinic triage, in-home house call dispatch, or 24/7 video consultation.
+          Do not wait. From acute vomiting and bloat to accident trauma and respiratory distress, Dr. Saif is on standby for immediate emergency clinic triage, in-home house call dispatch, or 24/7 video consultation.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a href="tel:+923114899904" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition shadow-lg flex items-center justify-center gap-2">

@@ -230,12 +230,28 @@ function Header() {
   );
 }
 
+function PawIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 512 512" fill="currentColor">
+      <path d="M226.5 92.9c14.3 7.3 22.8 23 20.9 38.6l-5.1 41.5c-3.1 25.1 14.8 47.7 39.9 50.8l41.5 5.1c15.6 1.9 31.3-6.6 38.6-20.9l22.6-44c15.2-29.6 54.3-33 74-6.4l28 37.4c17.5 23.4 12.8 56.6-10.6 74.1l-44.5 33.4c-21.7 16.3-51.4 18-74.8 4.3l-48.4-28.5c-5.8-3.4-12.8-2.6-17.8 2l-37.3 34.3c-20 18.4-50.6 19.3-71.5 2.1l-42-34.6c-17.4-14.3-21.1-39.4-8.5-57.5l29.4-42.3c14.3-20.5 41-26.6 62.6-14.3l48.4 27.6c5.8 3.3 12.8 2.6 17.8-2L219 146.4c12-10.4 30.2-9 40.5 3.3l12-13.8-45-53c-14.7-17.3-39.5-21-58.4-8.6l-37.4 24.5c-23.4 15.3-30.8 46.5-16.7 70.3l33.4 56.7c11.9 20.2 38 25.5 56.4 11.5l45.4-34.4c6.3-4.8 8.6-13.3 5.5-20.8l-18.4-44.3c-11.2-27.1 7.2-56.7 36.5-59z"/>
+      <path d="M304.5 303.4c-9.3-19.1-30.8-27-49.9-17.6l-37 18.2c-23.7 11.6-40.2 32.5-45 58l-5.6 29.5c-4.4 23.1 10.8 45.4 33.9 49.8l29.5 5.6c25.5 4.8 51.5-6.7 66.8-29.6l23.5-35.3c13.7-20.6 6.9-48.5-13.7-61.2l-2.5-1.5z"/>
+    </svg>
+  );
+}
+
 function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/70 via-[#faf9f7] to-[#faf9f7]" />
+        
+        {/* Decorative Paws (Subtle Animations) */}
+        <PawIcon className="absolute top-[15%] left-[8%] w-16 h-16 text-emerald-900/5 -rotate-12 animate-pulse" />
+        <PawIcon className="absolute top-[35%] left-[12%] w-12 h-12 text-emerald-900/5 rotate-12 animate-pulse" style={{ animationDelay: "1s" }} />
+        <PawIcon className="absolute top-[20%] right-[10%] w-24 h-24 text-amber-900/5 rotate-45 animate-float" />
+        <PawIcon className="absolute bottom-[10%] left-[20%] w-20 h-20 text-emerald-900/5 -rotate-12 animate-float" style={{ animationDelay: "2s" }} />
+
         <div className="absolute top-20 right-[10%] w-72 h-72 bg-amber-200/35 rounded-full blur-[100px] animate-float" />
         <div className="absolute bottom-0 left-[5%] w-96 h-96 bg-emerald-200/40 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
       </div>
@@ -263,7 +279,7 @@ function Hero() {
             </h1>
 
             <p className="mt-6 text-[18px] md:text-[20px] leading-relaxed text-slate-600 max-w-xl">
-              I'm Dr. Rehman — a mobile veterinarian. I do house calls across Lahore and 24/7 video consults for urgent pet worries. No stressful car rides. No waiting rooms.
+              I'm Dr. Saif — a mobile veterinarian. I do house calls across Lahore and 24/7 video consults for urgent pet worries. No stressful car rides. No waiting rooms.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
@@ -325,7 +341,7 @@ function Hero() {
                         <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                         ON A VISIT
                       </div>
-                      <div className="text-2xl font-bold">Dr. Rehman</div>
+                      <div className="text-2xl font-bold">Dr. Saif</div>
                       <div className="text-sm opacity-90">En route • 8 min away</div>
                       <div className="mt-4 flex gap-2">
                         <button className="flex-1 py-2.5 bg-white/20 backdrop-blur-md rounded-xl text-sm font-medium border border-white/30">Message</button>
@@ -518,7 +534,7 @@ function Booking() {
                 <div className="flex items-center gap-3">
                   <img src="https://images.pexels.com/photos/32788234/pexels-photo-32788234.jpeg?auto=compress&w=100&h=100&fit=crop" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover" />
                   <div>
-                    <div className="font-bold text-slate-900">Dr. Rehman Ahmed, DVM</div>
+                    <div className="font-bold text-slate-900">Dr. Saif Ur Rehman, DVM</div>
                     <div className="text-sm text-slate-600">Mobile Vet • Lahore Practice • 9+ Yrs Exp</div>
                   </div>
                 </div>
@@ -725,7 +741,7 @@ function About() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 grid place-items-center font-black">DVM</div>
                 <div>
-                  <div className="font-bold text-slate-900">Dr. Rehman Ahmed</div>
+                  <div className="font-bold text-slate-900">Dr. Saif Ur Rehman</div>
                   <div className="text-sm text-slate-600">DVM, Licensed Veterinarian • Lahore Practice</div>
                 </div>
               </div>
@@ -738,7 +754,7 @@ function About() {
               I started mobile vet care because my own dog hated the clinic.
             </h2>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              I'm Dr. Rehman. After years in busy animal hospitals, I saw how much stress car rides and clinic waiting rooms caused pets in Lahore. Especially for cats and senior dogs. So I built a mobile practice that comes directly to you.
+              I'm Dr. Saif. After years in busy animal hospitals, I saw how much stress car rides and clinic waiting rooms caused pets in Lahore. Especially for cats and senior dogs. So I built a mobile practice that comes directly to you.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
               My mobile van is a complete clinic on wheels — exam table, diagnostic microscope, vaccines, and emergency treatment kit. For video calls, I'm available 24/7 because pet emergencies don't check the clock.
@@ -803,7 +819,7 @@ function Footer() {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-4 text-sm text-slate-600 max-w-sm leading-relaxed">
-              Dr. Rehman brings hospital-grade mobile veterinary care directly to your doorstep in Lahore. 24/7 urgent video care, home vaccinations, laboratory diagnostics, and compassionate pet treatment.
+              Dr. Saif brings hospital-grade mobile veterinary care directly to your doorstep in Lahore. 24/7 urgent video care, home vaccinations, laboratory diagnostics, and compassionate pet treatment.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
@@ -856,7 +872,7 @@ function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Rehman Ahmed, DVM.</div>
+          <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.</div>
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

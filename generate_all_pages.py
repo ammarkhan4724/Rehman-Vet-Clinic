@@ -46,9 +46,9 @@ def build_page_1():
     }
 
     faqs = [
-        ("What symptoms indicate an immediate pet veterinary emergency in Lahore?", "Immediate red-flag emergencies include: non-stop vomiting or dry-heaving with an enlarged hard abdomen (suspected bloat/GDV), difficulty breathing or blue-tinted gums, sudden collapse, seizures lasting more than 2 minutes, blunt trauma from a road accident, ingestion of rat poison or human paracetamol, and inability of a male cat to urinate (urinary blockage). Call Dr. Rehman immediately at +92 311 4899904."),
-        ("Can Dr. Rehman visit my home for an emergency in Lahore?", "Yes. We operate a dedicated mobile veterinary unit equipped with emergency stabilization drugs, injectable fluids, oxygen concentrator, and wound trauma supplies. Depending on your location in Lahore (DHA, Gulberg, Model Town, Bahria), average mobile dispatch response time is 30 to 50 minutes. For critical surgical stabilization, clinic transport is coordinated."),
-        ("What should I do if my pet ingests rat poison or human medication?", "Never induce vomiting with salt water as this can cause fatal hypernatremia (salt toxicity). Immediately keep the packaging of the toxin, prevent the pet from eating or drinking further, and call Dr. Rehman. Specific antidotes (such as Vitamin K1 for anticoagulant rodenticides) must be administered under veterinary supervision within the golden hour."),
+        ("What symptoms indicate an immediate pet veterinary emergency in Lahore?", "Immediate red-flag emergencies include: non-stop vomiting or dry-heaving with an enlarged hard abdomen (suspected bloat/GDV), difficulty breathing or blue-tinted gums, sudden collapse, seizures lasting more than 2 minutes, blunt trauma from a road accident, ingestion of rat poison or human paracetamol, and inability of a male cat to urinate (urinary blockage). Call Dr. Saif immediately at +92 311 4899904."),
+        ("Can Dr. Saif visit my home for an emergency in Lahore?", "Yes. We operate a dedicated mobile veterinary unit equipped with emergency stabilization drugs, injectable fluids, oxygen concentrator, and wound trauma supplies. Depending on your location in Lahore (DHA, Gulberg, Model Town, Bahria), average mobile dispatch response time is 30 to 50 minutes. For critical surgical stabilization, clinic transport is coordinated."),
+        ("What should I do if my pet ingests rat poison or human medication?", "Never induce vomiting with salt water as this can cause fatal hypernatremia (salt toxicity). Immediately keep the packaging of the toxin, prevent the pet from eating or drinking further, and call Dr. Saif. Specific antidotes (such as Vitamin K1 for anticoagulant rodenticides) must be administered under veterinary supervision within the golden hour."),
         ("What are the costs associated with after-hours emergency veterinary care?", "Emergency triage and physical clinical exam ranges between Rs. 2,500 to Rs. 4,500 depending on the hour (daytime vs late night). Emergency IV fluids and medication administration typically range from Rs. 2,000 to Rs. 4,500. We provide 100% transparent cost estimates upfront before commencing specialized procedures.")
     ]
 
@@ -70,7 +70,7 @@ def build_page_1():
           24/7 Emergency Veterinary Care in Lahore
         </h1>
         <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6">
-          When life-threatening veterinary emergencies happen at 2:00 AM, waiting until morning is not an option. Led by Dr. Rehman Ahmed, DVM, our trauma unit provides round-the-clock emergency care, rapid stabilization, mobile emergency dispatch, and life-saving pet surgery across all areas of Lahore.
+          When life-threatening veterinary emergencies happen at 2:00 AM, waiting until morning is not an option. Led by Dr. Saif Ur Rehman, DVM, our trauma unit provides round-the-clock emergency care, rapid stabilization, mobile emergency dispatch, and life-saving pet surgery across all areas of Lahore.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="tel:+923114899904" class="px-6 py-3 rounded-full bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition shadow-lg shadow-rose-600/25 flex items-center gap-2">
@@ -123,7 +123,7 @@ def build_page_1():
     <article class="prose max-w-none my-12 text-slate-700 text-sm leading-relaxed space-y-6">
       <h2 class="text-2xl font-black text-slate-900">Clinical Emergency Protocols at Rehman Veterinary Clinic</h2>
       <p>
-        Veterinary emergency medicine requires rapid diagnostic precision, sterile equipment readiness, and a calm, compassionate bedside manner. Under the clinical supervision of Dr. Rehman Ahmed, DVM, our emergency protocol adheres to international small animal critical care guidelines adapted for the climate and prevalent disease vectors of Lahore.
+        Veterinary emergency medicine requires rapid diagnostic precision, sterile equipment readiness, and a calm, compassionate bedside manner. Under the clinical supervision of Dr. Saif Ur Rehman, DVM, our emergency protocol adheres to international small animal critical care guidelines adapted for the climate and prevalent disease vectors of Lahore.
       </p>
 
       <h3 class="text-xl font-bold text-slate-900">1. The 15-Minute Emergency Triage Protocol</h3>
@@ -219,7 +219,7 @@ def build_page_1():
 # -------------------------------------------------------------
 def build_page_2():
     title = "24 Hour Vet Clinic in Lahore — Round-the-Clock Urgent Animal Care & Night Doctor"
-    description = "Looking for a 24 hour vet clinic in Lahore? Dr. Rehman provides 24/7 emergency veterinary checkups, late night visits, and urgent video triage across Lahore. Call +92 311 4899904."
+    description = "Looking for a 24 hour vet clinic in Lahore? Dr. Saif provides 24/7 emergency veterinary checkups, late night visits, and urgent video triage across Lahore. Call +92 311 4899904."
     keywords = "24 hour vet clinic in lahore, late night vet lahore, 24 7 dog doctor lahore, round the clock pet hospital lahore, animal doctor open now lahore"
     breadcrumbs = [("Home", "/"), ("Services", "/services/emergency-veterinary-care.html"), ("24 Hour Vet Clinic", None)]
 
@@ -241,7 +241,7 @@ def build_page_2():
     faqs = [
         ("Are you really open 24 hours including 3:00 AM in Lahore?", "Yes. Veterinary emergencies do not observe office hours. Our emergency hotline (+92 311 4899904) is answered 24 hours a day, 7 days a week, 365 days a year—including Sundays, public holidays, and Eid days."),
         ("What areas does the 24-hour mobile vet service cover in Lahore?", "Our mobile emergency van covers all phases of DHA Lahore (Phase 1 to Phase 8 and Raya), Gulberg, Model Town, Lahore Cantt, Johar Town, Bahria Town, Wapda Town, and surrounding residential societies."),
-        ("Can I do a 24-hour video consult before deciding to rush my pet to the clinic?", "Yes. We offer round-the-clock live video triage over WhatsApp. Dr. Rehman examines your pet's breathing, gum color, and behavior via video to advise whether immediate emergency transport is needed or if safe home stabilization can be performed until morning.")
+        ("Can I do a 24-hour video consult before deciding to rush my pet to the clinic?", "Yes. We offer round-the-clock live video triage over WhatsApp. Dr. Saif examines your pet's breathing, gum color, and behavior via video to advise whether immediate emergency transport is needed or if safe home stabilization can be performed until morning.")
     ]
 
     related = [
@@ -282,7 +282,7 @@ def build_page_2():
         <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div class="text-amber-500 font-black text-xl mb-2">⚡ 01</div>
           <h3 class="font-bold text-slate-900 text-sm mb-1">Zero Waiting Line</h3>
-          <p class="text-xs text-slate-600">Urgent cases are received immediately by Dr. Rehman without bureaucratic delays.</p>
+          <p class="text-xs text-slate-600">Urgent cases are received immediately by Dr. Saif without bureaucratic delays.</p>
         </div>
         <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div class="text-emerald-600 font-black text-xl mb-2">🚐 02</div>
@@ -309,7 +309,7 @@ def build_page_2():
         Finding an open, qualified veterinarian in Lahore past 10:00 PM is one of the most stressful experiences a pet owner can endure. Most high-street pet shops and commercial clinics shut down early, leaving pet parents searching panicked social media groups for emergency phone numbers.
       </p>
       <p>
-        Rehman Veterinary Clinic was designed specifically to eliminate this gap. As a licensed DVM with extensive trauma experience, Dr. Rehman Ahmed provides a single, dependable point of clinical contact across Lahore 24 hours a day.
+        Rehman Veterinary Clinic was designed specifically to eliminate this gap. As a licensed DVM with extensive trauma experience, Dr. Saif Ur Rehman provides a single, dependable point of clinical contact across Lahore 24 hours a day.
       </p>
       
       <h3 class="text-xl font-bold text-slate-900">Our 3-Step Night Care Process:</h3>
@@ -357,7 +357,7 @@ def build_page_3():
     faqs = [
         ("What is the cost of dog vaccination in Pakistan in 2026?", "A standard 7-in-1 or 9-in-1 canine core vaccine (protecting against Parvovirus, Distemper, Hepatitis, Parainfluenza, and Leptospirosis) costs between Rs. 2,800 to Rs. 4,200 per shot depending on the imported brand (Biocan, Vanguard, or Nobivac). Anti-rabies vaccine costs Rs. 1,200 to Rs. 1,800. Complete puppy courses require 3 booster doses."),
         ("What is the cost of cat vaccination in Lahore?", "A feline core Tricat / FVRCP vaccine (protecting against Feline Panleukopenia, Viral Rhinotracheitis, and Calicivirus) costs between Rs. 2,500 to Rs. 3,800 in Lahore. Annual rabies booster costs Rs. 1,200 to Rs. 1,800."),
-        ("Can my puppy or kitten be vaccinated at home in Lahore?", "Yes! In fact, we strongly recommend vaccinating young puppies at home before their 3-shot series is finished. Unvaccinated puppies risk deadly exposure to Parvovirus in clinic waiting rooms. Dr. Rehman brings temperature-controlled cold-chain vaccines directly to your doorstep."),
+        ("Can my puppy or kitten be vaccinated at home in Lahore?", "Yes! In fact, we strongly recommend vaccinating young puppies at home before their 3-shot series is finished. Unvaccinated puppies risk deadly exposure to Parvovirus in clinic waiting rooms. Dr. Saif brings temperature-controlled cold-chain vaccines directly to your doorstep."),
         ("At what age should puppy vaccination start?", "Puppy vaccination should begin at exactly 6 to 8 weeks of age with the first core 7-in-1 shot, followed by boosters at 9–10 weeks and 12–14 weeks, culminating in the Rabies shot at 16 weeks.")
     ]
 
@@ -378,14 +378,14 @@ def build_page_3():
           Pet Vaccination Center Lahore & 2026 Price Guide
         </h1>
         <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6">
-          Vaccinating your pet is the single most effective barrier against fatal viral infections including Parvovirus, Canine Distemper, and Feline Panleukopenia. Dr. Rehman Ahmed, DVM provides 100% cold-chain verified vaccines administered at our clinic or directly in the comfort of your home.
+          Vaccinating your pet is the single most effective barrier against fatal viral infections including Parvovirus, Canine Distemper, and Feline Panleukopenia. Dr. Saif Ur Rehman, DVM provides 100% cold-chain verified vaccines administered at our clinic or directly in the comfort of your home.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20want%20to%20book%20a%20pet%20vaccination%20in%20Lahore." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition shadow-md flex items-center gap-2">
             <span>📅 Book Vaccination Appointment</span>
           </a>
           <a href="tel:+923114899904" class="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-md flex items-center gap-2">
-            <span>📞 Call Dr. Rehman: +92 311 4899904</span>
+            <span>📞 Call Dr. Saif: +92 311 4899904</span>
           </a>
         </div>
       </div>
@@ -512,7 +512,7 @@ def build_page_4():
     }
 
     faqs = [
-        ("How does a mobile veterinary house call work in Lahore?", "Dr. Rehman arrives directly at your home with a fully equipped medical mobile unit containing clinical diagnostics, medications, vaccines, and sterile surgical supplies. Your pet is examined in their calm, familiar living room environment without cage anxiety, car motion sickness, or waiting room pathogens."),
+        ("How does a mobile veterinary house call work in Lahore?", "Dr. Saif arrives directly at your home with a fully equipped medical mobile unit containing clinical diagnostics, medications, vaccines, and sterile surgical supplies. Your pet is examined in their calm, familiar living room environment without cage anxiety, car motion sickness, or waiting room pathogens."),
         ("What procedures can be performed at home?", "We perform comprehensive physical examinations, puppy and kitten vaccinations, blood collection for CBC and biochemical analysis, ear cleaning, skin allergy scrapings, wound dressing, subcutaneous fluid hydration, and peaceful at-home euthanasia."),
         ("What are the charges for a home visit in Lahore?", "A standard mobile home visit examination fee typically ranges from Rs. 2,000 to Rs. 3,500 depending on distance and locality within Lahore (DHA, Gulberg, Model Town, Johar Town, Bahria Town). Any medications, diagnostic tests, or vaccines administered are billed transparently at standard clinical rates."),
         ("How far in advance should I book a home visit?", "Routine wellness visits can be booked same-day or 24 hours in advance via WhatsApp. For urgent medical emergencies, priority mobile dispatch is available around the clock.")
@@ -535,7 +535,7 @@ def build_page_4():
           Professional Home Visit Vet in Lahore
         </h1>
         <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-6">
-          No stressful car rides. No barking waiting rooms. No risk of your unvaccinated kitten catching infectious viruses. Dr. Rehman Ahmed, DVM brings 9+ years of clinical excellence directly to your home across Lahore.
+          No stressful car rides. No barking waiting rooms. No risk of your unvaccinated kitten catching infectious viruses. Dr. Saif Ur Rehman, DVM brings 9+ years of clinical excellence directly to your home across Lahore.
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20would%20like%20to%20schedule%20a%20home%20visit%20vet%20in%20Lahore." target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition shadow-md flex items-center gap-2">
@@ -570,7 +570,7 @@ def build_page_4():
           <div class="w-10 h-10 rounded-2xl bg-blue-100 text-blue-800 grid place-items-center font-black text-base mb-4">⏰</div>
           <h3 class="font-bold text-slate-900 text-base mb-2">Convenient Multi-Pet Care</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Have multiple cats or dogs? Dr. Rehman can examine, vaccinate, and deworm all your pets in a single visit without you wrestling multiple carriers.
+            Have multiple cats or dogs? Dr. Saif can examine, vaccinate, and deworm all your pets in a single visit without you wrestling multiple carriers.
           </p>
         </div>
       </div>
@@ -580,7 +580,7 @@ def build_page_4():
     <article class="prose max-w-none my-12 text-slate-700 text-sm leading-relaxed space-y-6">
       <h2 class="text-2xl font-black text-slate-900">Equipped Mobile Veterinary Medical Unit</h2>
       <p>
-        A professional house call is not just a stethoscope in a briefcase. Dr. Rehman travels with a dedicated mobile unit configured with clinical-grade equipment:
+        A professional house call is not just a stethoscope in a briefcase. Dr. Saif travels with a dedicated mobile unit configured with clinical-grade equipment:
       </p>
       <ul class="list-disc pl-5 space-y-2">
         <li><strong>Digital Diagnostic Kit:</strong> Otoscope for deep ear canal inspection, ophthalmoscope for corneal and retinal exam, Woods lamp for feline ringworm detection.</li>
@@ -631,7 +631,7 @@ def build_page_5():
     }
 
     faqs = [
-        ("How fast can Dr. Rehman arrive at my house in DHA Lahore for an emergency?", "For priority emergencies across DHA Lahore (Phases 1, 2, 3, 4, 5, 6, 7, 8 and Raya), average response time is 25 to 40 minutes. We advise immediate telephone triage while the mobile unit is on route."),
+        ("How fast can Dr. Saif arrive at my house in DHA Lahore for an emergency?", "For priority emergencies across DHA Lahore (Phases 1, 2, 3, 4, 5, 6, 7, 8 and Raya), average response time is 25 to 40 minutes. We advise immediate telephone triage while the mobile unit is on route."),
         ("Do you provide home vaccinations for puppies in DHA Phase 5 and 6?", "Yes, we regularly conduct doorstep puppy immunization and kitten checkups across Phase 5, Phase 6, Phase 7, and Phase 8. Full PVMC official vaccination cards are issued on the spot."),
         ("Is there an extra travel fee for DHA Raya or Phase 9 Prism?", "Our standard mobile visit fee covers all DHA phases equally. Transparent flat-rate travel fees apply without unexpected surcharges.")
     ]
@@ -681,12 +681,12 @@ def build_page_5():
 
     <!-- Narrative -->
     <article class="prose max-w-none my-12 text-slate-700 text-sm leading-relaxed space-y-6">
-      <h2 class="text-2xl font-black text-slate-900">Why DHA Pet Parents Choose Dr. Rehman</h2>
+      <h2 class="text-2xl font-black text-slate-900">Why DHA Pet Parents Choose Dr. Saif</h2>
       <p>
         DHA Lahore is home to the highest concentration of pedigree dogs and cats in Pakistan—including high-maintenance Persian cats, Golden Retrievers, German Shepherds, and French Bulldogs. These breeds require specialized veterinary care, precise parasite prevention, and rapid medical attention when symptoms arise.
       </p>
       <p>
-        Rather than loading a 40kg stressed dog into your car or risking carrier trauma with a Persian cat along crowded ring-road traffic, Dr. Rehman Ahmed arrives directly at your residence with full clinical equipment.
+        Rather than loading a 40kg stressed dog into your car or risking carrier trauma with a Persian cat along crowded ring-road traffic, Dr. Saif Ur Rehman arrives directly at your residence with full clinical equipment.
       </p>
     </article>
 
@@ -711,7 +711,7 @@ def build_page_5():
 # -------------------------------------------------------------
 def build_page_6():
     title = "Canine Parvovirus Treatment in Pakistan (2026) — Costs, Saline Drips & Survival"
-    description = "Comprehensive medical guide by Dr. Rehman on canine parvovirus in Pakistan. Symptoms, IV fluid therapy, antiemetics, home vs clinic protocol, treatment costs, and survival rates."
+    description = "Comprehensive medical guide by Dr. Saif on canine parvovirus in Pakistan. Symptoms, IV fluid therapy, antiemetics, home vs clinic protocol, treatment costs, and survival rates."
     keywords = "parvovirus treatment for dogs in pakistan, parvo drip cost lahore, puppy parvo survival rate, parvo symptoms in dogs in urdu, puppy loose motion blood treatment lahore"
     breadcrumbs = [("Home", "/"), ("Blog", None), ("Parvovirus Treatment Guide", None)]
 
@@ -721,7 +721,7 @@ def build_page_6():
         "headline": "Canine Parvovirus Clinical Treatment Protocol and Survival Rates in Pakistan",
         "author": {
             "@type": "Person",
-            "name": "Dr. Rehman Ahmed, DVM"
+            "name": "Dr. Saif Ur Rehman, DVM"
         },
         "publisher": {
             "@type": "Organization",
@@ -733,7 +733,7 @@ def build_page_6():
     faqs = [
         ("What are the early symptoms of Parvovirus in a puppy?", "The earliest signs are sudden lethargy, refusal to eat or drink, and persistent vomiting of frothy yellow or white foam. Within 24 hours, this progresses to severe, foul-smelling diarrhea with dark red blood, severe dehydration, and subnormal body temperature. Every hour of delay drastically lowers survival."),
         ("What is the cost of Parvovirus treatment in Pakistan?", "Comprehensive Parvovirus treatment over 4 to 6 days typically costs between Rs. 18,000 to Rs. 45,000 in Pakistan. This covers twice-daily intravenous saline fluid therapy (Ringer Lactate with Dextrose and Potassium), injectable antiemetics (Maropitant / Ondansetron), broad-spectrum antibiotics to prevent sepsis, gastroprotectants, and nursing care."),
-        ("Can a puppy survive Parvovirus if treated at home?", "Yes. If hospitalization is financially prohibitive or clinic beds are full, Dr. Rehman coordinates an intensive at-home IV fluid and injectable medication protocol. With early diagnosis and rigorous fluid hydration, survival rates exceed 80% to 85%."),
+        ("Can a puppy survive Parvovirus if treated at home?", "Yes. If hospitalization is financially prohibitive or clinic beds are full, Dr. Saif coordinates an intensive at-home IV fluid and injectable medication protocol. With early diagnosis and rigorous fluid hydration, survival rates exceed 80% to 85%."),
         ("How do I disinfect my house in Lahore after Parvovirus?", "Standard household floor cleaners and Dettol do NOT kill Parvovirus virions. You must use diluted household bleach (1 part bleach to 30 parts water) on all washable tile surfaces and let it sit for at least 10–15 minutes before wiping. Unvaccinated puppies must not enter the premises for at least 6 to 12 months.")
     ]
 
@@ -748,7 +748,7 @@ def build_page_6():
     <div class="rounded-3xl bg-gradient-to-b from-white to-rose-50/50 border border-rose-100 p-8 md:p-12 mb-10 shadow-sm">
       <div class="max-w-3xl">
         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-bold mb-4">
-          🔬 Clinical Medical Guide · Dr. Rehman Ahmed, DVM
+          🔬 Clinical Medical Guide · Dr. Saif Ur Rehman, DVM
         </span>
         <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
           Canine Parvovirus in Pakistan: Treatment, Drip Costs & Survival Guide (2026)
