@@ -691,22 +691,24 @@ function Booking() {
 
 function Reviews() {
   const reviews = [
-    { name: "Aisha K.", pet: "Luna 🐕", text: "Dr Rehman came at 9pm for Luna's ear infection. No carrier, no stress. He sat on our floor and Luna actually fell asleep during exam.", time: "Home visit • 2 days ago", rating: 5 },
-    { name: "David M.", pet: "Whiskers 🐈", text: "3am video call saved us an ER trip. He diagnosed a UTI, sent prescription to 24hr pharmacy. $49 vs $400.", time: "Video • last night", rating: 5 },
-    { name: "Priya S.", pet: "Bruno 🐕", text: "Senior dog, can't do car rides anymore. Dr Rehman does monthly visits at home. Bruno wags his tail when he hears the doorbell.", time: "Home visit • weekly", rating: 5 },
+    { name: "Azhar Naeem", pet: "Local Guide", text: "Thank you very much for the successful treatment of my cat, Tiny. I'm happy to share that Tiny is now well again. I truly appreciate your support and care.", time: "4 months ago", rating: 5 },
+    { name: "Fakhar Zaman", pet: "1 review", text: "Best vet in Lahore Dr.Saif ur Rehman. My cat suffered from fungal Infection. By the Grace of Allah Almighty My cat is in recovery phase.", time: "6 months ago", rating: 5 },
+    { name: "Muhammad Haris Aijaz", pet: "2 reviews", text: "Our experience with Dr. Saif has been excellent. He is great with all animals, knowledgeable, and caring. He treats every pet with skill and kindness, putting both animals and owners at ease. We highly recommend him.", time: "7 months ago", rating: 5 },
+    { name: "Hunter Wayne", pet: "1 review", text: "Very professional, knowledegable and compassionate Dr Saif he very calmly and compassionatly treated my 16yrs old family dog who was very sick satisfied with his services .", time: "5 months ago", rating: 5 },
+    { name: "Ali Raza", pet: "1 review", text: "Best veterinarian Dr Saif ur Rehman. He not only diagnose disease. My cat suffered from Kidney disease and past 2 vets didn't diagnose the disease. He is the passionate veterinarian. 100% recommended.", time: "4 months ago", rating: 5 },
   ];
 
   return (
     <section id="reviews" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-5">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold tracking-tight text-slate-900">Pets don't do waiting rooms</h2>
-          <p className="mt-3 text-lg text-slate-600">Real stories from home visits and late-night video calls.</p>
+          <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold tracking-tight text-slate-900">What Our Clients Say</h2>
+          <p className="mt-3 text-lg text-slate-600">Real stories from our Google Reviews.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
-            <div key={r.name} className="group relative" style={{ animationDelay: `${i * 100}ms` }}>
+            <div key={i} className="group relative" style={{ animationDelay: `${i * 100}ms` }}>
               <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500/0 via-amber-500/25 to-emerald-500/0 rounded-[1.75rem] opacity-0 group-hover:opacity-100 blur-xl transition-all" />
               <div className="relative bg-[#faf9f7] border border-emerald-100 rounded-[1.75rem] p-7 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 transition-all">
                 <div className="flex gap-1 mb-4">
@@ -723,6 +725,15 @@ function Reviews() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white border border-emerald-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-emerald-300 transition-all flex items-center gap-2 shadow-sm">
+            <span>Read more Google Reviews</span>
+            <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all flex items-center gap-2 shadow-lg shadow-amber-500/25">
+            <span>⭐ Leave a Review</span>
+          </a>
         </div>
       </div>
     </section>
@@ -812,13 +823,24 @@ function CTA() {
 
 function Footer() {
   return (
-    <footer id="contact" className="border-t border-emerald-100 bg-white">
+    <footer id="contact" className="bg-slate-950 border-t border-slate-900 text-slate-400">
       <div className="max-w-7xl mx-auto px-5 py-14">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Brand & Bio */}
           <div className="md:col-span-2">
-            <Logo />
-            <p className="mt-4 text-sm text-slate-600 max-w-sm leading-relaxed">
+            <div className="flex items-center gap-3 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-amber-500 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition"></div>
+                <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 grid place-items-center text-white shadow-lg group-hover:scale-105 transition-all">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5H21L15.75 12.5L18 19L12 15L6 19L8.25 12.5L3 8.5H9.5L12 2Z" fill="white"></path></svg>
+                </div>
+              </div>
+              <div>
+                <div className="font-bold text-[17px] leading-none tracking-tight text-white">Rehman</div>
+                <div className="text-[10px] font-extrabold text-emerald-400 tracking-widest uppercase">VETERINARY</div>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-slate-400 max-w-sm leading-relaxed">
               Dr. Saif brings hospital-grade mobile veterinary care directly to your doorstep in Lahore. 24/7 urgent video care, home vaccinations, laboratory diagnostics, and compassionate pet treatment.
             </p>
             <div className="mt-5 flex items-center gap-3">
@@ -826,7 +848,7 @@ function Footer() {
                 href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold transition-colors border border-emerald-200 shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-bold transition-colors border border-slate-800 shadow-sm"
               >
                 <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                 WhatsApp: +92 311 4899904
@@ -836,46 +858,46 @@ function Footer() {
 
           {/* Col 2: Clinical Services & Silos */}
           <div>
-            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Clinical Services</div>
-            <ul className="space-y-2 text-xs text-slate-600">
-              <li><a href="/services/emergency-veterinary-care.html" className="hover:text-emerald-700 transition-colors">24/7 Emergency Care</a></li>
-              <li><a href="/services/24-hour-vet-clinic-lahore.html" className="hover:text-emerald-700 transition-colors">24 Hour Animal Hospital</a></li>
-              <li><a href="/services/pet-vaccination-center.html" className="hover:text-emerald-700 transition-colors">Pet Vaccination Center</a></li>
-              <li><a href="/services/home-visit-veterinary.html" className="hover:text-emerald-700 transition-colors">Mobile Vet House Calls</a></li>
-              <li><a href="/locations/dha-lahore-veterinary-clinic.html" className="hover:text-emerald-700 transition-colors">Vet in DHA Lahore</a></li>
-              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan.html" className="hover:text-emerald-700 transition-colors">Parvovirus Protocol</a></li>
+            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Clinical Services</div>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="/services/emergency-veterinary-care.html" className="hover:text-emerald-400 transition-colors">24/7 Emergency Care</a></li>
+              <li><a href="/services/24-hour-vet-clinic-lahore.html" className="hover:text-emerald-400 transition-colors">24 Hour Animal Hospital</a></li>
+              <li><a href="/services/pet-vaccination-center.html" className="hover:text-emerald-400 transition-colors">Pet Vaccination Center</a></li>
+              <li><a href="/services/home-visit-veterinary.html" className="hover:text-emerald-400 transition-colors">Mobile Vet House Calls</a></li>
+              <li><a href="/locations/dha-lahore-veterinary-clinic.html" className="hover:text-emerald-400 transition-colors">Vet in DHA Lahore</a></li>
+              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan.html" className="hover:text-emerald-400 transition-colors">Parvovirus Protocol</a></li>
             </ul>
           </div>
 
           {/* Col 3: Direct Contact */}
           <div>
-            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Direct Contact</div>
-            <div className="space-y-3.5 text-sm text-slate-600">
+            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Direct Contact</div>
+            <div className="space-y-3.5 text-sm text-slate-400">
               <div>
-                <span className="block text-xs font-semibold text-slate-400">Emergency &amp; Helpline:</span>
-                <a href="tel:+923114899904" className="font-bold text-slate-900 hover:text-emerald-700 transition-colors">
+                <span className="block text-xs font-semibold text-slate-500">Emergency &amp; Helpline:</span>
+                <a href="tel:+923114899904" className="font-bold text-white hover:text-emerald-400 transition-colors">
                   +92 311 4899904
                 </a>
               </div>
               <div>
-                <span className="block text-xs font-semibold text-slate-400">Official Email:</span>
-                <a href="mailto:info@rehmanvetclinic.com" className="font-semibold text-slate-900 hover:text-emerald-700 transition-colors">
+                <span className="block text-xs font-semibold text-slate-500">Official Email:</span>
+                <a href="mailto:info@rehmanvetclinic.com" className="font-semibold text-white hover:text-emerald-400 transition-colors">
                   info@rehmanvetclinic.com
                 </a>
               </div>
               <div>
-                <span className="block text-xs font-semibold text-slate-400">Service Coverage:</span>
-                <span className="text-slate-700 font-medium">Lahore (DHA, Gulberg, Bahria, Model Town &amp; All Sectors)</span>
+                <span className="block text-xs font-semibold text-slate-500">Service Coverage:</span>
+                <span className="text-slate-400 font-medium">Lahore (DHA, Gulberg, Bahria, Model Town &amp; All Sectors)</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.</div>
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span className="inline-flex items-center gap-1.5 text-emerald-500 font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Serving All Lahore Neighborhoods 24/7
             </span>
           </div>
