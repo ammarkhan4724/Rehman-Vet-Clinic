@@ -1,0 +1,28 @@
+{
+  "https://roundlakeanimalhospital.com.pk": {
+    "url": "https://roundlakeanimalhospital.com.pk/robots.txt",
+    "status": 200,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "available",
+    "fetched_at": "2026-09-16T17:19:28.727580+00:00",
+    "sha256": "85c3a701228c9bee5ef5151289504ff6c1140fd4f2424e39d3c96e4e1d97f449",
+    "text": "# START YOAST BLOCK\n# ---------------------------\nUser-agent: *\nDisallow: /wp-json/\nDisallow: /?rest_route=\n\nUser-agent: AdsBot\nDisallow: /\n\n# ---------------------------\n# END YOAST BLOCK\nSitemap: https://roundlakeanimalhospital.com.pk/sitemap.xml\nSitemap: https://roundlakeanimalhospital.com.pk/sitemap.html\n",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://roundlakeanimalhospital.com.pk/robots.txt",
+        "status": 200,
+        "error": "",
+        "fetched_at": "2026-09-16T17:19:28.727703+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "response_received",
+      "confidence": "observed",
+      "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+    }
+  }
+}

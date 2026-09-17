@@ -1,0 +1,19 @@
+[
+  {
+    "url": "https://roundlakeanimalhospital.com.pk/",
+    "code": "capture_incomplete",
+    "severity": "medium",
+    "evidence": "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n; Browser javascript_errors: ['wp is not defined']",
+    "action": "Inspect access and browser evidence, then recapture this URL before assessing missing content.",
+    "confidence": "observed",
+    "representation": "http"
+  },
+  {
+    "url": "https://roundlakeanimalhospital.com.pk/",
+    "code": "render_failed",
+    "severity": "medium",
+    "confidence": "observed",
+    "evidence": "TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n",
+    "action": "Inspect the local browser failure; raw HTML findings remain available."
+  }
+]

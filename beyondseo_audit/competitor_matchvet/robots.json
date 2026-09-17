@@ -1,0 +1,28 @@
+{
+  "https://matchvet.com": {
+    "url": "https://matchvet.com/robots.txt",
+    "status": 200,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "available",
+    "fetched_at": "2026-09-16T17:16:39.884201+00:00",
+    "sha256": "698f041df9b9408fbf9dc1d41042d8de55a68823da881876050b63178d244435",
+    "text": "User-Agent: *\nAllow: /\nDisallow: /go/\nDisallow: /book/\n\nSitemap: https://matchvet.com/sitemap.xml\n",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://matchvet.com/robots.txt",
+        "status": 200,
+        "error": "",
+        "fetched_at": "2026-09-16T17:16:39.884235+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "response_received",
+      "confidence": "observed",
+      "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+    }
+  }
+}

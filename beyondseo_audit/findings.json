@@ -1,0 +1,107 @@
+[
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "javascript_content",
+    "severity": "info",
+    "evidence": "Initial main words: 0; rendered: 591.",
+    "action": "Main content depends on rendering. Consider delivering essential text and metadata in initial HTML; indexing is not established by this observation.",
+    "confidence": "observed",
+    "representation": "rendered",
+    "affected_urls": [
+      "https://rehmanvetclinic.com/"
+    ],
+    "observation": "Initial main words: 0; rendered: 591.",
+    "captured_at": "2026-09-16T17:01:23.053848+00:00",
+    "claim_type": "verified_fact",
+    "why_it_matters": "Visitors and non-rendering consumers may receive different service information.",
+    "business_relevance": null,
+    "recommended_action": "Main content depends on rendering. Consider delivering essential text and metadata in initial HTML; indexing is not established by this observation.",
+    "priority": "review",
+    "priority_rationale": "Based on observed access/content impact; review business importance before scheduling. Informational signals are not automatically defects.",
+    "acceptance_check": "Fetch this URL without JavaScript and with the browser. Confirm the core offer, heading and contact route are available in both if server rendering is implemented.",
+    "uncertainty": [
+      "Observation applies to captured representations; rankings, indexing and AI citations were not measured.",
+      "Business profile not yet reviewed; business-specific impact needs interpretation."
+    ],
+    "evidence_refs": [
+      {
+        "url": "https://rehmanvetclinic.com/",
+        "captured_at": "2026-09-16T17:01:23.053848+00:00",
+        "representation": "rendered",
+        "body_sha256": "2b2f87a3d2db4f1c27d31c41a92b4cd1156cdddc6a4e68c3c6f548f61931a48f",
+        "html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.html",
+        "rendered_html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.rendered.html"
+      }
+    ]
+  },
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "missing_description",
+    "severity": "low",
+    "evidence": "No nonempty meta description.",
+    "action": "Add a useful page-specific summary where appropriate.",
+    "confidence": "observed",
+    "representation": "rendered",
+    "affected_urls": [
+      "https://rehmanvetclinic.com/"
+    ],
+    "observation": "No nonempty meta description.",
+    "captured_at": "2026-09-16T17:01:23.053848+00:00",
+    "claim_type": "verified_fact",
+    "why_it_matters": "A page-specific summary can explain the offer to people considering a visit.",
+    "business_relevance": null,
+    "recommended_action": "Add a useful page-specific summary where appropriate.",
+    "priority": "P3",
+    "priority_rationale": "Based on observed access/content impact; review business importance before scheduling. Informational signals are not automatically defects.",
+    "acceptance_check": "Recrawl and verify a unique, accurate meta description; search engines may choose a different snippet.",
+    "uncertainty": [
+      "Observation applies to captured representations; rankings, indexing and AI citations were not measured.",
+      "Business profile not yet reviewed; business-specific impact needs interpretation."
+    ],
+    "evidence_refs": [
+      {
+        "url": "https://rehmanvetclinic.com/",
+        "captured_at": "2026-09-16T17:01:23.053848+00:00",
+        "representation": "rendered",
+        "body_sha256": "2b2f87a3d2db4f1c27d31c41a92b4cd1156cdddc6a4e68c3c6f548f61931a48f",
+        "html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.html",
+        "rendered_html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.rendered.html"
+      }
+    ]
+  },
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "canonical_not_declared",
+    "severity": "low",
+    "evidence": "No HTML canonical link.",
+    "action": "Review URL variants; add a canonical when useful. HTTP Link canonicals are not parsed.",
+    "confidence": "review",
+    "representation": "rendered",
+    "affected_urls": [
+      "https://rehmanvetclinic.com/"
+    ],
+    "observation": "No HTML canonical link.",
+    "captured_at": "2026-09-16T17:01:23.053848+00:00",
+    "claim_type": "inference",
+    "why_it_matters": "Review this recorded signal in the context of the page's intended customer journey.",
+    "business_relevance": null,
+    "recommended_action": "Review URL variants; add a canonical when useful. HTTP Link canonicals are not parsed.",
+    "priority": "P3",
+    "priority_rationale": "Based on observed access/content impact; review business importance before scheduling. Informational signals are not automatically defects.",
+    "acceptance_check": "Apply the stated action on the affected URL, recrawl it, and compare this exact evidence and issue code with the prior capture.",
+    "uncertainty": [
+      "Observation applies to captured representations; rankings, indexing and AI citations were not measured.",
+      "Business profile not yet reviewed; business-specific impact needs interpretation."
+    ],
+    "evidence_refs": [
+      {
+        "url": "https://rehmanvetclinic.com/",
+        "captured_at": "2026-09-16T17:01:23.053848+00:00",
+        "representation": "rendered",
+        "body_sha256": "2b2f87a3d2db4f1c27d31c41a92b4cd1156cdddc6a4e68c3c6f548f61931a48f",
+        "html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.html",
+        "rendered_html_path": "html/6efe90eab967a26db26de5ffeedf3f5d2a48130a22896f89496e325715715d27.rendered.html"
+      }
+    ]
+  }
+]

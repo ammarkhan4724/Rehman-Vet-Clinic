@@ -1,0 +1,4 @@
+﻿url,code,severity,confidence,evidence,action
+https://rehmanvetclinic.com/,javascript_content,info,observed,Initial main words: 0; rendered: 591.,Main content depends on rendering. Consider delivering essential text and metadata in initial HTML; indexing is not established by this observation.
+https://rehmanvetclinic.com/,missing_description,low,observed,No nonempty meta description.,Add a useful page-specific summary where appropriate.
+https://rehmanvetclinic.com/,canonical_not_declared,low,review,No HTML canonical link.,Review URL variants; add a canonical when useful. HTTP Link canonicals are not parsed.

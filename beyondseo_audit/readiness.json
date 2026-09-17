@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-16T17:01:31.478949+00:00",
+  "seed": "https://rehmanvetclinic.com/",
+  "coverage_limited": false,
+  "sitemap_urls_observed": 0,
+  "sitemap_fetch_failures": 0,
+  "pages": [
+    {
+      "url": "https://rehmanvetclinic.com/",
+      "final_url": "https://rehmanvetclinic.com/",
+      "representation": "rendered",
+      "status": 200,
+      "main_words": 591,
+      "body_words": 626,
+      "in_observed_sitemap": false,
+      "schema_types": [],
+      "microdata_types": [],
+      "schema_errors": [],
+      "robots_path_permissions": {
+        "Googlebot": true,
+        "Bingbot": true
+      },
+      "snippet_controls_to_review": [],
+      "index_signals_http": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "index_signals_selected": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "observations": [
+        {
+          "code": "javascript_content",
+          "observation": "Substantial text arrived after JavaScript ran.",
+          "why_it_matters": "Different crawlers may see different content.",
+          "next_step": "Compare the raw response with the full page; consider server-rendering important answers and links."
+        },
+        {
+          "code": "schema_review",
+          "observation": "No JSON-LD or microdata types were observed.",
+          "why_it_matters": "Structured data may clarify real entities, but its absence does not establish an AI visibility problem.",
+          "next_step": "Review relevant markup for this page; add only types and facts it actually supports."
+        }
+      ]
+    }
+  ],
+  "not_measured": [
+    "actual indexing",
+    "AI answer inclusion",
+    "competitor rankings",
+    "independent reputation",
+    "schema semantic validity"
+  ],
+  "interpretation": "These are access, text and markup observations. They do not measure an engine's trust, indexing or citations."
+}

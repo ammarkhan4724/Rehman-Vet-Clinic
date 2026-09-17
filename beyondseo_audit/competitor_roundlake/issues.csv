@@ -1,0 +1,9 @@
+﻿url,code,severity,confidence,evidence,action
+https://roundlakeanimalhospital.com.pk/,capture_incomplete,medium,observed,"Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.
+Call log:
+  - navigating to ""https://roundlakeanimalhospital.com.pk/"", waiting until ""domcontentloaded""
+; Browser javascript_errors: ['wp is not defined']","Inspect access and browser evidence, then recapture this URL before assessing missing content."
+https://roundlakeanimalhospital.com.pk/,render_failed,medium,observed,"TimeoutError: Page.goto: Timeout 17437ms exceeded.
+Call log:
+  - navigating to ""https://roundlakeanimalhospital.com.pk/"", waiting until ""domcontentloaded""
+",Inspect the local browser failure; raw HTML findings remain available.

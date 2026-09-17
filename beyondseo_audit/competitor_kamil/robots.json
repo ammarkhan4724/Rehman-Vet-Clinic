@@ -1,0 +1,28 @@
+{
+  "https://kamilveterinaryclinic.com": {
+    "url": "https://kamilveterinaryclinic.com/robots.txt",
+    "status": 200,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "available",
+    "fetched_at": "2026-09-16T17:21:53.999344+00:00",
+    "sha256": "491c884711e53a725237f10d2f4d08bf12dd156dc5f320f89ee225a5a7f1a2eb",
+    "text": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://kamilveterinaryclinic.com/sitemap_index.xml\n",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://kamilveterinaryclinic.com/robots.txt",
+        "status": 200,
+        "error": "",
+        "fetched_at": "2026-09-16T17:21:53.999421+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "response_received",
+      "confidence": "observed",
+      "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+    }
+  }
+}

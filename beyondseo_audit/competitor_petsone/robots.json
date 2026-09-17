@@ -1,0 +1,28 @@
+{
+  "https://petsone.pk": {
+    "url": "https://petsone.pk/robots.txt",
+    "status": 200,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "available",
+    "fetched_at": "2026-09-16T17:21:04.228245+00:00",
+    "sha256": "935f7b2f469f67f9d9bc14ff88587c5f4f5926470a9d79605824f2248ed7f15d",
+    "text": "# Physical robots.txt, added 2026-07-25.\n#\n# This replaces the WordPress/Yoast virtual robots.txt, which emitted two\n# conflicting \"User-agent: *\" groups -- the second (the Yoast block) carrying an\n# empty \"Disallow:\", i.e. allow-all. Crawlers that honour only the last matching\n# group therefore ignored the add-to-cart rules above it. All previous\n# directives are preserved below, in a single group.\n#\n# NOTE: WordPress only generates its virtual robots.txt when no physical file\n# exists. Deleting this file restores the old behaviour; any robots change made\n# in the Yoast UI while it exists will NOT take effect.\n\nUser-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /wp-content/uploads/*b2bking-\n\n# Faceted-search crawl space. Every combination of these parameters is a unique\n# URL backed by a full, uncached product query, and add-to-cart writes a\n# cart/session row on every hit. Left open, it is an unbounded crawl trap.\nDisallow: /*?add-to-cart=\nDisallow: /*&add-to-cart=\nDisallow: /*?s=\nDisallow: /*&s=\nDisallow: /*?post_type=product\nDisallow: /*&post_type=product\nDisallow: /*?min_price=\nDisallow: /*&min_price=\nDisallow: /*?max_price=\nDisallow: /*&max_price=\nDisallow: /*?per_page=\nDisallow: /*&per_page=\nDisallow: /*?per_row=\nDisallow: /*&per_row=\nDisallow: /*?shop_view=\nDisallow: /*&shop_view=\nDisallow: /*?orderby=\nDisallow: /*&orderby=\n\n# Meta's crawler. A crawler obeys ONLY its most specific matching group and\n# ignores \"User-agent: *\" entirely, so every rule above is repeated here --\n# omitting them would hand meta-externalagent a blanket allow, which is the\n# exact bug this file was written to fix.\nUser-agent: meta-externalagent\nCrawl-delay: 30\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /wp-content/uploads/*b2bking-\nDisallow: /*?add-to-cart=\nDisallow: /*&add-to-cart=\nDisallow: /*?s=\nDisallow: /*&s=\nDisallow: /*?post_type=product\nDisallow: /*&post_type=product\nDisallow: /*?min_price=\nDisallow: /*&min_price=\nDisallow: /*?max_price=\nDisallow: /*&max_price=\nDisallow: /*?per_page=\nDisallow: /*&per_page=\nDisallow: /*?per_row=\nDisallow: /*&per_row=\nDisallow: /*?shop_view=\nDisallow: /*&shop_view=\nDisallow: /*?orderby=\nDisallow: /*&orderby=\nDisallow: /cart/\nDisallow: /checkout/\nDisallow: /my-account/\n\nSitemap: https://petsone.pk/sitemap_index.xml\n",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://petsone.pk/robots.txt",
+        "status": 200,
+        "error": "",
+        "fetched_at": "2026-09-16T17:21:04.228680+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "response_received",
+      "confidence": "observed",
+      "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+    }
+  }
+}

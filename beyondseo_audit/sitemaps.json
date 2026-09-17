@@ -1,0 +1,77 @@
+{
+  "fetches": [
+    {
+      "url": "https://rehmanvetclinic.com/sitemap.xml",
+      "status": 404,
+      "error": "",
+      "fetched_at": "2026-09-16T17:01:19.192480+00:00",
+      "sha256": "e7db95c97a5d45787cc3e40cbcb93b748fefc65bc14e162c746e37f979861729",
+      "redirects": [],
+      "entries": 0,
+      "http_events": [
+        {
+          "url": "https://rehmanvetclinic.com/sitemap.xml",
+          "status": 404,
+          "error": "",
+          "fetched_at": "2026-09-16T17:01:19.192512+00:00",
+          "retry_after": null,
+          "challenge_detected": false
+        }
+      ],
+      "access": {
+        "code": "http_error",
+        "confidence": "observed",
+        "evidence": "HTTP 404"
+      }
+    },
+    {
+      "url": "https://rehmanvetclinic.com/sitemap_index.xml",
+      "status": 404,
+      "error": "",
+      "fetched_at": "2026-09-16T17:01:19.917698+00:00",
+      "sha256": "e7db95c97a5d45787cc3e40cbcb93b748fefc65bc14e162c746e37f979861729",
+      "redirects": [],
+      "entries": 0,
+      "http_events": [
+        {
+          "url": "https://rehmanvetclinic.com/sitemap_index.xml",
+          "status": 404,
+          "error": "",
+          "fetched_at": "2026-09-16T17:01:19.917744+00:00",
+          "retry_after": null,
+          "challenge_detected": false
+        }
+      ],
+      "access": {
+        "code": "http_error",
+        "confidence": "observed",
+        "evidence": "HTTP 404"
+      }
+    },
+    {
+      "url": "https://rehmanvetclinic.com/wp-sitemap.xml",
+      "status": 404,
+      "error": "",
+      "fetched_at": "2026-09-16T17:01:20.611970+00:00",
+      "sha256": "e7db95c97a5d45787cc3e40cbcb93b748fefc65bc14e162c746e37f979861729",
+      "redirects": [],
+      "entries": 0,
+      "http_events": [
+        {
+          "url": "https://rehmanvetclinic.com/wp-sitemap.xml",
+          "status": 404,
+          "error": "",
+          "fetched_at": "2026-09-16T17:01:20.611998+00:00",
+          "retry_after": null,
+          "challenge_detected": false
+        }
+      ],
+      "access": {
+        "code": "http_error",
+        "confidence": "observed",
+        "evidence": "HTTP 404"
+      }
+    }
+  ],
+  "urls": []
+}

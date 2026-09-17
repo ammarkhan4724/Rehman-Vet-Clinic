@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Logo from "./components/Logo";
+import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -7,6 +9,7 @@ const NAV = [
   { label: "Book", href: "#book" },
   { label: "Reviews", href: "#reviews" },
   { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 // Deterministic pseudo-random based on a seed (stable per date+type+time)
@@ -120,6 +123,7 @@ export default function App() {
       <About />
       <CTA />
       <Footer />
+      <WhatsAppFloatingButton />
     </div>
   );
 }
@@ -138,20 +142,7 @@ function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-4"}`}>
       <div className={`mx-4 md:mx-auto max-w-7xl transition-all duration-500 ${scrolled ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-slate-900/5" : "bg-white/70 backdrop-blur-md"} rounded-full border border-white/50`}>
         <div className="px-5 md:px-7 py-3 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-amber-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition" />
-              <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 grid place-items-center text-white shadow-lg shadow-amber-500/25 group-hover:scale-105 group-hover:rotate-3 transition-all duration-300">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L14.5 8.5H21L15.75 12.5L18 19L12 15L6 19L8.25 12.5L3 8.5H9.5L12 2Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <div className="font-bold text-[17px] leading-none tracking-tight text-slate-900">Rehman</div>
-              <div className="text-[10px] font-extrabold text-emerald-600 tracking-widest uppercase">VETERINARY</div>
-            </div>
-          </a>
+          <Logo />
 
           <nav className="hidden lg:flex items-center gap-1 bg-emerald-50/80 border border-emerald-100/60 rounded-full p-1">
             {NAV.map((n) => (
@@ -162,14 +153,41 @@ function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href="tel:+15551234567" className="hidden md:flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-700 text-white text-sm font-medium hover:bg-emerald-800 hover:scale-105 transition-all shadow-md shadow-emerald-700/15">
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              24/7 Video
+            {/* Direct Dial Helpline */}
+            <a
+              href="tel:+923114899904"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
+            >
+              <svg className="w-3.5 h-3.5 text-amber-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z" />
+              </svg>
+              <span>+92 311 4899904</span>
             </a>
-            <a href="#book" className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 transition-all">
+
+            {/* Quick WhatsApp Pill */}
+            <a
+              href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-all shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+              <span>WhatsApp</span>
+            </a>
+
+            {/* Main CTA */}
+            <a
+              href="#book"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 transition-all"
+            >
               Book Now
             </a>
-            <button onClick={() => setOpen(!open)} className="lg:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-slate-100 transition">
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="lg:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-slate-100 transition"
+              aria-label="Toggle navigation menu"
+            >
               <div className="space-y-1.5">
                 <div className={`w-5 h-0.5 bg-slate-700 transition ${open ? "rotate-45 translate-y-2" : ""}`} />
                 <div className={`w-5 h-0.5 bg-slate-700 transition ${open ? "opacity-0" : ""}`} />
@@ -182,12 +200,29 @@ function Header() {
 
       {open && (
         <div className="lg:hidden mx-4 mt-2 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden animate-slide-in">
-          <div className="p-2">
+          <div className="p-3">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block px-5 py-3 rounded-2xl hover:bg-slate-50 font-medium">
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block px-5 py-3 rounded-2xl hover:bg-slate-50 font-medium text-slate-800">
                 {n.label}
               </a>
             ))}
+
+            <div className="mt-3 pt-3 border-t border-slate-100 px-3 flex flex-col gap-2">
+              <a href="tel:+923114899904" className="flex items-center gap-2 text-sm font-bold text-slate-800 py-1.5">
+                <span>📞 Call: +92 311 4899904</span>
+              </a>
+              <a href="mailto:info@rehmanvetclinic.com" className="flex items-center gap-2 text-xs font-semibold text-slate-600 py-1">
+                <span>✉️ info@rehmanvetclinic.com</span>
+              </a>
+              <a
+                href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-bold shadow-md shadow-[#25D366]/20 mt-1"
+              >
+                <span>Chat on WhatsApp (24/7)</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -213,7 +248,7 @@ function Hero() {
                 <span className="w-1.5 h-1.5 bg-slate-950 rounded-full animate-pulse" />
                 LIVE
               </span>
-              <span className="text-[13px] font-medium text-slate-700">Mobile vet in your area • 3 slots today</span>
+              <span className="text-[13px] font-medium text-slate-700">Mobile vet in Lahore • 3 slots today</span>
             </div>
 
             <h1 className="text-[clamp(40px,6vw,72px)] font-[800] leading-[0.9] tracking-[-0.02em] text-slate-900">
@@ -228,7 +263,7 @@ function Hero() {
             </h1>
 
             <p className="mt-6 text-[18px] md:text-[20px] leading-relaxed text-slate-600 max-w-xl">
-              I'm Dr. Rehman — a mobile veterinarian. I do house calls across the city and 24/7 video consults for urgent worries. No stressful car rides. No waiting rooms.
+              I'm Dr. Rehman — a mobile veterinarian. I do house calls across Lahore and 24/7 video consults for urgent pet worries. No stressful car rides. No waiting rooms.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
@@ -462,7 +497,7 @@ function Booking() {
                 See my real availability. Book instantly.
               </h2>
               <p className="mt-4 text-lg text-slate-600">
-                Home visits within 15 miles of downtown. Video calls worldwide, 24/7.
+                Home visits across Lahore (DHA, Gulberg, Bahria, Model Town & all areas). Video calls 24/7.
               </p>
 
               <div className="mt-8 space-y-3">
@@ -483,10 +518,24 @@ function Booking() {
                 <div className="flex items-center gap-3">
                   <img src="https://images.pexels.com/photos/32788234/pexels-photo-32788234.jpeg?auto=compress&w=100&h=100&fit=crop" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover" />
                   <div>
-                    <div className="font-bold text-slate-900">Dr. Rehman, DVM</div>
-                    <div className="text-sm text-slate-600">Mobile vet • 9 years experience</div>
+                    <div className="font-bold text-slate-900">Dr. Rehman Ahmed, DVM</div>
+                    <div className="text-sm text-slate-600">Mobile Vet • Lahore Practice • 9+ Yrs Exp</div>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-4 p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80">
+                <div className="text-xs font-bold text-emerald-900 mb-1">Prefer instant WhatsApp booking?</div>
+                <p className="text-xs text-slate-600 mb-2.5">Send a quick WhatsApp text with your pet's name &amp; location in Lahore.</p>
+                <a
+                  href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20would%20like%20to%20book%20a%20home%20visit%20in%20Lahore."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition-all shadow-sm"
+                >
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  <span>Book via WhatsApp: +92 311 4899904</span>
+                </a>
               </div>
             </div>
           </div>
@@ -677,7 +726,7 @@ function About() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 grid place-items-center font-black">DVM</div>
                 <div>
                   <div className="font-bold text-slate-900">Dr. Rehman Ahmed</div>
-                  <div className="text-sm text-slate-600">Cornell 2015 • Mobile practice since 2020</div>
+                  <div className="text-sm text-slate-600">DVM, Licensed Veterinarian • Lahore Practice</div>
                 </div>
               </div>
             </div>
@@ -689,18 +738,18 @@ function About() {
               I started mobile vet care because my own dog hated the clinic.
             </h2>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              I'm Dr. Rehman. After 5 years in a busy animal hospital, I saw how much stress the car ride and waiting room caused. Especially for cats and seniors. So I built a practice that comes to you.
+              I'm Dr. Rehman. After years in busy animal hospitals, I saw how much stress car rides and clinic waiting rooms caused pets in Lahore. Especially for cats and senior dogs. So I built a mobile practice that comes directly to you.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              My van is a full clinic on wheels — exam table, microscope, vaccines, lab kit. For video calls, I'm available 24/7 because pet emergencies don't check the clock.
+              My mobile van is a complete clinic on wheels — exam table, diagnostic microscope, vaccines, and emergency treatment kit. For video calls, I'm available 24/7 because pet emergencies don't check the clock.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
-                { k: "9 years", v: "Experience" },
+                { k: "9+ years", v: "Clinical Experience" },
                 { k: "2,400+", v: "Home visits" },
-                { k: "15 miles", v: "Service radius" },
-                { k: "24/7", v: "Video support" },
+                { k: "All Lahore", v: "Service coverage" },
+                { k: "24/7", v: "Emergency support" },
               ].map(s => (
                 <div key={s.v} className="p-4 rounded-2xl bg-white border border-emerald-100/80 shadow-sm">
                   <div className="text-2xl font-black text-slate-900">{s.k}</div>
@@ -724,10 +773,19 @@ function CTA() {
           <div className="relative bg-slate-950 rounded-[2.5rem] px-8 py-14 md:px-14 md:py-16 text-center">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-xs font-extrabold text-amber-400 uppercase tracking-wider mb-5">Available now</div>
             <h3 className="text-[clamp(28px,4vw,44px)] font-extrabold text-white leading-tight">Worried about your pet right now?</h3>
-            <p className="mt-3 text-slate-300 text-lg max-w-2xl mx-auto">Start a video call in 2 minutes, or book a home visit for today. I'm on call.</p>
+            <p className="mt-3 text-slate-300 text-lg max-w-2xl mx-auto">Start a video call in 2 minutes, or book a home visit for today. I'm on call across Lahore.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="#book" className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 rounded-2xl font-black shadow-lg shadow-amber-500/25 hover:-translate-y-0.5 transition-all">Start video — $49</a>
-              <a href="tel:+15551234567" className="px-8 py-4 bg-white/10 backdrop-blur border border-white/20 text-white rounded-2xl font-bold hover:bg-white/15 transition-all">Call: (555) 123-4567</a>
+              <a href="#book" className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 rounded-2xl font-black shadow-lg shadow-amber-500/25 hover:-translate-y-0.5 transition-all">Book Online</a>
+              <a href="tel:+923114899904" className="px-8 py-4 bg-white/10 backdrop-blur border border-white/20 text-white rounded-2xl font-bold hover:bg-white/15 transition-all flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-amber-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z" />
+                </svg>
+                <span>Call: +92 311 4899904</span>
+              </a>
+              <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet." target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/25 hover:-translate-y-0.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+                <span>WhatsApp (24/7)</span>
+              </a>
             </div>
           </div>
         </div>
@@ -738,19 +796,74 @@ function CTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-emerald-100 bg-white">
-      <div className="max-w-7xl mx-auto px-5 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 grid place-items-center text-slate-950 shadow-md">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 8.5H21L15.75 12.5L18 19L12 15L6 19L8.25 12.5L3 8.5H9.5L12 2Z" fill="currentColor"/></svg>
-            </div>
-            <div>
-              <div className="font-bold leading-none">Rehman Veterinary Clinic</div>
-              <div className="text-xs text-slate-500">Mobile vet • 24/7 video • Home visits</div>
+    <footer id="contact" className="border-t border-emerald-100 bg-white">
+      <div className="max-w-7xl mx-auto px-5 py-14">
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+          {/* Col 1: Brand & Bio */}
+          <div className="md:col-span-2">
+            <Logo />
+            <p className="mt-4 text-sm text-slate-600 max-w-sm leading-relaxed">
+              Dr. Rehman brings hospital-grade mobile veterinary care directly to your doorstep in Lahore. 24/7 urgent video care, home vaccinations, laboratory diagnostics, and compassionate pet treatment.
+            </p>
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold transition-colors border border-emerald-200 shadow-sm"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                WhatsApp: +92 311 4899904
+              </a>
             </div>
           </div>
-          <div className="text-sm text-slate-500">© {new Date().getFullYear()} Dr. Rehman Ahmed, DVM. Serving the metro area.</div>
+
+          {/* Col 2: Navigation */}
+          <div>
+            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Navigation</div>
+            <ul className="space-y-2.5 text-sm text-slate-600">
+              {NAV.map((n) => (
+                <li key={n.href}>
+                  <a href={n.href} className="hover:text-emerald-700 transition-colors">
+                    {n.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: Direct Contact */}
+          <div>
+            <div className="font-bold text-slate-900 text-sm mb-4 uppercase tracking-wider text-emerald-900">Direct Contact</div>
+            <div className="space-y-3.5 text-sm text-slate-600">
+              <div>
+                <span className="block text-xs font-semibold text-slate-400">Emergency &amp; Helpline:</span>
+                <a href="tel:+923114899904" className="font-bold text-slate-900 hover:text-emerald-700 transition-colors">
+                  +92 311 4899904
+                </a>
+              </div>
+              <div>
+                <span className="block text-xs font-semibold text-slate-400">Official Email:</span>
+                <a href="mailto:info@rehmanvetclinic.com" className="font-semibold text-slate-900 hover:text-emerald-700 transition-colors">
+                  info@rehmanvetclinic.com
+                </a>
+              </div>
+              <div>
+                <span className="block text-xs font-semibold text-slate-400">Service Coverage:</span>
+                <span className="text-slate-700 font-medium">Lahore (DHA, Gulberg, Bahria, Model Town &amp; All Sectors)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Rehman Ahmed, DVM.</div>
+          <div className="flex items-center gap-4">
+            <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              Serving All Lahore Neighborhoods 24/7
+            </span>
+          </div>
         </div>
       </div>
     </footer>

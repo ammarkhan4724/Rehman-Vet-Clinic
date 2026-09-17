@@ -1,0 +1,77 @@
+[
+  {
+    "url": "https://roundlakeanimalhospital.com.pk/",
+    "code": "capture_incomplete",
+    "severity": "medium",
+    "evidence": "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n; Browser javascript_errors: ['wp is not defined']",
+    "action": "Inspect access and browser evidence, then recapture this URL before assessing missing content.",
+    "confidence": "observed",
+    "representation": "http",
+    "affected_urls": [
+      "https://roundlakeanimalhospital.com.pk/"
+    ],
+    "observation": "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n; Browser javascript_errors: ['wp is not defined']",
+    "captured_at": "2026-09-16T17:19:20.044538+00:00",
+    "claim_type": "verified_fact",
+    "why_it_matters": "Missing answers or markup cannot be assessed from an incomplete capture.",
+    "business_relevance": null,
+    "recommended_action": "Inspect access and browser evidence, then recapture this URL before assessing missing content.",
+    "priority": "P2",
+    "priority_rationale": "Based on observed access/content impact; review business importance before scheduling. Informational signals are not automatically defects.",
+    "acceptance_check": "Resolve the recorded access/render limitation; repeat this URL and check browser readiness before making absence claims.",
+    "uncertainty": [
+      "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n",
+      "Browser javascript_errors: ['wp is not defined']",
+      "Observation applies to captured representations; rankings, indexing and AI citations were not measured.",
+      "The crawl did not establish complete website coverage.",
+      "Business profile not yet reviewed; business-specific impact needs interpretation."
+    ],
+    "evidence_refs": [
+      {
+        "url": "https://roundlakeanimalhospital.com.pk/",
+        "captured_at": "2026-09-16T17:19:20.044538+00:00",
+        "representation": "http",
+        "body_sha256": "a9d065c5f2101c43e6e19bfac7f7053d9c2d2c9e59a194885e3273e245d07c09",
+        "html_path": "html/93ac17c81af03bff15aa62c92a4804a6aa18208dd4d56fac484dfd4e4dc16eff.html",
+        "rendered_html_path": null
+      }
+    ]
+  },
+  {
+    "url": "https://roundlakeanimalhospital.com.pk/",
+    "code": "render_failed",
+    "severity": "medium",
+    "confidence": "observed",
+    "evidence": "TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n",
+    "action": "Inspect the local browser failure; raw HTML findings remain available.",
+    "affected_urls": [
+      "https://roundlakeanimalhospital.com.pk/"
+    ],
+    "observation": "TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n",
+    "captured_at": "2026-09-16T17:19:20.044538+00:00",
+    "claim_type": "verified_fact",
+    "why_it_matters": "JavaScript content was not verified in this run.",
+    "business_relevance": null,
+    "recommended_action": "Inspect the local browser failure; raw HTML findings remain available.",
+    "priority": "P2",
+    "priority_rationale": "Based on observed access/content impact; review business importance before scheduling. Informational signals are not automatically defects.",
+    "acceptance_check": "Run doctor, address its exact browser error and recapture this page; retain any usable initial HTML evidence.",
+    "uncertainty": [
+      "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n",
+      "Browser javascript_errors: ['wp is not defined']",
+      "Observation applies to captured representations; rankings, indexing and AI citations were not measured.",
+      "The crawl did not establish complete website coverage.",
+      "Business profile not yet reviewed; business-specific impact needs interpretation."
+    ],
+    "evidence_refs": [
+      {
+        "url": "https://roundlakeanimalhospital.com.pk/",
+        "captured_at": "2026-09-16T17:19:20.044538+00:00",
+        "representation": "http",
+        "body_sha256": "a9d065c5f2101c43e6e19bfac7f7053d9c2d2c9e59a194885e3273e245d07c09",
+        "html_path": "html/93ac17c81af03bff15aa62c92a4804a6aa18208dd4d56fac484dfd4e4dc16eff.html",
+        "rendered_html_path": null
+      }
+    ]
+  }
+]

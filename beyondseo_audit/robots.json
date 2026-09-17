@@ -1,0 +1,54 @@
+{
+  "https://rehmanvetclinic.com": {
+    "url": "https://rehmanvetclinic.com/robots.txt",
+    "status": 404,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "unavailable",
+    "fetched_at": "2026-09-16T17:01:23.545702+00:00",
+    "sha256": "e7db95c97a5d45787cc3e40cbcb93b748fefc65bc14e162c746e37f979861729",
+    "text": "",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://rehmanvetclinic.com/robots.txt",
+        "status": 404,
+        "error": "",
+        "fetched_at": "2026-09-16T17:01:23.545721+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "http_error",
+      "confidence": "observed",
+      "evidence": "HTTP 404"
+    }
+  },
+  "https://fonts.googleapis.com": {
+    "url": "https://fonts.googleapis.com/robots.txt",
+    "status": 200,
+    "error": "",
+    "blocked": false,
+    "policy_availability": "available",
+    "fetched_at": "2026-09-16T17:01:26.104001+00:00",
+    "sha256": "e5b0ced34aa0387b2ffc898873fd0f73deed3e2b30c6163b8713f9c7fc629f05",
+    "text": "User-agent: *\nDisallow: \n",
+    "redirects": [],
+    "http_events": [
+      {
+        "url": "https://fonts.googleapis.com/robots.txt",
+        "status": 200,
+        "error": "",
+        "fetched_at": "2026-09-16T17:01:26.104022+00:00",
+        "retry_after": null,
+        "challenge_detected": false
+      }
+    ],
+    "access": {
+      "code": "response_received",
+      "confidence": "observed",
+      "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+    }
+  }
+}

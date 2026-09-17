@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-16T17:21:58.524801+00:00",
+  "seed": "https://kamilveterinaryclinic.com/",
+  "coverage_limited": true,
+  "sitemap_urls_observed": 0,
+  "sitemap_fetch_failures": 0,
+  "pages": [
+    {
+      "url": "https://kamilveterinaryclinic.com/",
+      "final_url": "https://kamilveterinaryclinic.com/",
+      "representation": "http",
+      "status": 200,
+      "main_words": 2027,
+      "body_words": 2200,
+      "in_observed_sitemap": false,
+      "schema_types": [
+        "ContactPoint",
+        "ImageObject",
+        "Organization",
+        "Place",
+        "PostalAddress",
+        "SearchAction",
+        "WebPage",
+        "WebSite"
+      ],
+      "microdata_types": [],
+      "schema_errors": [],
+      "robots_path_permissions": {
+        "Googlebot": true,
+        "Bingbot": true
+      },
+      "snippet_controls_to_review": [],
+      "index_signals_http": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [
+          "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+        ],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "index_signals_selected": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [
+          "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+        ],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "observations": []
+    }
+  ],
+  "not_measured": [
+    "actual indexing",
+    "AI answer inclusion",
+    "competitor rankings",
+    "independent reputation",
+    "schema semantic validity"
+  ],
+  "interpretation": "These are access, text and markup observations. They do not measure an engine's trust, indexing or citations."
+}

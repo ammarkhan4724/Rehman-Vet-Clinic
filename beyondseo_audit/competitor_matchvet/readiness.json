@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-16T17:16:42.720786+00:00",
+  "seed": "https://matchvet.com/",
+  "coverage_limited": true,
+  "sitemap_urls_observed": 0,
+  "sitemap_fetch_failures": 0,
+  "pages": [
+    {
+      "url": "https://matchvet.com/",
+      "final_url": "https://matchvet.com/",
+      "representation": "http",
+      "status": 200,
+      "main_words": 1214,
+      "body_words": 1315,
+      "in_observed_sitemap": false,
+      "schema_types": [
+        "City",
+        "ContactPoint",
+        "Country",
+        "OpeningHoursSpecification",
+        "Organization",
+        "PostalAddress",
+        "VeterinaryCare",
+        "WebSite"
+      ],
+      "microdata_types": [],
+      "schema_errors": [],
+      "robots_path_permissions": {
+        "Googlebot": true,
+        "Bingbot": true
+      },
+      "snippet_controls_to_review": [],
+      "index_signals_http": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "index_signals_selected": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "observations": []
+    }
+  ],
+  "not_measured": [
+    "actual indexing",
+    "AI answer inclusion",
+    "competitor rankings",
+    "independent reputation",
+    "schema semantic validity"
+  ],
+  "interpretation": "These are access, text and markup observations. They do not measure an engine's trust, indexing or citations."
+}

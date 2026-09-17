@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "javascript_content",
+    "severity": "info",
+    "evidence": "Initial main words: 0; rendered: 591.",
+    "action": "Main content depends on rendering. Consider delivering essential text and metadata in initial HTML; indexing is not established by this observation.",
+    "confidence": "observed",
+    "representation": "rendered"
+  },
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "missing_description",
+    "severity": "low",
+    "evidence": "No nonempty meta description.",
+    "action": "Add a useful page-specific summary where appropriate.",
+    "confidence": "observed",
+    "representation": "rendered"
+  },
+  {
+    "url": "https://rehmanvetclinic.com/",
+    "code": "canonical_not_declared",
+    "severity": "low",
+    "evidence": "No HTML canonical link.",
+    "action": "Review URL variants; add a canonical when useful. HTTP Link canonicals are not parsed.",
+    "confidence": "review",
+    "representation": "rendered"
+  }
+]

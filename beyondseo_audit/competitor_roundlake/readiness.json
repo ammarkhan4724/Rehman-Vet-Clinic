@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-16T17:19:56.111374+00:00",
+  "seed": "https://roundlakeanimalhospital.com.pk/",
+  "coverage_limited": true,
+  "sitemap_urls_observed": 0,
+  "sitemap_fetch_failures": 0,
+  "pages": [
+    {
+      "url": "https://roundlakeanimalhospital.com.pk/",
+      "final_url": "https://roundlakeanimalhospital.com.pk/",
+      "representation": "http",
+      "status": 200,
+      "main_words": 720,
+      "body_words": 859,
+      "in_observed_sitemap": false,
+      "schema_types": [
+        "BreadcrumbList",
+        "EntryPoint",
+        "ImageObject",
+        "ListItem",
+        "Organization",
+        "PropertyValueSpecification",
+        "ReadAction",
+        "SearchAction",
+        "WebPage",
+        "WebSite"
+      ],
+      "microdata_types": [
+        "https://schema.org/WebPage"
+      ],
+      "schema_errors": [],
+      "robots_path_permissions": {
+        "Googlebot": true,
+        "Bingbot": true
+      },
+      "snippet_controls_to_review": [],
+      "index_signals_http": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        ],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "index_signals_selected": {
+        "googlebot_noindex_observed": false,
+        "generic_meta": [
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        ],
+        "googlebot_meta": [],
+        "x_robots_tag": "",
+        "canonical_elsewhere": false,
+        "indexability_candidate": true,
+        "indexing_status": "not_verified",
+        "note": "Candidate only: search-engine robots policy, rendering and actual indexing require separate evidence."
+      },
+      "observations": [
+        {
+          "code": "capture_incomplete",
+          "observation": "Browser error: TimeoutError: Page.goto: Timeout 17437ms exceeded.\nCall log:\n  - navigating to \"https://roundlakeanimalhospital.com.pk/\", waiting until \"domcontentloaded\"\n; Browser javascript_errors: ['wp is not defined']",
+          "why_it_matters": "A partial capture cannot establish missing answers or markup.",
+          "next_step": "Resolve the recorded capture limitation and recapture this URL."
+        }
+      ]
+    }
+  ],
+  "not_measured": [
+    "actual indexing",
+    "AI answer inclusion",
+    "competitor rankings",
+    "independent reputation",
+    "schema semantic validity"
+  ],
+  "interpretation": "These are access, text and markup observations. They do not measure an engine's trust, indexing or citations."
+}

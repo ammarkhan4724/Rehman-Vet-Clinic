@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "assessment": "No supported access-denial or challenge signal was observed in this sample. This does not predict larger or later crawls.",
+    "page_access_counts": {
+      "response_received": 1
+    },
+    "remote_denial_or_challenge_pages": 0,
+    "remote_denial_or_challenge_discovery_responses": 0,
+    "http_access_denied_attempts_recorded": 0,
+    "challenge_attempts_recorded": 0,
+    "http_429_attempts_recorded": 0,
+    "http_attempts_recorded": 2,
+    "stop_reasons": [
+      "configured_page_limit"
+    ],
+    "browser_restriction_counts": {},
+    "history_note": "Only instrumented HTTP attempts are counted, including recorded browser requests; legacy runs may lack attempt history."
+  },
+  "pages": [
+    {
+      "url": "https://kamilveterinaryclinic.com/",
+      "status": 200,
+      "access": {
+        "code": "response_received",
+        "confidence": "observed",
+        "evidence": "HTTP 200 received; no supported denial/challenge marker detected."
+      },
+      "robots_decision": null,
+      "withheld_url": "",
+      "http_events": [
+        {
+          "url": "https://kamilveterinaryclinic.com/",
+          "status": 200,
+          "error": "",
+          "fetched_at": "2026-09-16T17:21:55.888595+00:00",
+          "retry_after": null,
+          "challenge_detected": false
+        }
+      ]
+    }
+  ]
+}
