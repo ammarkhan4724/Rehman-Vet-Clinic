@@ -427,7 +427,7 @@ function HowItWorks() {
 function Services() {
   const services = [
     { icon: "🏠", title: "Home Visit Exam", price: "From $129", desc: "Full physical exam at your home. Vaccines, blood draw, nail trim.", tag: "Most booked" },
-    { icon: "📹", title: "24/7 Video Consult", price: "$49", desc: "Instant video for vomiting, limping, skin, behavior. 15 min.", tag: "Instant" },
+    { icon: "📹", title: "24/7 Video Consult", price: "PKR 500", desc: "Instant video for vomiting, limping, skin, behavior. 10 min.", tag: "Instant" },
     { icon: "💉", title: "Vaccines at Home", price: "$89", desc: "Core vaccines, no clinic stress. Certificate emailed.", tag: null },
     { icon: "🩸", title: "Lab Work Mobile", price: "$149", desc: "Blood, urine, cytology collected at home. Results in 24h.", tag: null },
     { icon: "🐾", title: "Senior Pet Care", price: "$159", desc: "Arthritis, kidney, thyroid management at home.", tag: null },
@@ -486,9 +486,46 @@ function Booking() {
   const slots = generateSlots(date, type);
   const availableCount = slots.filter(s => s.available).length;
 
-  const handleBook = () => {
+  const handleBook = async () => {
     if (!selectedSlot || !form.name || !form.phone) return;
     setBooked(true);
+
+    const slotLabel = slots.find(s => s.time === selectedSlot)?.label || selectedSlot;
+    
+    // --- Send Email via Web3Forms ---
+    const formData = new FormData();
+    formData.append("access_key", "04fada0c-09d8-4609-a37c-ebd774dad98d");
+    formData.append("subject", `New Appointment: ${form.name} (${type === "home" ? "Home Visit" : "Video Call"})`);
+    formData.append("Type", type === "home" ? "Home Visit" : "Video Call");
+    formData.append("Date", date);
+    formData.append("Time", slotLabel as string);
+    formData.append("Name", form.name);
+    formData.append("Phone", form.phone);
+    formData.append("Pet", form.pet || "Not specified");
+    if (type === "home") formData.append("Address", form.address);
+    formData.append("Concern", form.concern || "None");
+
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+    } catch (err) {
+      console.error("Failed to send email", err);
+    }
+
+    // --- WhatsApp Redirect (Kept as requested earlier) ---
+    const message = `*New Appointment Request* 🐾
+*Type:* ${type === "home" ? "Home Visit" : "Video Call"}
+*Date:* ${date}
+*Time:* ${slotLabel}
+*Name:* ${form.name}
+*Phone:* ${form.phone}
+*Pet:* ${form.pet || "Not specified"}
+${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concern || "None"}`;
+
+    window.open(`https://wa.me/923114899904?text=${encodeURIComponent(message)}`, '_blank');
+
     setTimeout(() => {
       setBooked(false);
       setStep(1);
@@ -668,7 +705,7 @@ function Booking() {
                       disabled={!form.name || !form.phone || (type === "home" && !form.address) || booked}
                       className="mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold disabled:opacity-40 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5"
                     >
-                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "home" ? "Home Visit" : "Video Call"} — ${type === "home" ? "$129" : "$49"}`}
+                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "home" ? "Home Visit" : "Video Call"} — ${type === "home" ? "$129" : "PKR 500"}`}
                     </button>
                     <p className="mt-3 text-xs text-center text-slate-500">You'll get SMS confirmation instantly. Pay after visit.</p>
                   </div>
