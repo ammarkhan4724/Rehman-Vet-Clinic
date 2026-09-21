@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cedar and Pine mark">
+  <rect width="64" height="64" rx="12" fill="#2d5a45"/>
+  <path d="M32 10 L44 34 H20 Z" fill="#f6f3ec"/>
+  <path d="M32 22 L40 38 H24 Z" fill="#c8a24a"/>
+  <rect x="30" y="38" width="4" height="14" fill="#efe3c4"/>
+</svg>

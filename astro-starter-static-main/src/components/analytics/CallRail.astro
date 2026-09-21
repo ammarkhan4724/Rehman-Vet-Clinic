@@ -1,0 +1,32 @@
+---
+/**
+ * CallRail — dynamic number swapping (`swap.js`).
+ *
+ * Renders only when CALLRAIL_ACCOUNT_ID is set. That value is the
+ * **company** id in the swap.js path (`cdn.callrail.com/companies/…`),
+ * not the CallRail account id used by the WP starter's runtime leads
+ * proxy. Same name, two meanings — do not copy a runtime account id
+ * into this build-time variable.
+ *
+ * Loading: native, `defer`, main-thread. Always on when configured
+ * (ADR-014: essential phone tracking). Do not wrap in Partytown —
+ * number swapping mutates the DOM and breaks under a worker.
+ *
+ * Optional CALLRAIL_SWAP_KEY completes the dashboard snippet path
+ * (`…/companies/{id}/{key}/12/swap.js`). Without it the shorter
+ * `…/companies/{id}/12/swap.js` URL is used. Both hosts must stay
+ * `cdn.callrail.com` (not calltrk.com) — that host is what CSP allows.
+ *
+ * This starter has no CallRail API / submissions proxy. Leads stay on
+ * D1 via functions/api/lead.js. Runtime CALLRAIL_API_KEY is WP-only.
+ */
+const accountId = import.meta.env.CALLRAIL_ACCOUNT_ID ?? '';
+const swapKey = import.meta.env.CALLRAIL_SWAP_KEY ?? '';
+const swapSrc = accountId
+  ? swapKey
+    ? `https://cdn.callrail.com/companies/${accountId}/${swapKey}/12/swap.js`
+    : `https://cdn.callrail.com/companies/${accountId}/12/swap.js`
+  : '';
+---
+
+{swapSrc && <script src={swapSrc} defer is:inline />}

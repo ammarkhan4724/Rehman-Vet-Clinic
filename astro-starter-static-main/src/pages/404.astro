@@ -1,0 +1,15 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+---
+
+<BaseLayout
+  title="Page not found — Cedar & Pine Studio"
+  description="That address is not a page on this site."
+  noindex={true}
+>
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>Page not found</Heading>
+    <p>That URL is not a page. Try the <a href="/sitemap/">sitemap</a> or <a href="/">home</a>.</p>
+  </main>
+</BaseLayout>

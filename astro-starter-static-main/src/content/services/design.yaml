@@ -1,0 +1,7 @@
+order: 2
+name: Site design
+summary: TEMPLATE PLACEHOLDER — layouts, type, and a component set that a static Astro site can actually ship.
+body: This is not a client case study. Swap the name, summary, and body when the real service exists.
+seo:
+  title: "Site design — Cedar & Pine (placeholder)"
+  description: "TEMPLATE PLACEHOLDER service page for site design."

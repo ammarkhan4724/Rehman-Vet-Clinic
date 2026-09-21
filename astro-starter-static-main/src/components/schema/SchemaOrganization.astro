@@ -1,0 +1,34 @@
+---
+/**
+ * SchemaOrganization — the organisation node.
+ *
+ * CLAUDE.md hard rule: never write a raw <script type="application/ld+json">
+ * in a page. Use a Schema* component so every graph is generated from
+ * src/data/site.ts and cannot drift page to page.
+ *
+ * Emit this on pages that represent the organisation itself — homepage,
+ * About, and Contact.
+ */
+import { site } from '~/data/site';
+import { compact, serializeJsonLd } from '~/lib/schema';
+
+const graph = compact({
+  '@context': 'https://schema.org',
+  '@type': site.organizationType,
+  name: site.name,
+  alternateName: site.shortName,
+  url: site.url,
+  logo: new URL(site.logo, site.url).href,
+  description: site.description,
+  foundingDate: site.foundingDate,
+  address: {
+    '@type': 'PostalAddress',
+    ...site.address,
+  },
+  telephone: site.telephone,
+  email: site.email,
+  sameAs: [...site.sameAs],
+});
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(graph)} is:inline />

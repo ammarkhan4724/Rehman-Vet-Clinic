@@ -1,0 +1,22 @@
+# Environment — never commit real secrets
+.env
+.env.local
+.env.*.local
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+
+# Cloudflare
+.wrangler/
+
+# Gate logs written by CI and by a local gate run
+ci-logs/
+
+# lighthouse: per-route JSON reports from scripts/lighthouse-audit.mjs
+.lighthouse*/
+
+# Editor
+.DS_Store
+*.log

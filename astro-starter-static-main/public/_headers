@@ -1,0 +1,21 @@
+# Cloudflare Pages — HTTP response headers
+# Turnstile is required on forms; challenges.cloudflare.com must stay allowed.
+# CookieYes + the Organix tracking pack (GTM / GA4 / Meta / Clarity / CallRail)
+# are the same product bar as astro-starter-wordpress. CSP lists those hosts
+# so a client can turn a tracker on by setting an env var — no header edit.
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://tagmanager.google.com https://ssl.google-analytics.com https://www.google-analytics.com https://*.callrail.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://cdn-cookieyes.com https://www.clarity.ms https://scripts.clarity.ms https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com https://tagmanager.google.com https://www.google-analytics.com https://*.analytics.google.com https://region1.google-analytics.com https://region1.analytics.google.com https://stats.g.doubleclick.net https://ad.doubleclick.net https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://www.googleadservices.com https://www.google.com https://*.callrail.com https://log.cookieyes.com https://cdn-cookieyes.com https://www.clarity.ms https://*.clarity.ms https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com https://tagmanager.google.com https://tagassistant.google.com https://googleads.g.doubleclick.net https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

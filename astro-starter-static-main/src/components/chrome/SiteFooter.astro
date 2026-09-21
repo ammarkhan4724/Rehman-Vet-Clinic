@@ -1,0 +1,63 @@
+---
+import { site } from '~/data/site';
+import { footerExplore, footerLegal } from '~/data/nav';
+import Heading from '~/components/seo/Heading.astro';
+import LeadForm from '~/components/forms/LeadForm.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-footer pb-[1.4rem] pt-[2.2rem]">
+  <div class="wrap grid gap-[1.4rem] nav:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+    <div>
+      <Heading level={2} class="mb-2 text-[1.05rem]">{site.shortName}</Heading>
+      <p class="text-muted">{site.description}</p>
+      {
+        site.isPlaceholder && (
+          <p class="font-sans text-[0.85rem] text-warn">Template placeholder — replace site identity in src/data/site.ts.</p>
+        )
+      }
+    </div>
+
+    <div>
+      <Heading level={2} class="mb-2 text-[1.05rem]">Explore</Heading>
+      <ul class="m-0 list-none p-0">
+        {footerExplore.map((link) => (
+          <li>
+            <a class="text-ink no-underline" href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <Heading level={2} class="mb-2 text-[1.05rem]">Legal</Heading>
+      <ul class="m-0 list-none p-0">
+        {footerLegal.map((link) => (
+          <li>
+            <a class="text-ink no-underline" href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <Heading level={2} class="mb-2 text-[1.05rem]">Newsletter</Heading>
+      <p class="text-muted">Occasional notes. No spam. TEMPLATE PLACEHOLDER list.</p>
+      <LeadForm form="newsletter" class="flex flex-wrap gap-2">
+        <label class="sr-only" for="newsletter-email">Email</label>
+        <input id="newsletter-email" class="min-w-48 flex-1" type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+        <button class="inline-block cursor-pointer rounded-full border-0 bg-accent px-[1.15rem] py-[0.7rem] font-sans text-accent-ink" type="submit">Subscribe</button>
+      </LeadForm>
+    </div>
+  </div>
+
+  <div class="wrap mt-[1.6rem] flex flex-wrap justify-between gap-[0.6rem] font-sans text-[0.88rem] text-muted">
+    <p>© {year} {site.name}. Built with Organix Media’s static Astro starter.</p>
+    <p>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      ·
+      <a href={`tel:${site.telephone}`}>{site.telephoneDisplay}</a>
+    </p>
+  </div>
+</footer>

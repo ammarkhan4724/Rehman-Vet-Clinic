@@ -1,0 +1,108 @@
+---
+/**
+ * Image — accessibility-enforcing image wrapper.
+ *
+ * CLAUDE.md hard rule: never write a raw <img> tag. Use this component.
+ *
+ * This does NOT extend Astro's built-in <Image>. Site imagery lives in
+ * public/assets/. It exists to make a missing alt impossible and to keep
+ * loading / fetchpriority decisions visible in one place.
+ *
+ * For a decorative image — one that says nothing the surrounding text does
+ * not already say — pass decorative={true} AND alt="" explicitly.
+ */
+interface Props {
+  src?: string;
+  alt: string;
+  decorative?: boolean;
+  width?: number;
+  height?: number;
+  class?: string;
+  id?: string;
+  'aria-hidden'?: 'true' | 'false' | boolean;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  decoding?: 'async' | 'sync' | 'auto';
+  srcset?: string;
+  sizes?: string;
+}
+
+const FORWARDED = [
+  'src',
+  'alt',
+  'decorative',
+  'width',
+  'height',
+  'class',
+  'id',
+  'aria-hidden',
+  'loading',
+  'fetchpriority',
+  'decoding',
+  'srcset',
+  'sizes',
+] as const;
+
+const {
+  src,
+  alt,
+  decorative = false,
+  width,
+  height,
+  class: className,
+  id,
+  'aria-hidden': ariaHidden,
+  loading = 'lazy',
+  fetchpriority,
+  decoding = 'async',
+  srcset,
+  sizes,
+} = Astro.props;
+
+const unknown = Object.keys(Astro.props).filter(
+  (name) => !(FORWARDED as readonly string[]).includes(name) && !name.startsWith('data-astro-'),
+);
+if (unknown.length) {
+  const one = unknown.length === 1;
+  throw new Error(
+    `Image: ${unknown.map((n) => `"${n}"`).join(', ')} ` +
+      `${one ? 'is not an attribute' : 'are not attributes'} this component forwards, so ` +
+      `${one ? 'it' : 'they'} would not reach the markup (src="${src}"). Add ` +
+      `${one ? 'it' : 'them'} to Props, to FORWARDED and to the <img> below if the attribute ` +
+      'belongs there, or remove it from the call.',
+  );
+}
+
+if (src === undefined && !decorative) {
+  throw new Error(
+    'Image: an image with no src is set from JavaScript at runtime and must be ' +
+      'decorative, so that its alt is written at the same moment as its src.',
+  );
+}
+
+if (!decorative && !alt) {
+  throw new Error(
+    `Image: alt is required for non-decorative images (src="${src}"). ` +
+      'For decorative images pass decorative={true} and alt="".',
+  );
+}
+
+if (srcset && !sizes) {
+  throw new Error(`Image: sizes is required whenever srcset is set (src="${src}").`);
+}
+---
+
+<img
+  id={id}
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={decorative ? '' : alt}
+  width={width}
+  height={height}
+  class={className}
+  aria-hidden={ariaHidden}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  decoding={decoding}
+/>

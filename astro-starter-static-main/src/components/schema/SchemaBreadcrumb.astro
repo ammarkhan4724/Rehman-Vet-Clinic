@@ -1,0 +1,30 @@
+---
+/**
+ * SchemaBreadcrumb — BreadcrumbList for the current page.
+ *
+ * Per CLAUDE.md every page carries one (via BaseLayout).
+ */
+import { site } from '~/data/site';
+import { compact, serializeJsonLd } from '~/lib/schema';
+
+interface Props {
+  trail?: { name: string; href: string }[];
+}
+
+const { trail = [] } = Astro.props;
+
+const items = [{ name: 'Home', href: '/' }, ...trail].map((item, index) => ({
+  '@type': 'ListItem',
+  position: index + 1,
+  name: item.name,
+  item: new URL(item.href, site.url).href,
+}));
+
+const graph = compact({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items,
+});
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(graph)} is:inline />

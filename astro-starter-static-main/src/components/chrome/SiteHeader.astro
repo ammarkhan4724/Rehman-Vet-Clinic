@@ -1,0 +1,43 @@
+---
+import { site } from '~/data/site';
+import { primaryLinks } from '~/data/nav';
+import Image from '~/components/seo/Image.astro';
+
+interface Props {
+  active?: string;
+}
+
+const { active = '' } = Astro.props;
+---
+
+<header class="border-b border-line bg-bg-raised">
+  <div class="wrap flex items-center justify-between gap-4 py-[0.9rem]">
+    <a class="flex items-center gap-[0.6rem] font-bold text-ink no-underline" href="/" aria-label={`${site.shortName} home`}>
+      <Image src={site.logo} alt={`${site.name} logo`} width={40} height={40} />
+      <span>{site.shortName}</span>
+    </a>
+
+    <nav class="hidden gap-[1.1rem] nav:flex" aria-label="Primary">
+      {
+        primaryLinks.map((link) => (
+          <a
+            class="font-sans text-[0.95rem] text-ink no-underline aria-[current=page]:underline"
+            href={link.href}
+            aria-current={link.key === active ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      class="nav-toggle rounded-full border-0 bg-accent px-[0.9rem] py-[0.45rem] font-sans text-accent-ink nav:hidden"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+    >
+      Menu
+    </button>
+  </div>
+</header>

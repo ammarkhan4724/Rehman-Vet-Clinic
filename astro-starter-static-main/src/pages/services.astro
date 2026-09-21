@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Services — Cedar & Pine Studio (placeholder)"
+  description="TEMPLATE PLACEHOLDER service index. Three demo offers from src/content/services/."
+  navActive="services"
+  breadcrumb={[{ name: 'Services', href: '/services/' }]}
+>
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>Services</Heading>
+    <p class="text-[1.15rem] text-muted">TEMPLATE PLACEHOLDER offers. Each card is a content collection entry.</p>
+    <div class="grid gap-4 nav:grid-cols-3">
+      {services.map((service) => (
+        <article class="rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+          <Heading level={2}>{service.data.name}</Heading>
+          <p>{service.data.summary}</p>
+          <p class="mb-0"><a href={`/services/${service.id}/`}>Read more</a></p>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

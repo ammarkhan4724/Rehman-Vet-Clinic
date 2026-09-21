@@ -1,0 +1,40 @@
+---
+/**
+ * SchemaLocalBusiness — homepage and contact page.
+ *
+ * Use the most specific schema.org subtype for the client's industry
+ * (e.g. Plumber, ProfessionalService). Defaults to site.localBusinessType.
+ */
+import { site } from '~/data/site';
+import { compact, serializeJsonLd } from '~/lib/schema';
+
+interface Props {
+  type?: string;
+}
+
+const { type = site.localBusinessType } = Astro.props;
+
+const graph = compact({
+  '@context': 'https://schema.org',
+  '@type': type,
+  name: site.name,
+  description: site.description,
+  url: site.url,
+  telephone: site.telephone,
+  email: site.email,
+  image: new URL(site.ogImage, site.url).href,
+  logo: new URL(site.logo, site.url).href,
+  priceRange: site.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    ...site.address,
+  },
+  areaServed: site.areaServed.map((city) => ({
+    '@type': 'City',
+    name: city,
+  })),
+  sameAs: [...site.sameAs],
+});
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(graph)} is:inline />

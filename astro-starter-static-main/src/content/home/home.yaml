@@ -1,0 +1,30 @@
+seo:
+  title: "Cedar & Pine Studio — TEMPLATE PLACEHOLDER"
+  description: "TEMPLATE PLACEHOLDER homepage for the Organix Media static Astro starter. A neighborhood studio for strategy, design, and community programs."
+navActive: home
+hero:
+  eyebrow: Template placeholder
+  heading: A quiet studio for useful work.
+  lede: Cedar & Pine is demo copy for this starter — replace it with the client's voice, services, and proof. Nothing here is a real business.
+  image:
+    src: /assets/hero.svg
+    alt: Abstract cedar and pine marks used as the template hero illustration
+  primaryCta:
+    label: Talk to us
+    href: /contact/
+  secondaryCta:
+    label: See services
+    href: /services/
+stats:
+  - value: "3"
+    label: Demo service lines
+  - value: "12"
+    label: Placeholder programs
+  - value: "1"
+    label: File-based CMS (none)
+intro:
+  heading: Built for sites that do not need WordPress
+  body: Edit YAML and Markdown in src/content/. The page templates stay in src/pages/. Writers change copy through pull requests — no GraphQL, no Reflex, no headless CMS.
+servicesTeaser:
+  heading: What this scaffold demonstrates
+  body: Three service entries, a journal, an FAQ, and a Turnstile-protected contact form. Use them as a shape, not as client claims.

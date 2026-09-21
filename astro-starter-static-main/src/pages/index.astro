@@ -1,0 +1,78 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+import Image from '~/components/seo/Image.astro';
+import SchemaOrganization from '~/components/schema/SchemaOrganization.astro';
+import SchemaLocalBusiness from '~/components/schema/SchemaLocalBusiness.astro';
+
+const entry = await getEntry('home', 'home');
+if (!entry) throw new Error('Missing src/content/home/home.yaml');
+const page = entry.data;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  navActive={page.navActive}
+>
+  <Fragment slot="head">
+    <SchemaOrganization />
+    <SchemaLocalBusiness />
+  </Fragment>
+
+  <main class="pt-[2.4rem] pb-[3.4rem]">
+    <div class="wrap grid items-center gap-[1.6rem] nav:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <p class="font-sans text-[0.85rem] text-warn">{page.hero.eyebrow}</p>
+        <Heading level={1}>{page.hero.heading}</Heading>
+        <p class="text-[1.15rem] text-muted">{page.hero.lede}</p>
+        <div class="mt-[1.2rem] flex flex-wrap gap-[0.7rem]">
+          <a class="inline-block rounded-full bg-accent px-[1.15rem] py-[0.7rem] font-sans text-accent-ink no-underline" href={page.hero.primaryCta.href}>{page.hero.primaryCta.label}</a>
+          <a class="inline-block rounded-full border border-accent bg-transparent px-[1.15rem] py-[0.7rem] font-sans text-accent no-underline" href={page.hero.secondaryCta.href}>{page.hero.secondaryCta.label}</a>
+        </div>
+      </div>
+      <div class="rounded-card border border-line bg-bg-raised p-4">
+        <Image
+          src={page.hero.image.src}
+          alt={page.hero.image.alt}
+          width={720}
+          height={480}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+    <section class="wrap mt-12" aria-label="Placeholder metrics">
+      <div class="grid gap-4 nav:grid-cols-3">
+        {page.stats.map((stat) => (
+          <div class="rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+            <p class="m-0 text-[1.8rem]">{stat.value}</p>
+            <p class="mb-0 text-muted">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="wrap mt-12">
+      <Heading level={2}>{page.intro.heading}</Heading>
+      <p>{page.intro.body}</p>
+    </section>
+
+    <section class="wrap mt-12">
+      <Heading level={2}>{page.servicesTeaser.heading}</Heading>
+      <p>{page.servicesTeaser.body}</p>
+      <div class="grid gap-4 nav:grid-cols-3">
+        {services.map((service) => (
+          <article class="rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+            <Heading level={3}>{service.data.name}</Heading>
+            <p>{service.data.summary}</p>
+            <p class="mb-0"><a href={`/services/${service.id}/`}>Read more</a></p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

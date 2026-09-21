@@ -1,0 +1,66 @@
+---
+/**
+ * SchemaArticle — JSON-LD for journal / blog posts.
+ *
+ * Required by Google Rich Results: headline, image, author, datePublished.
+ */
+import { site } from '~/data/site';
+import { compact, serializeJsonLd } from '~/lib/schema';
+
+interface Props {
+  type?: 'Article' | 'NewsArticle' | 'BlogPosting';
+  headline: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  authorName?: string;
+  datePublished: string;
+  dateModified?: string;
+}
+
+const {
+  type = 'BlogPosting',
+  headline,
+  description,
+  url,
+  image,
+  authorName = site.name,
+  datePublished,
+  dateModified,
+} = Astro.props;
+
+const imageUrl = image
+  ? image.startsWith('http')
+    ? image
+    : new URL(image, site.url).href
+  : new URL(site.ogImage, site.url).href;
+
+const graph = compact({
+  '@context': 'https://schema.org',
+  '@type': type,
+  headline,
+  description,
+  url,
+  mainEntityOfPage: url && {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  image: [imageUrl],
+  author: {
+    '@type': 'Organization',
+    name: authorName,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: site.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL(site.logo, site.url).href,
+    },
+  },
+  datePublished,
+  dateModified: dateModified ?? datePublished,
+});
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(graph)} is:inline />

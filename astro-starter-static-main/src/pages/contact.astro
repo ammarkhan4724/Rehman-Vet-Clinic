@@ -1,0 +1,64 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+import LeadForm from '~/components/forms/LeadForm.astro';
+import SchemaOrganization from '~/components/schema/SchemaOrganization.astro';
+import SchemaLocalBusiness from '~/components/schema/SchemaLocalBusiness.astro';
+import { site } from '~/data/site';
+
+const entry = await getEntry('contact', 'contact');
+if (!entry) throw new Error('Missing src/content/contact/contact.yaml');
+const page = entry.data;
+---
+
+<BaseLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  navActive={page.navActive}
+  breadcrumb={[{ name: 'Contact', href: '/contact/' }]}
+>
+  <Fragment slot="head">
+    <SchemaOrganization />
+    <SchemaLocalBusiness />
+  </Fragment>
+
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>{page.heading}</Heading>
+    <p class="text-[1.15rem] text-muted">{page.lede}</p>
+
+    <div class="grid gap-4 nav:grid-cols-2">
+      <LeadForm form="contact" class="grid gap-[0.85rem] rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+        <label>
+          Name
+          <input type="text" name="name" required autocomplete="name" maxlength="200" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" maxlength="200" />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" autocomplete="tel" maxlength="50" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required maxlength="5000"></textarea>
+        </label>
+        <button class="justify-self-start cursor-pointer rounded-full border-0 bg-accent px-[1.15rem] py-[0.7rem] font-sans text-accent-ink" type="submit">{page.submitLabel}</button>
+      </LeadForm>
+
+      <aside class="rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+        <Heading level={2}>Studio</Heading>
+        <p>{site.name}</p>
+        <p>
+          {site.address.streetAddress}<br />
+          {site.address.addressLocality}, {site.address.addressRegion} {site.address.postalCode}
+        </p>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><a href={`tel:${site.telephone}`}>{site.telephoneDisplay}</a></p>
+        <p class="mb-0 font-sans text-[0.85rem] text-warn">TEMPLATE PLACEHOLDER contact details.</p>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>

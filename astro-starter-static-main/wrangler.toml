@@ -1,0 +1,34 @@
+# Cloudflare Pages — static output + Functions (lead capture + Turnstile).
+#
+# REPLACE every placeholder before the first production deploy.
+# This file ships with dummy values so a clone is not bound to another
+# client's D1 database or Cloudflare account.
+#
+# Deploy from the repo root, never from dist/:
+#   npx wrangler pages deploy dist --project-name=<client-slug> --branch main
+#
+# Wrangler resolves functions/ from the working directory. Deploying from
+# inside dist/ serves the pages and silently drops lead capture.
+
+name = "astro-starter-static"
+compatibility_date = "2026-07-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# D1 — leads source of truth. Create with:
+#   npx wrangler d1 create <client>_leads
+# then paste the returned database_id below. Do not copy another project's ID.
+[[d1_databases]]
+binding = "DB"
+database_name = "starter_leads"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# Non-secret vars. Secrets go through:
+#   npx wrangler pages secret put TURNSTILE_SECRET_KEY --project-name <slug>
+#   npx wrangler pages secret put ADMIN_PASS --project-name <slug>
+#   npx wrangler pages secret put CF_EMAIL_TOKEN --project-name <slug>
+[vars]
+NOTIFY_TO = "hello@example.com"
+NOTIFY_FROM = "leads@example.com"
+ADMIN_USER = "admin"
+# CF_ACCOUNT_ID is set as a secret or dashboard var — never commit a live one.

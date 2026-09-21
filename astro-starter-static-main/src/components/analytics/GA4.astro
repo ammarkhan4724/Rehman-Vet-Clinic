@@ -1,0 +1,29 @@
+---
+/**
+ * GA4 — Standalone Google Analytics 4.
+ *
+ * Renders only when GA4_MEASUREMENT_ID is set.
+ *
+ * Use ONLY when GTM is not in play. When GTM is enabled, configure GA4
+ * inside the container instead — loading both double-fires every event.
+ *
+ * Loading: native, async, main-thread. Consent: Google Consent Mode v2
+ * (ConsentDefaults sets analytics_storage denied; CookieYes updates).
+ */
+const ga4Id = import.meta.env.GA4_MEASUREMENT_ID;
+---
+
+{
+  ga4Id && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} is:inline />
+      <script is:inline define:vars={{ ga4Id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('config', ga4Id, { anonymize_ip: true });
+      </script>
+    </>
+  )
+}

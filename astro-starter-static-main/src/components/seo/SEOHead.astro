@@ -1,0 +1,65 @@
+---
+/**
+ * SEOHead — emits all <head> metadata for a page.
+ *
+ * Schema stays out of here: JSON-LD belongs in the <Schema*> components so
+ * each page declares its own graph.
+ *
+ * CLAUDE.md hard rule: every page includes this, via BaseLayout. Never write
+ * a raw <title> or <meta> tag in a page or component.
+ */
+import { site } from '~/data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  /**
+   * noindex MUST travel as an explicit prop through every wrapper between the
+   * content file and this component. A dropped prop is a valid prop — an
+   * editor can tick noindex and nothing happens, and no gate fails.
+   */
+  noindex?: boolean;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  noindex = false,
+  ogType = 'website',
+} = Astro.props;
+
+const canonical = Astro.props.canonical || Astro.url.href;
+const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+const siteOrigin = Astro.site?.origin ?? site.url;
+
+const toAbsolute = (src?: string | null): string | undefined =>
+  !src ? undefined : src.startsWith('http') ? src : new URL(src, siteOrigin).href;
+
+const ogImageUrl = toAbsolute(Astro.props.ogImage || site.ogImage);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+{description && <meta name="description" content={description} />}
+
+{!noindex && <link rel="canonical" href={canonical} />}
+<meta name="robots" content={robotsContent} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+{!noindex && <meta property="og:url" content={canonical} />}
+<meta property="og:site_name" content={site.shortName} />
+<meta property="og:locale" content="en_US" />
+{ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+{description && <meta name="twitter:description" content={description} />}
+{ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}

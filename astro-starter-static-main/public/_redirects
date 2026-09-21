@@ -1,0 +1,3 @@
+# Build-time redirects only. Bulk historical maps belong in Cloudflare Bulk Redirects.
+# Example:
+# /old-path /new-path 301

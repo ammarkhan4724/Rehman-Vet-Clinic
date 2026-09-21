@@ -1,0 +1,10 @@
+seo:
+  title: "About — Cedar & Pine Studio (placeholder)"
+  description: "TEMPLATE PLACEHOLDER about page. Replace with the client's story. Do not ship this copy to a real domain."
+navActive: about
+heading: About this placeholder studio
+lede: Cedar & Pine exists only inside this template so npm run build has something honest to render.
+paragraphs:
+  - "Organix Media uses this starter for client sites that are static Astro with file-based content. There is no WordPress and no Reflex."
+  - "When you create a client repository from the GitHub template, replace src/data/site.ts, this file, and the rest of src/content/ with facts the client has approved. If a fact is unknown, leave it out."
+  - "The quality layer — Heading, Image, SEOHead, schema call sites, lead capture with Turnstile, and the build gates — stays. The demo story does not."

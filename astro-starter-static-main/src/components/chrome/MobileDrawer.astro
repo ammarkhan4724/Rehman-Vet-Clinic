@@ -1,0 +1,13 @@
+---
+import { drawerLinks } from '~/data/nav';
+---
+
+<div id="mobile-drawer" class="border-b border-line bg-bg-raised px-5 pb-[1.4rem] pt-4 nav:hidden" hidden>
+  <nav class="grid gap-[0.7rem]" aria-label="Mobile">
+    {
+      drawerLinks.map((link) => (
+        <a class="font-sans text-ink" href={link.href}>{link.label}</a>
+      ))
+    }
+  </nav>
+</div>

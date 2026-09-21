@@ -1,0 +1,109 @@
+# CI — transferable gates on every pull request.
+#
+# Builds the merge result (GitHub's pull_request default), not the branch
+# head. Do not add `ref:` to checkout and do not switch to pull_request_target.
+#
+# Every gate runs even after one fails. The summary fails the job.
+# A step that did not run is never a pass.
+#
+# Charity-specific parity against _legacy/ HTML is intentionally absent.
+# This is a template, not a conversion.
+
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    name: Gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the merge result
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Confirm what was checked out
+        run: |
+          head_sha="$(git rev-parse HEAD)"
+          pr_head='${{ github.event.pull_request.head.sha }}'
+          echo "HEAD      $head_sha"
+          echo "PR head   $pr_head"
+          if [ "$head_sha" = "$pr_head" ]; then
+            echo "::error::HEAD is the branch head, not the merge result."
+            exit 1
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Prepare gate logs
+        run: mkdir -p ci-logs
+
+      - name: astro build
+        id: build
+        continue-on-error: true
+        run: npm run build:fast 2>&1 | tee ci-logs/build.log
+
+      - name: astro check
+        id: check
+        continue-on-error: true
+        run: npx astro check 2>&1 | tee ci-logs/check.log
+
+      - name: npm test
+        id: test
+        continue-on-error: true
+        run: npm test 2>&1 | tee ci-logs/test.log
+
+      - name: lint-build
+        id: verify
+        continue-on-error: true
+        run: npm run lint:build 2>&1 | tee ci-logs/verify.log
+
+      - name: machine-readable
+        id: machine
+        continue-on-error: true
+        run: npm run machine 2>&1 | tee ci-logs/machine.log
+
+      - name: Record outcomes
+        if: always()
+        run: |
+          {
+            printf 'build\t%s\n'   '${{ steps.build.outcome }}'
+            printf 'check\t%s\n'   '${{ steps.check.outcome }}'
+            printf 'test\t%s\n'    '${{ steps.test.outcome }}'
+            printf 'verify\t%s\n'  '${{ steps.verify.outcome }}'
+            printf 'machine\t%s\n' '${{ steps.machine.outcome }}'
+          } > ci-logs/status.tsv
+          cat ci-logs/status.tsv
+
+      - name: Summary
+        if: always()
+        run: node scripts/ci-summary.mjs ci-logs
+
+      - name: Keep the gate logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: gate-logs
+          path: ci-logs/
+          retention-days: 14

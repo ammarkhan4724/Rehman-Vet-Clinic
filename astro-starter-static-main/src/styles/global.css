@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind CSS v4 — official Astro 7 path (`@tailwindcss/vite` in
+ * astro.config.mjs). This file is imported once from BaseLayout so utility
+ * classes work on every page and component.
+ *
+ * Cedar & Pine tokens live in @theme. Replace them with the client brand
+ * when you create a repo from this template.
+ */
+
+@theme {
+  --color-bg: #f6f3ec;
+  --color-bg-raised: #fffdf8;
+  --color-ink: #1c1914;
+  --color-muted: #5c564c;
+  --color-line: #ddd4c4;
+  --color-accent: #2d5a45;
+  --color-accent-ink: #f6f3ec;
+  --color-warn: #8a3b12;
+  --color-ok: #1f6b3a;
+  --color-danger: #9b1c1c;
+  --color-banner: #efe3c4;
+  --color-footer: #efe9db;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+
+  --radius-card: 0.875rem;
+  --radius-input: 0.625rem;
+
+  --max-width-page: 68rem;
+
+  /* Matches the previous 800px chrome breakpoint. */
+  --breakpoint-nav: 50rem;
+}
+
+@utility wrap {
+  width: min(var(--max-width-page), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+  }
+
+  h1 {
+    margin: 0 0 0.7rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  ul {
+    list-style: disc;
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  ol {
+    list-style: decimal;
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  form[data-lead-form] label {
+    display: grid;
+    gap: 0.3rem;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+  }
+
+  form[data-lead-form] input,
+  form[data-lead-form] textarea,
+  form[data-lead-form] select {
+    font: inherit;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-input);
+    background: #fff;
+  }
+}
+
+/*
+ * Hooks written by lead-forms.ts at submit time, plus the Turnstile widget
+ * class the tests and handler look for. Not layout leftovers.
+ */
+.form-msg[data-ok="true"] {
+  color: var(--color-ok);
+}
+
+.form-msg[data-ok="false"] {
+  color: var(--color-danger);
+}
+
+.cf-turnstile {
+  margin: 0.4rem 0;
+}

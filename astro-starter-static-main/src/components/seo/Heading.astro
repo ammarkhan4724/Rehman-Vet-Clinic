@@ -1,0 +1,21 @@
+---
+/**
+ * Heading — semantic heading wrapper.
+ *
+ * CLAUDE.md hard rule: never write a raw <h1>/<h2>/etc. in any .astro file.
+ * Use this component so the build-time linter can enforce one h1 per page and
+ * a hierarchy that does not skip levels.
+ */
+interface Props {
+  level: 1 | 2 | 3 | 4 | 5 | 6;
+  class?: string;
+  id?: string;
+}
+
+const { level, class: className, id } = Astro.props;
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+---
+
+<Tag class={className} id={id}>
+  <slot />
+</Tag>

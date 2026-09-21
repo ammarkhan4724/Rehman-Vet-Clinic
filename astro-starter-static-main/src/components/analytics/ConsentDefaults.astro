@@ -1,0 +1,40 @@
+---
+/**
+ * ConsentDefaults — Google Consent Mode v2 defaults.
+ *
+ * Sets the default consent state to "denied" BEFORE GTM / GA4 load,
+ * so Google Analytics / Ads collect cookie-less consent-mode pings
+ * until CookieYes updates the state after the user's choice.
+ *
+ * Renders only when a Google tracker is configured (GTM or GA4).
+ * CookieYes is configured in its dashboard to call
+ * `gtag('consent', 'update', { … })` when the user accepts categories.
+ *
+ * Must render BEFORE GoogleTagManager.astro / GA4.astro in <head>.
+ */
+const gtmId = import.meta.env.GTM_CONTAINER_ID;
+const ga4Id = import.meta.env.GA4_MEASUREMENT_ID;
+const enabled = !!(gtmId || ga4Id);
+---
+
+{
+  enabled && (
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      // Default to denied — CookieYes updates these after the user's choice.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500,
+      });
+      gtag('js', new Date());
+    </script>
+  )
+}

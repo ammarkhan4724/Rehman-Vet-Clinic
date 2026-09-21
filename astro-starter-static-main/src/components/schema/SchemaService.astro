@@ -1,0 +1,37 @@
+---
+/**
+ * SchemaService — JSON-LD for service pages.
+ */
+import { site } from '~/data/site';
+import { compact, serializeJsonLd } from '~/lib/schema';
+
+interface Props {
+  name: string;
+  description?: string;
+  url?: string;
+  serviceType?: string;
+}
+
+const { name, description, url, serviceType } = Astro.props;
+
+const graph = compact({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  description,
+  url,
+  serviceType,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: site.name,
+    url: site.url,
+    telephone: site.telephone,
+  },
+  areaServed: site.areaServed.map((city) => ({
+    '@type': 'City',
+    name: city,
+  })),
+});
+---
+
+<script type="application/ld+json" set:html={serializeJsonLd(graph)} is:inline />

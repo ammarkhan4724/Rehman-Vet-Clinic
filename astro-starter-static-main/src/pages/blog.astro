@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Journal — Cedar & Pine Studio (placeholder)"
+  description="TEMPLATE PLACEHOLDER journal index. Posts live in src/content/posts/."
+  navActive="blog"
+  breadcrumb={[{ name: 'Journal', href: '/blog/' }]}
+>
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>Journal</Heading>
+    <p class="text-[1.15rem] text-muted">TEMPLATE PLACEHOLDER posts. Delete them when real articles exist.</p>
+    <div class="grid gap-4 nav:grid-cols-3">
+      {posts.map((post) => (
+        <article class="rounded-card border border-line bg-bg-raised px-5 py-[1.2rem]">
+          <Heading level={2}>{post.data.title}</Heading>
+          <p class="text-muted">{post.data.date.toISOString().slice(0, 10)} · {post.data.author}</p>
+          <p>{post.data.description}</p>
+          <p class="mb-0"><a href={`/blog/${post.id}/`}>Read</a></p>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

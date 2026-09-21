@@ -1,0 +1,15 @@
+seo:
+  title: "FAQ — Cedar & Pine Studio (placeholder)"
+  description: "TEMPLATE PLACEHOLDER questions about this static Astro starter."
+navActive: faq
+heading: Frequently asked questions
+lede: These answers describe the starter, not a real client. Replace them.
+items:
+  - question: When should we use this starter instead of the WordPress one?
+    answer: Use astro-starter-static when the site has no CMS — copy lives in YAML and Markdown. Use astro-starter-wordpress when editors need WordPress / WPGraphQL.
+  - question: Where do we edit copy?
+    answer: In src/content/. Page templates in src/pages/ read those collections. Do not put prose in .astro files if a writer would change it.
+  - question: How is the contact form protected?
+    answer: A honeypot field plus Cloudflare Turnstile. The widget uses TURNSTILE_SITE_KEY at build time. functions/api/lead.js verifies the token with TURNSTILE_SECRET_KEY before writing to D1.
+  - question: Is any of this copy real?
+    answer: No. Cedar & Pine, the address, the phone number, and the service names are template placeholders.

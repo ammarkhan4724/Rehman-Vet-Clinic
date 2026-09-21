@@ -4,10 +4,10 @@ import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const NAV = [
   { label: "Home", href: "/#home" },
-  { label: "Emergency 24/7", href: "/services/emergency-veterinary-care.html" },
-  { label: "Vaccinations", href: "/services/pet-vaccination-center.html" },
-  { label: "Home Visits", href: "/services/home-visit-veterinary.html" },
-  { label: "DHA Lahore", href: "/locations/dha-lahore-veterinary-clinic.html" },
+  { label: "Emergency 24/7", href: "/services/emergency-veterinary-care" },
+  { label: "Vaccinations", href: "/services/pet-vaccination-center" },
+  { label: "Home Visits", href: "/services/home-visit-veterinary" },
+  { label: "DHA Lahore", href: "/locations/dha-lahore-veterinary-clinic" },
   { label: "Reviews", href: "/#reviews" },
   { label: "About", href: "/#about" },
 ];
@@ -428,10 +428,10 @@ function Services() {
   const services = [
     { icon: "🏠", title: "Home Visit Exam", price: "PKR 1500 (1st free)", desc: "Full physical exam at your home. Vaccines, blood draw, nail trim.", tag: "Most booked" },
     { icon: "📹", title: "24/7 Video Consult", price: "PKR 500 (1st free)", desc: "Instant video for vomiting, limping, skin, behavior. 10 min.", tag: "Instant" },
-    { icon: "💉", title: "Vaccines at Home", price: "$89", desc: "Core vaccines, no clinic stress. Certificate emailed.", tag: null },
-    { icon: "🩸", title: "Lab Work Mobile", price: "$149", desc: "Blood, urine, cytology collected at home. Results in 24h.", tag: null },
-    { icon: "🐾", title: "Senior Pet Care", price: "$159", desc: "Arthritis, kidney, thyroid management at home.", tag: null },
-    { icon: "🚨", title: "Urgent Home Visit", price: "$199", desc: "Same-day priority for emergencies. Call first.", tag: "24/7" },
+    { icon: "💉", title: "Vaccines at Home", price: "PKR 8,500", desc: "Core vaccines, no clinic stress. Certificate emailed.", tag: null },
+    { icon: "🩸", title: "Lab Work Mobile", price: "PKR 14,000", desc: "Blood, urine, cytology collected at home. Results in 24h.", tag: null },
+    { icon: "🐾", title: "Senior Pet Care", price: "PKR 15,000", desc: "Arthritis, kidney, thyroid management at home.", tag: null },
+    { icon: "🚨", title: "Urgent Home Visit", price: "PKR 19,000", desc: "Same-day priority for emergencies. Call first.", tag: "24/7" },
   ];
 
   return (
@@ -897,12 +897,12 @@ function Footer() {
           <div>
             <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Clinical Services</div>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="/services/emergency-veterinary-care.html" className="hover:text-emerald-400 transition-colors">24/7 Emergency Care</a></li>
-              <li><a href="/services/24-hour-vet-clinic-lahore.html" className="hover:text-emerald-400 transition-colors">24 Hour Animal Hospital</a></li>
-              <li><a href="/services/pet-vaccination-center.html" className="hover:text-emerald-400 transition-colors">Pet Vaccination Center</a></li>
-              <li><a href="/services/home-visit-veterinary.html" className="hover:text-emerald-400 transition-colors">Mobile Vet House Calls</a></li>
-              <li><a href="/locations/dha-lahore-veterinary-clinic.html" className="hover:text-emerald-400 transition-colors">Vet in DHA Lahore</a></li>
-              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan.html" className="hover:text-emerald-400 transition-colors">Parvovirus Protocol</a></li>
+              <li><a href="/services/emergency-veterinary-care" className="hover:text-emerald-400 transition-colors">24/7 Emergency Care</a></li>
+              <li><a href="/services/24-hour-vet-clinic-lahore" className="hover:text-emerald-400 transition-colors">24 Hour Animal Hospital</a></li>
+              <li><a href="/services/pet-vaccination-center" className="hover:text-emerald-400 transition-colors">Pet Vaccination Center</a></li>
+              <li><a href="/services/home-visit-veterinary" className="hover:text-emerald-400 transition-colors">Mobile Vet House Calls</a></li>
+              <li><a href="/locations/dha-lahore-veterinary-clinic" className="hover:text-emerald-400 transition-colors">Vet in DHA Lahore</a></li>
+              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan" className="hover:text-emerald-400 transition-colors">Parvovirus Protocol</a></li>
             </ul>
           </div>
 
@@ -933,6 +933,8 @@ function Footer() {
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.</div>
           <div className="flex items-center gap-4">
+            <a href="/privacy-policy" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:text-emerald-400 transition-colors">Terms of Service</a>
             <span className="inline-flex items-center gap-1.5 text-emerald-500 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Serving All Lahore Neighborhoods 24/7

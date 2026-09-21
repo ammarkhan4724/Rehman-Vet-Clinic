@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Placeholder hero art">
+  <rect width="720" height="480" fill="#efe9db"/>
+  <rect x="48" y="48" width="624" height="384" rx="24" fill="#fffdf8" stroke="#ddd4c4"/>
+  <circle cx="220" cy="220" r="90" fill="#2d5a45"/>
+  <circle cx="420" cy="250" r="120" fill="#c8a24a" opacity="0.85"/>
+  <text x="80" y="420" fill="#5c564c" font-family="Georgia, serif" font-size="22">TEMPLATE PLACEHOLDER</text>
+</svg>

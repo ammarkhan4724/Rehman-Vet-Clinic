@@ -1,0 +1,25 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+import { indexablePages } from '~/lib/pages';
+
+const pages = await indexablePages();
+---
+
+<BaseLayout
+  title="Sitemap — Cedar & Pine Studio (placeholder)"
+  description="HTML sitemap of every indexable page in this template."
+  breadcrumb={[{ name: 'Sitemap', href: '/sitemap/' }]}
+>
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>Sitemap</Heading>
+    <p class="text-[1.15rem] text-muted">Every indexable route this build publishes. Machine copies live at /sitemap.xml and /sitemap.md.</p>
+    <ul>
+      {pages.map((page) => (
+        <li>
+          <a href={page.route}>{page.title}</a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>

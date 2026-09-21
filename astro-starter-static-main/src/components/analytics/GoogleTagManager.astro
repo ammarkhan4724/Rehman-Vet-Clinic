@@ -1,0 +1,57 @@
+---
+/**
+ * GoogleTagManager — GTM container loader.
+ *
+ * Renders only when GTM_CONTAINER_ID is set. Unset = no script (demo /
+ * CI stay clean).
+ *
+ * Loading strategy: native, async, main-thread. No Partytown — same as
+ * astro-starter-wordpress ADR-014. Consent Mode v2 (ConsentDefaults)
+ * gates whether GTM-fired tags send PII until the user consents.
+ *
+ * Use either this component OR GA4.astro — not both. When GTM is on,
+ * configure GA4 inside the container (Tags → Google Analytics: GA4
+ * Configuration). Loading both double-fires every event.
+ *
+ *   <GoogleTagManager />                 <!-- in <head> -->
+ *   <GoogleTagManager position="body" /> <!-- first child of <body> -->
+ */
+interface Props {
+  /** Head injects the loader; body injects the noscript iframe. */
+  position?: 'head' | 'body';
+}
+
+const { position = 'head' } = Astro.props;
+const gtmId = import.meta.env.GTM_CONTAINER_ID;
+---
+
+{
+  gtmId && position === 'head' && (
+    <script is:inline define:vars={{ gtmId }}>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', gtmId);
+    </script>
+  )
+}
+
+{
+  gtmId && position === 'body' && (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="Google Tag Manager"
+      />
+    </noscript>
+  )
+}

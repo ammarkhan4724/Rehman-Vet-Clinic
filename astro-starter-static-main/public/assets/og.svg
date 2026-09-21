@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Cedar and Pine share image">
+  <rect width="1200" height="630" fill="#2d5a45"/>
+  <text x="80" y="300" fill="#f6f3ec" font-family="Georgia, serif" font-size="72">Cedar &amp; Pine</text>
+  <text x="80" y="380" fill="#c8a24a" font-family="Georgia, serif" font-size="32">TEMPLATE PLACEHOLDER  static Astro starter</text>
+</svg>

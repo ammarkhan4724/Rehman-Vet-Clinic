@@ -1,0 +1,7 @@
+seo:
+  title: "Contact — Cedar & Pine Studio (placeholder)"
+  description: "TEMPLATE PLACEHOLDER contact page with a Turnstile-protected lead form."
+navActive: contact
+heading: Contact
+lede: This form posts to /api/lead. Cloudflare Turnstile is verified on the server. Replace the labels when the client repo is created.
+submitLabel: Send message

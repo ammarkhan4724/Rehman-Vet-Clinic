@@ -1,0 +1,54 @@
+---
+/**
+ * FacebookPixel — Meta (Facebook) Pixel loader.
+ *
+ * Renders only when META_PIXEL_ID is set.
+ *
+ * Loading: native, CookieYes auto-blocker.
+ *   - Script is `type="text/plain"` + `data-cookieyes="cookieyes-advertisement"`
+ *   - CookieYes upgrades the type after the Advertisement category is accepted
+ *
+ * The <noscript> 1×1 is a sanctioned raw <img>. Image.astro does not
+ * forward `style`, and a conversion pixel is not site imagery. lint-build
+ * still requires alt (empty is correct here).
+ *
+ * CSP: script-src https://connect.facebook.net; img-src covers facebook.com.
+ */
+const pixelId = import.meta.env.META_PIXEL_ID;
+---
+
+{
+  pixelId && (
+    <>
+      <script type="text/plain" data-cookieyes="cookieyes-advertisement" is:inline define:vars={{ pixelId }}>
+        !(function (f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s);
+        })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixelId);
+        fbq('track', 'PageView');
+      </script>
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style="display:none"
+          alt=""
+          src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
+        />
+      </noscript>
+    </>
+  )
+}

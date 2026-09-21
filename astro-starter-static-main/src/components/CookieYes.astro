@@ -1,0 +1,37 @@
+---
+/**
+ * CookieYes — cookie consent banner.
+ *
+ * Loads CookieYes's hosted script with the per-client site key.
+ * CookieYes owns the UX: banner, localStorage consent, category-based
+ * script blocking, and Google Consent Mode v2 updates (ConsentDefaults
+ * + GTM/GA4 stay cookie-less until the user accepts).
+ *
+ * Product-line decision: astro-starter-wordpress ADR-014 (native load,
+ * CookieYes auto-blocking). Required for Quebec Law 25, GDPR, and CCPA.
+ *
+ * Per-client setup:
+ *   1. Add the client's domain to the Organix CookieYes account (or a
+ *      dedicated account)
+ *   2. Match banner colors to the brand
+ *   3. Set COOKIEYES_SITE_KEY in Pages / GitHub Actions **build** env
+ *   4. Categories baseline: Necessary (always on), Analytics, Marketing
+ *
+ * If COOKIEYES_SITE_KEY is unset, no script loads. The demo site and CI
+ * build with the key empty on purpose.
+ *
+ * CSP (public/_headers):
+ *   - script-src  https://cdn-cookieyes.com
+ *   - connect-src https://log.cookieyes.com
+ */
+const cookieYesKey = import.meta.env.COOKIEYES_SITE_KEY ?? '';
+const scriptSrc = cookieYesKey
+  ? `https://cdn-cookieyes.com/client_data/${cookieYesKey}/script.js`
+  : '';
+---
+
+{
+  cookieYesKey && (
+    <script id="cookieyes" type="text/javascript" src={scriptSrc} is:inline />
+  )
+}

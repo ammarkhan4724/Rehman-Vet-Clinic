@@ -1,0 +1,47 @@
+---
+/**
+ * LeadForm — the <form> element for a submission stored in the leads database.
+ *
+ * The seam: the page owns the fields, this component owns the form element
+ * (endpoint, _form key, honeypot, Turnstile), BaseLayout owns the handler,
+ * and functions/api/lead.js owns the schema.
+ *
+ * It deliberately does NOT import the handler. src/scripts/lead-forms.ts is
+ * imported once from BaseLayout, so a page cannot acquire a lead form without
+ * also acquiring the handler.
+ */
+import Turnstile from './Turnstile.astro';
+
+type LeadFormKey = keyof typeof import('../../../functions/api/lead.js')['FORMS'];
+
+interface Props {
+  form: LeadFormKey;
+  class?: string;
+  id?: string;
+}
+
+const { form, class: className, id } = Astro.props;
+---
+
+<form
+  class={className}
+  id={id}
+  data-lead-form={form}
+  method="POST"
+  action="/api/lead"
+>
+  <input
+    type="text"
+    name="_hp"
+    tabindex="-1"
+    autocomplete="off"
+    style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"
+    aria-hidden="true"
+  />
+
+  <slot />
+
+  <Turnstile />
+
+  <slot name="message" />
+</form>

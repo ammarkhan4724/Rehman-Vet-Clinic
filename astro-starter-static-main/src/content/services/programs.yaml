@@ -1,0 +1,7 @@
+order: 3
+name: Community programs
+summary: TEMPLATE PLACEHOLDER — seasonal workshops and civic projects for a neighborhood audience.
+body: Keep, rename, or delete this entry. Dynamic routes under /services/[slug]/ grow from this collection.
+seo:
+  title: "Community programs — Cedar & Pine (placeholder)"
+  description: "TEMPLATE PLACEHOLDER service page for community programs."

@@ -1,0 +1,24 @@
+---
+/**
+ * Turnstile — Cloudflare bot challenge widget.
+ *
+ * Renders the public site key at build time. The Pages Function verifies
+ * the token against TURNSTILE_SECRET_KEY at submit time.
+ *
+ * The dummy always-passes key is the documented Cloudflare test key so this
+ * template builds and shows a widget without a real account. Replace
+ * TURNSTILE_SITE_KEY before production.
+ */
+interface Props {
+  theme?: 'light' | 'dark' | 'auto';
+}
+
+const { theme = 'light' } = Astro.props;
+
+/** Dummy always-passes key — https://developers.cloudflare.com/turnstile/troubleshooting/testing/ */
+const DUMMY_ALWAYS_PASS = '1x00000000000000000000AA';
+const siteKey = (import.meta.env.TURNSTILE_SITE_KEY as string | undefined) || DUMMY_ALWAYS_PASS;
+---
+
+<div class="cf-turnstile" data-sitekey={siteKey} data-theme={theme}></div>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>

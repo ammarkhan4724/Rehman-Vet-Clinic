@@ -1,0 +1,27 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Heading from '~/components/seo/Heading.astro';
+import SchemaOrganization from '~/components/schema/SchemaOrganization.astro';
+
+const entry = await getEntry('about', 'about');
+if (!entry) throw new Error('Missing src/content/about/about.yaml');
+const page = entry.data;
+---
+
+<BaseLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  navActive={page.navActive}
+  breadcrumb={[{ name: 'About', href: '/about/' }]}
+>
+  <Fragment slot="head">
+    <SchemaOrganization />
+  </Fragment>
+
+  <main class="wrap pt-[2.4rem] pb-[3.4rem]">
+    <Heading level={1}>{page.heading}</Heading>
+    <p class="text-[1.15rem] text-muted">{page.lede}</p>
+    {page.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </main>
+</BaseLayout>

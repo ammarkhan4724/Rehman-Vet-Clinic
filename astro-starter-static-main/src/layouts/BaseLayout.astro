@@ -1,0 +1,93 @@
+---
+/**
+ * BaseLayout — the document shell every page uses.
+ *
+ * CLAUDE.md hard rules this enforces for free: SEOHead is always present, so
+ * no page writes a raw <title> or <meta>; and the header, drawer and footer
+ * are real markup rather than something JavaScript assembles after load.
+ *
+ * Consent + tracking (same product bar as astro-starter-wordpress ADR-014):
+ * CookieYes first, then ConsentDefaults, then the env-gated trackers.
+ * Missing env vars skip render — the demo builds with every key unset.
+ */
+import SEOHead from '~/components/seo/SEOHead.astro';
+import CookieYes from '~/components/CookieYes.astro';
+import ConsentDefaults from '~/components/analytics/ConsentDefaults.astro';
+import GoogleTagManager from '~/components/analytics/GoogleTagManager.astro';
+import GA4 from '~/components/analytics/GA4.astro';
+import FacebookPixel from '~/components/analytics/FacebookPixel.astro';
+import MicrosoftClarity from '~/components/analytics/MicrosoftClarity.astro';
+import CallRail from '~/components/analytics/CallRail.astro';
+import SchemaBreadcrumb from '~/components/schema/SchemaBreadcrumb.astro';
+import SiteHeader from '~/components/chrome/SiteHeader.astro';
+import MobileDrawer from '~/components/chrome/MobileDrawer.astro';
+import SiteFooter from '~/components/chrome/SiteFooter.astro';
+import { site } from '~/data/site';
+import '~/styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  navActive?: string;
+  breadcrumb?: { name: string; href: string }[];
+  noindex?: boolean;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  navActive = '',
+  breadcrumb,
+  noindex = false,
+  ogImage,
+  ogType,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEOHead
+      title={title}
+      description={description}
+      noindex={noindex}
+      ogImage={ogImage}
+      ogType={ogType}
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <SchemaBreadcrumb trail={breadcrumb} />
+    {/* CookieYes first so auto-blocking can wrap later scripts. */}
+    <CookieYes />
+    {/* ConsentDefaults must precede GTM / GA4. Each tracker env-gates itself. */}
+    <ConsentDefaults />
+    <GoogleTagManager />
+    <GA4 />
+    <FacebookPixel />
+    <MicrosoftClarity />
+    <CallRail />
+    <slot name="head" />
+  </head>
+
+  <body data-active={navActive}>
+    <GoogleTagManager position="body" />
+    {
+      site.isPlaceholder && (
+        <p class="m-0 bg-banner px-4 py-[0.65rem] text-center font-sans text-[0.92rem] text-warn">
+          TEMPLATE PLACEHOLDER SITE — file-based Astro starter. Replace copy in
+          <code>src/content/</code> and identity in <code>src/data/site.ts</code>.
+        </p>
+      )
+    }
+    <SiteHeader active={navActive} />
+    <MobileDrawer />
+    <slot />
+    <SiteFooter />
+
+    <script>
+      import '~/scripts/chrome';
+      import '~/scripts/lead-forms';
+    </script>
+  </body>
+</html>
