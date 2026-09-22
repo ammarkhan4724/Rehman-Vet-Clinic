@@ -1,0 +1,36 @@
+# ----------------------------------------------------------------------
+# Rehman Veterinary Clinic — Apache / Hostinger Security Configuration
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+  # Clickjacking defense
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # MIME-type sniffing defense
+  Header always set X-Content-Type-Options "nosniff"
+  # Cross-site scripting (XSS) defense
+  Header always set X-XSS-Protection "1; mode=block"
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Restrict unauthorized hardware
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Block Common SQL Injection & Malicious Query Strings
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block common SQL injection payloads in query strings
+  RewriteCond %{QUERY_STRING} (select|union|insert|drop|truncate|alter|delete|update) [NC,OR]
+  RewriteCond %{QUERY_STRING} (benchmark|sleep|waitfor\s+delay) [NC,OR]
+  RewriteCond %{QUERY_STRING} (<script|%3Cscript|javascript:) [NC,OR]
+  RewriteCond %{QUERY_STRING} (\.\./|\.\.\\) [NC]
+  RewriteRule .* - [F,L]
+
+  # Block malicious scrapers and abusive bots
+  RewriteCond %{HTTP_USER_AGENT} (libwww-perl|curl|wget|python-requests|scrapy|nikto|sqlmap) [NC]
+  RewriteCond %{REQUEST_URI} !^/robots\.txt$
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes

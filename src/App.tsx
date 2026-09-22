@@ -4,10 +4,12 @@ import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const NAV = [
   { label: "Home", href: "/#home" },
+  { label: "Shop", href: "/shop" },
   { label: "Emergency 24/7", href: "/services/emergency-veterinary-care" },
   { label: "Vaccinations", href: "/services/pet-vaccination-center" },
   { label: "Home Visits", href: "/services/home-visit-veterinary" },
   { label: "DHA Lahore", href: "/locations/dha-lahore-veterinary-clinic" },
+  { label: "Blog", href: "/blog/parvovirus-treatment-cost-survival-pakistan" },
   { label: "Reviews", href: "/#reviews" },
   { label: "About", href: "/#about" },
 ];
@@ -118,6 +120,7 @@ export default function App() {
       <Hero />
       <HowItWorks />
       <Services />
+      <ShopPreview />
       <Booking />
       <Reviews />
       <About />
@@ -466,6 +469,103 @@ function Services() {
                   <div className="text-amber-400 font-extrabold">{s.price}</div>
                 </div>
                 <p className="text-slate-300 text-[15px] leading-relaxed">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ShopPreview() {
+  const featured = [
+    {
+      name: "Fluffy Adult Cat Food (Poultry & Fish)",
+      size: "1.2 kg",
+      price: "Rs. 1,850",
+      tag: "Best Seller",
+      img: "/images/products/fluffy-cat-food-1-2kg.png",
+      desc: "High protein 32%, balanced urinary pH to prevent feline FLUTD stones.",
+      wa: "https://wa.me/923114899904?text=Hello%20Dr.%20Saif,%20I%20want%20to%20order%20Fluffy%20Cat%20Food%201.2kg"
+    },
+    {
+      name: "PetAg KMR Kitten Milk Replacer",
+      size: "340 g Powder",
+      price: "Rs. 7,950",
+      tag: "USA Import",
+      img: "/images/products/petag-kmr-kitten-milk-powder.jpg",
+      desc: "Veterinary maternal milk formula for orphan newborn kittens.",
+      wa: "https://wa.me/923114899904?text=Hello%20Dr.%20Saif,%20I%20want%20to%20order%20PetAg%20KMR%20Kitten%20Milk"
+    },
+    {
+      name: "Klumpy Ultra Bentonite Cat Litter",
+      size: "5 kg",
+      price: "Rs. 1,350",
+      tag: "Odor Lock",
+      img: "/images/products/klumpy-bentonite-cat-litter-5kg.png",
+      desc: "Fast clumping in 3 seconds, 99.5% dust-free respiratory safe.",
+      wa: "https://wa.me/923114899904?text=Hello%20Dr.%20Saif,%20I%20want%20to%20order%20Klumpy%20Cat%20Litter%205kg"
+    },
+    {
+      name: "Feli-Worm Cat Deworming Tablets",
+      size: "4 Tablets",
+      price: "Rs. 950",
+      tag: "Prescription",
+      img: "/images/products/feli-worm-cat-deworming-tablets.jpg",
+      desc: "Broad-spectrum Praziquantel + Pyrantel eliminating all internal worms.",
+      wa: "https://wa.me/923114899904?text=Hello%20Dr.%20Saif,%20I%20want%20to%20order%20Feli-Worm%20Cat%20Deworming%20Tablets"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-white border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 uppercase tracking-wider mb-3">
+              Veterinary Pharmacy &amp; Pet Shop
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Veterinarian-Approved Pet Essentials
+            </h2>
+            <p className="text-sm text-slate-500 mt-2 max-w-xl">
+              Authentic cat foods, KMR milk, dust-free litter, and verified dewormers vetted by Dr. Saif Ur Rehman with same-day doorstep dispatch in Lahore.
+            </p>
+          </div>
+          <a
+            href="/shop"
+            className="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-sm"
+          >
+            <span>Explore All 22+ Products in Shop</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featured.map((item) => (
+            <div key={item.name} className="rounded-3xl border border-slate-100 bg-[#faf9f7] overflow-hidden p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <div className="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200">
+                  <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                  <span className="absolute top-2.5 left-2.5 bg-slate-900/90 text-amber-400 text-[10px] font-black uppercase px-2 py-0.5 rounded-full">
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="text-[11px] font-semibold text-slate-400">{item.size}</div>
+                <h3 className="font-bold text-slate-900 text-sm mt-1 leading-snug">{item.name}</h3>
+                <p className="text-xs text-slate-500 mt-1 line-clamp-2">{item.desc}</p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                <span className="font-black text-slate-950 text-base">{item.price}</span>
+                <a
+                  href={item.wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20bd5a] transition flex items-center gap-1 shadow-sm"
+                >
+                  <span>WhatsApp</span>
+                </a>
               </div>
             </div>
           ))}
@@ -893,38 +993,48 @@ function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Clinical Services & Silos */}
+          {/* Col 2: Pet Shop & Pharmacy */}
           <div>
-            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Clinical Services</div>
+            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Pet Shop &amp; Pharmacy</div>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="/services/emergency-veterinary-care" className="hover:text-emerald-400 transition-colors">24/7 Emergency Care</a></li>
-              <li><a href="/services/24-hour-vet-clinic-lahore" className="hover:text-emerald-400 transition-colors">24 Hour Animal Hospital</a></li>
-              <li><a href="/services/pet-vaccination-center" className="hover:text-emerald-400 transition-colors">Pet Vaccination Center</a></li>
-              <li><a href="/services/home-visit-veterinary" className="hover:text-emerald-400 transition-colors">Mobile Vet House Calls</a></li>
-              <li><a href="/locations/dha-lahore-veterinary-clinic" className="hover:text-emerald-400 transition-colors">Vet in DHA Lahore</a></li>
-              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan" className="hover:text-emerald-400 transition-colors">Parvovirus Protocol</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors font-semibold text-white">Browse Full Shop (22+ Items)</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors">Fluffy Cat Food (1.2kg &amp; 3kg)</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors">PetAg KMR Kitten Milk Replacer</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors">Klumpy Clumping Bentonite Litter</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors">Feli-Worm Deworming Tablets</a></li>
+              <li><a href="/shop" className="hover:text-emerald-400 transition-colors">Frontline Plus Flea &amp; Tick Spray</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Direct Contact */}
+          {/* Col 3: Clinical & Medical Guides */}
           <div>
-            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Direct Contact</div>
-            <div className="space-y-3.5 text-sm text-slate-400">
+            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Clinical Guides</div>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="/blog/best-cat-food-brands-prices-pakistan" className="hover:text-emerald-400 transition-colors">Cat Food Brands Price List 2026</a></li>
+              <li><a href="/blog/canine-distemper-symptoms-treatment-pakistan" className="hover:text-emerald-400 transition-colors">Canine Distemper Symptoms &amp; Care</a></li>
+              <li><a href="/blog/kmr-kitten-milk-replacer-feeding-guide-pakistan" className="hover:text-emerald-400 transition-colors">KMR Kitten Bottle Feeding Guide</a></li>
+              <li><a href="/blog/cat-deworming-tablet-schedule-dosage-pakistan" className="hover:text-emerald-400 transition-colors">Cat Deworming Tablets &amp; Schedule</a></li>
+              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan" className="hover:text-emerald-400 transition-colors">Canine Parvovirus Protocol</a></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Services & Helpline */}
+          <div>
+            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Hospital &amp; Helpline</div>
+            <div className="space-y-3 text-xs text-slate-400">
               <div>
-                <span className="block text-xs font-semibold text-slate-500">Emergency &amp; Helpline:</span>
-                <a href="tel:+923114899904" className="font-bold text-white hover:text-emerald-400 transition-colors">
+                <span className="block text-[11px] font-semibold text-slate-500">24/7 Helpline / Emergency:</span>
+                <a href="tel:+923114899904" className="font-bold text-white hover:text-emerald-400 transition-colors text-sm">
                   +92 311 4899904
                 </a>
               </div>
               <div>
-                <span className="block text-xs font-semibold text-slate-500">Official Email:</span>
-                <a href="mailto:info@rehmanvetclinic.com" className="font-semibold text-white hover:text-emerald-400 transition-colors">
-                  info@rehmanvetclinic.com
-                </a>
-              </div>
-              <div>
-                <span className="block text-xs font-semibold text-slate-500">Service Coverage:</span>
-                <span className="text-slate-400 font-medium">Lahore (DHA, Gulberg, Bahria, Model Town &amp; All Sectors)</span>
+                <ul className="space-y-1.5 text-slate-400">
+                  <li><a href="/services/emergency-veterinary-care" className="hover:text-emerald-400 transition">24/7 Emergency Care</a></li>
+                  <li><a href="/services/pet-vaccination-center" className="hover:text-emerald-400 transition">Pet Vaccination Center</a></li>
+                  <li><a href="/services/home-visit-veterinary" className="hover:text-emerald-400 transition">Mobile Vet House Calls</a></li>
+                  <li><a href="/locations/dha-lahore-veterinary-clinic" className="hover:text-emerald-400 transition">Vet in DHA Lahore</a></li>
+                </ul>
               </div>
             </div>
           </div>

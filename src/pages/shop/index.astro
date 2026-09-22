@@ -1,0 +1,264 @@
+---
+import ShopCatalog, { PRODUCTS } from '../../components/ShopCatalog';
+import '../../styles/global.css';
+
+// Schema ItemList generator
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Veterinary Pet Shop & Pharmacy — Rehman Vet Clinic Lahore",
+  "description": "Authentic cat food, kitten milk replacers, bentonite cat litter, orthopedic pet beds, harnesses, and veterinary-grade deworming medications in Pakistan.",
+  "itemListElement": PRODUCTS.map((p, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "item": {
+      "@type": "Product",
+      "name": p.name,
+      "image": p.image,
+      "description": p.description,
+      "category": p.categoryLabel,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PKR",
+        "price": p.price,
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "VeterinaryCare",
+          "name": "Rehman Veterinary Clinic"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": p.rating,
+        "reviewCount": p.reviewCount
+      }
+    }
+  }))
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RT8KMREC6"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7RT8KMREC6');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Shop & Pharmacy Lahore — Authentic Cat Food, KMR, Litter, Dewormers & Accessories</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Rehman Vet Clinic official pet shop & pharmacy in Lahore. Order genuine Fluffy cat food, KMR kitten milk, Klumpy litter, cat beds, harnesses, deworming tablets & flea sprays with same-day doorstep delivery." />
+    <meta name="keywords" content="cat food, fluffy cat food, nourvet cat food, royal canin cat food, kmr kitten milk, cat litter box, klumpy cat litter, cat bed, cat harness, cat shoes pakistan, cat deworming tablet, frontline spray, pet shop near me lahore, pet store pakistan" />
+    <meta name="author" content="Dr. Saif Ur Rehman, DVM" />
+    <meta name="geo.region" content="PK-PB" />
+    <meta name="geo.placename" content="Lahore" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pet Shop & Pharmacy Lahore — Authentic Cat Food, KMR, Litter & Dewormers" />
+    <meta property="og:description" content="Rehman Vet Clinic official pet shop & pharmacy. Order genuine Fluffy, Nourvet, Royal Canin, KMR kitten milk, Klumpy cat litter, and vet dewormers." />
+    <meta property="og:site_name" content="Rehman Veterinary Clinic" />
+    <meta property="og:image" content="https://rehmanvetclinic.com/images/products/fluffy-cat-food-1-2kg.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pet Shop & Pharmacy Lahore — Rehman Vet Clinic" />
+    <meta name="twitter:description" content="Authentic pet food, KMR milk, litter, beds, harnesses & verified veterinary medicines in Lahore." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  </head>
+  <body class="bg-[#faf9f7] text-slate-800 antialiased min-h-screen flex flex-col justify-between" style="font-family: 'Outfit', system-ui, sans-serif;">
+    <div>
+      {/* Header Navigation */}
+      <header class="fixed top-0 w-full z-50 py-3 bg-white/90 backdrop-blur-xl border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 border border-emerald-500/40 grid place-items-center shadow-md">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4V28M4 16H28" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round" opacity="0.3"/>
+                <path d="M6 16.5H10L12.5 10.5L15.5 21.5L18 12.5L19.5 16.5H26" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="16" cy="7.5" r="1.8" fill="#F59E0B" />
+                <circle cx="12.5" cy="8.5" r="1.3" fill="#10B981" />
+                <circle cx="19.5" cy="8.5" r="1.3" fill="#10B981" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-black text-lg leading-none tracking-tight text-slate-900 group-hover:text-emerald-800 transition">Rehman</div>
+              <div class="text-[9px] font-extrabold text-emerald-600 tracking-[0.2em] uppercase mt-0.5">VETERINARY</div>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-1 bg-emerald-50/80 border border-emerald-100/60 rounded-full p-1 text-xs font-semibold text-slate-700">
+            <a href="/" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Home</a>
+            <a href="/shop" class="px-3.5 py-1.5 text-white bg-slate-900 rounded-full transition shadow-sm">Shop & Pharmacy</a>
+            <a href="/services/emergency-veterinary-care" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Emergency 24/7</a>
+            <a href="/services/pet-vaccination-center" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Vaccinations</a>
+            <a href="/services/home-visit-veterinary" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Home Visits</a>
+            <a href="/locations/dha-lahore-veterinary-clinic" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">DHA Lahore</a>
+            <a href="/blog/parvovirus-treatment-cost-survival-pakistan" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Medical Blog</a>
+          </nav>
+
+          <!-- Direct Helpline & WhatsApp -->
+          <div class="flex items-center gap-2">
+            <a href="tel:+923114899904" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-sm">
+              <svg class="w-3.5 h-3.5 text-amber-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z" />
+              </svg>
+              <span>+92 311 4899904</span>
+            </a>
+            <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20would%20like%20to%20order%20products%20from%20your%20clinic%20shop." target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-white" />
+              <span>WhatsApp Shop</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Hero & Trust Header */}
+      <main class="pt-28 pb-16 max-w-7xl mx-auto px-5">
+        {/* Breadcrumb */}
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
+          <a href="/" class="hover:text-emerald-700 transition">Home</a>
+          <span>/</span>
+          <span class="text-slate-900">Pet Shop & Veterinary Pharmacy</span>
+        </div>
+
+        {/* Hero Banner */}
+        <div class="relative bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden shadow-xl mb-10 border border-emerald-800/30">
+          <div class="relative z-10 max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Veterinarian Verified • Same-Day Dispatch in Lahore
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+              Veterinary Pet Shop &amp; Clinical Pharmacy
+            </h1>
+            <p class="mt-4 text-sm md:text-base text-slate-300 leading-relaxed font-normal">
+              Every food brand, milk replacer, dewormer, and accessory in our catalog is physically evaluated and approved by <strong>Dr. Saif Ur Rehman, DVM</strong>. Never risk counterfeit medicines or poor-grade pet foods—enjoy 100% genuine products delivered straight to your doorstep across Lahore and Pakistan.
+            </p>
+
+            {/* Quick Trust Badges */}
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-8 border-t border-white/10 text-xs font-semibold text-slate-200">
+              <div class="flex items-center gap-2">
+                <span class="text-base text-amber-400">🛡️</span>
+                <span>PVMC Certified</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-base text-emerald-400">🚚</span>
+                <span>Lahore Same-Day</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-base text-amber-400">💊</span>
+                <span>Prescription Safe</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-base text-emerald-400">💬</span>
+                <span>Direct WhatsApp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Shop Catalog (Search, Filter, WhatsApp Cart) */}
+        <ShopCatalog client:load />
+
+        {/* Veterinary Buying Guides & Educational Bridges */}
+        <div class="mt-16 bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+          <h2 class="text-xl font-black text-slate-900 mb-3">
+            Veterinary Prescription Guidelines &amp; Pet Nutrition FAQ
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs text-slate-600 leading-relaxed">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <h3 class="font-bold text-slate-900 text-sm mb-1.5">
+                🍼 How do I safely feed orphaned newborn kittens with KMR?
+              </h3>
+              <p>
+                Cow's milk contains high lactose levels that cause acute, life-threatening diarrhea in kittens under 4 weeks. Always use <strong>PetAg KMR Kitten Milk Replacer</strong> mixed with warm sterile water (100°F). Feed with our graduated silicone teated bottles every 2 to 3 hours, keeping the kitten lying naturally on its belly. For complete schedules, read our full <a href="/blog/kmr-kitten-milk-replacer-feeding-guide-pakistan" class="text-emerald-700 font-bold underline">KMR Kitten Care Guide</a>.
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <h3 class="font-bold text-slate-900 text-sm mb-1.5">
+                💊 What is the proper deworming dosage for cats in Pakistan?
+              </h3>
+              <p>
+                Administer 1 tablet of <strong>Feli-Worm (Praziquantel/Pyrantel)</strong> per 4 kg of body weight. Kittens should be dewormed starting at 6 weeks of age, followed by repeats every 2 weeks until 12 weeks, and then every 3 months for adult cats. Never use human Zentel without veterinary guidance. Review our complete <a href="/blog/cat-deworming-tablet-schedule-dosage-pakistan" class="text-emerald-700 font-bold underline">Cat Deworming Tablets & Schedule Guide</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 grid place-items-center text-white font-black text-sm">
+                RV
+              </div>
+              <div>
+                <div class="font-bold text-white text-base">Rehman Veterinary Clinic</div>
+                <div class="text-[9px] font-extrabold text-emerald-400 tracking-widest uppercase">PET SHOP &amp; PHARMACY</div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Dr. Saif provides hospital-grade mobile veterinary care and genuine pet supplies across Lahore. Doorstep delivery for pet foods, KMR kitten milk, clumping litter, and clinical medications.
+            </p>
+          </div>
+
+          <div>
+            <div class="font-bold text-white text-xs uppercase tracking-wider text-emerald-400 mb-4">Shop Categories</div>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li><a href="/shop" class="hover:text-emerald-400 transition">Cat &amp; Kitten Food</a></li>
+              <li><a href="/shop" class="hover:text-emerald-400 transition">KMR Milk &amp; Feeder Bottles</a></li>
+              <li><a href="/shop" class="hover:text-emerald-400 transition">Klumpy Bentonite Cat Litter</a></li>
+              <li><a href="/shop" class="hover:text-emerald-400 transition">Beds, Houses &amp; Wire Cages</a></li>
+              <li><a href="/shop" class="hover:text-emerald-400 transition">Cat Harnesses &amp; Shoes</a></li>
+              <li><a href="/shop" class="hover:text-emerald-400 transition">Feli-Worm Deworming Tablets</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="font-bold text-white text-xs uppercase tracking-wider text-emerald-400 mb-4">Clinical Guides</div>
+            <ul class="space-y-2 text-xs text-slate-400">
+              <li><a href="/blog/best-cat-food-brands-prices-pakistan" class="hover:text-emerald-400 transition">Cat Food Brands Price List 2026</a></li>
+              <li><a href="/blog/kmr-kitten-milk-replacer-feeding-guide-pakistan" class="hover:text-emerald-400 transition">KMR Kitten Care &amp; Bottle Feeding</a></li>
+              <li><a href="/blog/cat-deworming-tablet-schedule-dosage-pakistan" class="hover:text-emerald-400 transition">Cat Deworming Tablets &amp; Schedule</a></li>
+              <li><a href="/blog/canine-distemper-symptoms-treatment-pakistan" class="hover:text-emerald-400 transition">Canine Distemper Symptoms &amp; Care</a></li>
+              <li><a href="/blog/parvovirus-treatment-cost-survival-pakistan" class="hover:text-emerald-400 transition">Parvovirus Protocol &amp; Survival</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="font-bold text-white text-xs uppercase tracking-wider text-emerald-400 mb-4">Order Helpline</div>
+            <div class="space-y-2 text-xs text-slate-400">
+              <div>Phone: <a href="tel:+923114899904" class="text-white font-bold hover:text-emerald-400 transition">+92 311 4899904</a></div>
+              <div>WhatsApp: <a href="https://wa.me/923114899904" class="text-emerald-400 font-bold transition">Instant Order Chat</a></div>
+              <div>Delivery: <span class="text-white">Same-Day Lahore • 2-3 Days Pakistan</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 pt-8 mt-8 border-t border-slate-800 text-center text-[11px] text-slate-500">
+          © {new Date().getFullYear()} Rehman Veterinary Clinic &amp; Pet Pharmacy Lahore. All rights reserved. Dr. Saif Ur Rehman, DVM.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

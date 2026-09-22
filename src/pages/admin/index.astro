@@ -1,0 +1,23 @@
+---
+import AdminCMS from '../../components/AdminCMS';
+import '../../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    
+    <!-- STRICT NOINDEX DIRECTIVES: Do not index or follow admin portal -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+    
+    <title>Clinic CMS Inventory &amp; Price Controller — Rehman Veterinary Clinic</title>
+  </head>
+  <body class="bg-[#09111e] min-h-screen">
+    <AdminCMS client:load />
+  </body>
+</html>
