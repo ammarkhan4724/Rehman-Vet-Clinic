@@ -167,17 +167,6 @@ function Header() {
               <span>+92 311 4899904</span>
             </a>
 
-            {/* Quick WhatsApp Pill */}
-            <a
-              href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-all shadow-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#25D366]" />
-              <span>WhatsApp</span>
-            </a>
-
             {/* Main CTA */}
             <a
               href="#book"
