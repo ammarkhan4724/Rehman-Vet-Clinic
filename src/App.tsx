@@ -957,9 +957,9 @@ function Footer() {
   return (
     <footer id="contact" className="bg-slate-950 border-t border-slate-900 text-slate-400">
       <div className="max-w-7xl mx-auto px-5 py-14">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand & Bio */}
-          <div className="md:col-span-2">
+          <div>
             <div className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-amber-500 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition"></div>
@@ -972,7 +972,7 @@ function Footer() {
                 <div className="text-[10px] font-extrabold text-emerald-400 tracking-widest uppercase">VETERINARY</div>
               </div>
             </div>
-            <p className="mt-4 text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="mt-4 text-xs text-slate-400 leading-relaxed">
               Dr. Saif brings hospital-grade mobile veterinary care directly to your doorstep in Lahore. 24/7 urgent video care, home vaccinations, laboratory diagnostics, and compassionate pet treatment.
             </p>
             <div className="mt-5 flex items-center gap-3">
@@ -980,7 +980,7 @@ function Footer() {
                 href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-bold transition-colors border border-slate-800 shadow-sm"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-bold transition-colors border border-slate-800 shadow-sm"
               >
                 <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                 WhatsApp: +92 311 4899904
@@ -990,7 +990,7 @@ function Footer() {
 
           {/* Col 2: Pet Shop & Pharmacy */}
           <div>
-            <div className="font-bold text-white text-sm mb-4 uppercase tracking-wider text-emerald-400">Pet Shop &amp; Pharmacy</div>
+            <div className="font-bold text-white text-xs uppercase tracking-wider text-emerald-400 mb-4">Pet Shop &amp; Pharmacy</div>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><a href="/shop" className="hover:text-emerald-400 transition-colors font-semibold text-white">Browse Full Shop (22+ Items)</a></li>
               <li><a href="/shop" className="hover:text-emerald-400 transition-colors">Fluffy Cat Food (1.2kg &amp; 3kg)</a></li>
