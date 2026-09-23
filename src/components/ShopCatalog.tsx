@@ -704,7 +704,7 @@ export default function ShopCatalog() {
           {filteredProducts.map((p) => (
             <div
               key={p.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm transition-all duration-300 flex flex-col justify-between group sheen-card card-hover-lift"
             >
               <div>
                 {/* Product Image */}
@@ -778,7 +778,7 @@ export default function ShopCatalog() {
                   </div>
                   <button
                     onClick={() => setSelectedProduct(p)}
-                    className="text-[11px] font-bold text-slate-600 hover:text-emerald-700 bg-slate-50 hover:bg-slate-100 px-2.5 py-1.5 rounded-xl transition"
+                    className="text-[11px] font-bold text-slate-600 hover:text-emerald-700 bg-slate-50 hover:bg-slate-100 px-2.5 py-1.5 rounded-xl transition active:scale-95"
                   >
                     View Details
                   </button>
@@ -789,7 +789,7 @@ export default function ShopCatalog() {
                   <div className="grid grid-cols-2 gap-1.5">
                     <button
                       onClick={() => addToCart(p, true)}
-                      className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold transition"
+                      className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold transition active:scale-95"
                       title="Add to clinic cart"
                     >
                       <span>🛒</span>
@@ -797,7 +797,7 @@ export default function ShopCatalog() {
                     </button>
                     <button
                       onClick={() => quickBuyNow(p)}
-                      className="flex items-center justify-center gap-1 py-2 px-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-[11px] font-black transition shadow-sm hover:scale-[1.02]"
+                      className="shimmer-btn flex items-center justify-center gap-1 py-2 px-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-[11px] font-black transition shadow-sm hover:scale-[1.02] active:scale-95"
                       title="Direct step-by-step checkout"
                     >
                       <span>⚡ Buy Now</span>
@@ -806,7 +806,7 @@ export default function ShopCatalog() {
 
                   <button
                     onClick={() => handleWhatsAppOrder(p)}
-                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#128C7E] text-[11px] font-extrabold transition"
+                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#128C7E] text-[11px] font-extrabold transition active:scale-95"
                     title="Order and chat with Dr. Saif on WhatsApp"
                   >
                     <svg className="w-3.5 h-3.5 fill-[#128C7E]" viewBox="0 0 24 24">
@@ -927,7 +927,7 @@ export default function ShopCatalog() {
         <div className="fixed bottom-6 right-6 z-40 animate-slide-in">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs shadow-2xl border border-slate-700 hover:scale-105 transition-all group"
+            className="shimmer-btn flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs shadow-2xl border border-slate-700 hover:scale-105 active:scale-95 transition-all group animate-radar"
           >
             <span className="text-base group-hover:scale-110 transition-transform">🛒</span>
             <span>Cart ({totalCartCount})</span>

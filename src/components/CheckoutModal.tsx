@@ -700,7 +700,7 @@ export default function CheckoutModal({
                   type="button"
                   disabled={isSubmitting}
                   onClick={handleFinalOrderSubmit}
-                  className="px-8 py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-black rounded-2xl shadow-xl shadow-emerald-900/30 transition-all hover:scale-[1.01] flex items-center gap-2 disabled:opacity-50"
+                  className="shimmer-btn px-8 py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-black rounded-2xl shadow-xl shadow-emerald-900/30 transition-all hover:scale-[1.01] active:scale-95 flex items-center gap-2 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>

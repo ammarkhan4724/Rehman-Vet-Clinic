@@ -170,7 +170,7 @@ export default function CartDrawer({
                 onClose();
                 onProceedToCheckout();
               }}
-              className="w-full py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs rounded-2xl shadow-xl shadow-emerald-900/20 transition-all hover:scale-[1.01] flex items-center justify-center gap-2"
+              className="shimmer-btn w-full py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs rounded-2xl shadow-xl shadow-emerald-900/20 transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2"
             >
               <span>Proceed to Checkout</span>
               <span>→</span>

@@ -165,7 +165,7 @@ function Header() {
             {/* Direct Dial Helpline */}
             <a
               href="tel:+923114899904"
-              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md whitespace-nowrap shrink-0"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold hover:-translate-y-0.5 active:scale-95 transition-all shadow-md whitespace-nowrap shrink-0"
             >
               <svg className="w-3.5 h-3.5 text-amber-400 animate-pulse shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z" />
@@ -176,7 +176,7 @@ function Header() {
             {/* Main CTA */}
             <a
               href="#book"
-              className="px-4 xl:px-5 py-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs xl:text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 transition-all whitespace-nowrap shrink-0"
+              className="shimmer-btn px-4 xl:px-5 py-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs xl:text-sm shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 active:scale-95 transition-all whitespace-nowrap shrink-0"
             >
               Book Now
             </a>
@@ -216,7 +216,7 @@ function Header() {
                 href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-bold shadow-md shadow-[#25D366]/20 mt-1"
+                className="shimmer-btn flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] text-white text-sm font-bold shadow-md shadow-[#25D366]/20 mt-1 active:scale-95 transition-all"
               >
                 <span>Chat on WhatsApp (24/7)</span>
               </a>
@@ -247,11 +247,11 @@ function Hero() {
         {/* Decorative Paws (Subtle Animations) */}
         <PawIcon className="absolute top-[15%] left-[8%] w-16 h-16 text-emerald-900/5 -rotate-12 animate-pulse" />
         <PawIcon className="absolute top-[35%] left-[12%] w-12 h-12 text-emerald-900/5 rotate-12 animate-pulse" style={{ animationDelay: "1s" }} />
-        <PawIcon className="absolute top-[20%] right-[10%] w-24 h-24 text-amber-900/5 rotate-45 animate-float" />
-        <PawIcon className="absolute bottom-[10%] left-[20%] w-20 h-20 text-emerald-900/5 -rotate-12 animate-float" style={{ animationDelay: "2s" }} />
+        <PawIcon className="absolute top-[20%] right-[10%] w-24 h-24 text-amber-900/5 rotate-45 animate-float-slow" />
+        <PawIcon className="absolute bottom-[10%] left-[20%] w-20 h-20 text-emerald-900/5 -rotate-12 animate-float-reverse" style={{ animationDelay: "2s" }} />
 
-        <div className="absolute top-20 right-[10%] w-72 h-72 bg-amber-200/35 rounded-full blur-[100px] animate-float" />
-        <div className="absolute bottom-0 left-[5%] w-96 h-96 bg-emerald-200/40 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-20 right-[10%] w-72 h-72 bg-amber-200/35 rounded-full blur-[100px] animate-float-slow pointer-events-none" />
+        <div className="absolute bottom-0 left-[5%] w-96 h-96 bg-emerald-200/40 rounded-full blur-[120px] animate-float-reverse pointer-events-none" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-5">
@@ -259,7 +259,7 @@ function Hero() {
           <div className="animate-slide-in">
             <div className="inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 bg-white rounded-full shadow-md shadow-slate-900/5 border border-emerald-100 mb-6 group hover:shadow-lg transition-all">
               <span className="flex items-center gap-1.5 px-2.5 py-1 bg-amber-500 text-slate-950 rounded-full text-[11px] font-extrabold tracking-wide">
-                <span className="w-1.5 h-1.5 bg-slate-950 rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-slate-950 rounded-full animate-radar" />
                 LIVE
               </span>
               <span className="text-[13px] font-medium text-slate-700">Mobile vet in Lahore • 3 slots today</span>
@@ -268,7 +268,7 @@ function Hero() {
             <h1 className="text-[clamp(40px,6vw,72px)] font-[800] leading-[0.9] tracking-[-0.02em] text-slate-900">
               The vet
               <span className="relative inline-block mx-3">
-                <span className="relative z-10 bg-gradient-to-r from-amber-600 via-amber-500 to-emerald-600 bg-clip-text text-transparent">comes to you</span>
+                <span className="relative z-10 bg-gradient-to-r from-amber-600 via-amber-500 to-emerald-600 bg-clip-text text-transparent animate-gradient-flow">comes to you</span>
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-amber-300" viewBox="0 0 200 12" fill="none">
                   <path d="M1 5.5C50 1.5 150 11 199 5.5" stroke="currentColor" strokeWidth="8" strokeLinecap="round" opacity="0.4"/>
                 </svg>
@@ -281,7 +281,7 @@ function Hero() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
-              <a href="#book" className="group relative px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 rounded-2xl font-extrabold shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/35 hover:-translate-y-1 transition-all overflow-hidden">
+              <a href="#book" className="shimmer-btn group relative px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 rounded-2xl font-extrabold shadow-xl shadow-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/35 hover:-translate-y-1 active:scale-95 transition-all overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative flex items-center justify-center gap-2">
                   Book home visit
@@ -290,7 +290,7 @@ function Hero() {
                   </svg>
                 </span>
               </a>
-              <a href="#book" className="px-8 py-4 bg-emerald-50/80 border-2 border-emerald-200 text-emerald-900 rounded-2xl font-semibold hover:border-emerald-400 hover:bg-emerald-100/60 hover:-translate-y-1 transition-all flex items-center justify-center gap-2.5">
+              <a href="#book" className="px-8 py-4 bg-emerald-50/80 border-2 border-emerald-200 text-emerald-900 rounded-2xl font-semibold hover:border-emerald-400 hover:bg-emerald-100/60 hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2.5">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
@@ -308,9 +308,9 @@ function Hero() {
                     "https://images.pexels.com/photos/29358402/pexels-photo-29358402.jpeg?auto=compress&w=80&h=80&fit=crop",
                     "https://images.pexels.com/photos/14440674/pexels-photo-14440674.jpeg?auto=compress&w=80&h=80&fit=crop",
                   ].map((src, i) => (
-                    <img key={i} src={src} alt="" className="w-10 h-10 rounded-full border-[3px] border-white object-cover shadow-md" />
+                    <img key={i} src={src} alt="" className="w-10 h-10 rounded-full border-[3px] border-white object-cover shadow-md hover:scale-125 hover:z-30 transition-transform duration-300 cursor-pointer" />
                   ))}
-                  <div className="w-10 h-10 rounded-full border-[3px] border-white bg-slate-900 text-white grid place-items-center text-[11px] font-bold shadow-md">1.2k+</div>
+                  <div className="w-10 h-10 rounded-full border-[3px] border-white bg-slate-900 text-white grid place-items-center text-[11px] font-bold shadow-md hover:scale-110 transition-transform cursor-pointer">1.2k+</div>
                 </div>
               </div>
               <div className="h-10 w-px bg-slate-200" />
@@ -327,7 +327,7 @@ function Hero() {
 
           <div className="relative lg:h-[600px] animate-scale-in" style={{ animationDelay: "0.2s" }}>
             {/* Phone mockup */}
-            <div className="relative z-20 mx-auto w-[300px] animate-float">
+            <div className="relative z-20 mx-auto w-[300px] animate-float-slow">
               <div className="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl shadow-slate-900/30">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
                   <div className="h-[600px] relative">
@@ -335,26 +335,26 @@ function Hero() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
                     <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-full" />
                     <div className="absolute bottom-0 inset-x-0 p-6 text-white">
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/90 backdrop-blur text-xs font-bold mb-3">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/90 backdrop-blur text-xs font-bold mb-3 animate-radar">
                         <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                         ON A VISIT
                       </div>
                       <div className="text-2xl font-bold">Dr. Saif</div>
                       <div className="text-sm opacity-90">En route • 8 min away</div>
                       <div className="mt-4 flex gap-2">
-                        <button className="flex-1 py-2.5 bg-white/20 backdrop-blur-md rounded-xl text-sm font-medium border border-white/30">Message</button>
-                        <button className="flex-1 py-2.5 bg-white text-slate-900 rounded-xl text-sm font-semibold">Call</button>
+                        <button className="flex-1 py-2.5 bg-white/20 backdrop-blur-md rounded-xl text-sm font-medium border border-white/30 hover:bg-white/30 active:scale-95 transition-all">Message</button>
+                        <button className="flex-1 py-2.5 bg-white text-slate-900 rounded-xl text-sm font-semibold hover:bg-slate-100 active:scale-95 transition-all">Call</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-amber-500 rounded-3xl rotate-12 blur-2xl opacity-40" />
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-amber-500 rounded-3xl rotate-12 blur-2xl opacity-40 animate-pulse" />
             </div>
 
             {/* Floating cards */}
-            <div className="absolute top-10 -left-4 md:left-0 z-30 animate-float" style={{ animationDelay: "1s" }}>
-              <div className="bg-white rounded-2xl shadow-xl p-4 border border-emerald-100 w-[200px]">
+            <div className="absolute top-10 -left-4 md:left-0 z-30 animate-float-reverse" style={{ animationDelay: "1s" }}>
+              <div className="bg-white rounded-2xl shadow-xl p-4 border border-emerald-100 w-[200px] sheen-card card-hover-lift cursor-pointer">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-emerald-100 grid place-items-center text-2xl">💻</div>
                   <div>
@@ -365,8 +365,8 @@ function Hero() {
               </div>
             </div>
 
-            <div className="absolute bottom-20 -right-4 md:right-10 z-30 animate-float" style={{ animationDelay: "1.5s" }}>
-              <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+            <div className="absolute bottom-20 -right-4 md:right-10 z-30 animate-float-slow" style={{ animationDelay: "1.5s" }}>
+              <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100 sheen-card card-hover-lift cursor-pointer">
                 <div className="flex items-center gap-3">
                   <img src="https://images.pexels.com/photos/7469228/pexels-photo-7469228.jpeg?auto=compress&w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover" alt="" />
                   <div>
@@ -404,12 +404,12 @@ function HowItWorks() {
           {steps.map((s, i) => (
             <div key={s.title} className="group relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" style={{ backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))` }} />
-              <div className="relative bg-white rounded-[2rem] p-8 border border-slate-200 hover:border-slate-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-500">
+              <div className="relative bg-white rounded-[2rem] p-8 border border-slate-200 hover:border-slate-300 transition-all duration-500 sheen-card card-hover-lift">
                 <div className="flex items-start justify-between mb-6">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} grid place-items-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
                     {s.icon}
                   </div>
-                  <div className="text-5xl font-black text-slate-100 group-hover:text-slate-200 transition-colors">0{i+1}</div>
+                  <div className="text-5xl font-black text-slate-100 group-hover:text-slate-200 group-hover:scale-110 transition-all duration-300">0{i+1}</div>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{s.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{s.desc}</p>
@@ -435,8 +435,8 @@ function Services() {
   return (
     <section id="services" className="py-20 md:py-28 bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-[120px] animate-float-slow pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-[100px] animate-float-reverse pointer-events-none" />
       </div>
       
       <div className="relative max-w-7xl mx-auto px-5">
@@ -452,9 +452,9 @@ function Services() {
           {services.map((s) => (
             <div key={s.title} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent rounded-[1.75rem] opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative h-full bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-[1.75rem] p-6 hover:bg-slate-900 hover:border-amber-500/40 hover:-translate-y-1 transition-all duration-300">
+              <div className="relative h-full bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-[1.75rem] p-6 hover:bg-slate-900 hover:border-amber-500/40 transition-all duration-300 sheen-card card-hover-lift">
                 {s.tag && (
-                  <div className="absolute -top-3 -right-3 px-3.5 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[11px] font-extrabold rounded-full shadow-lg shadow-amber-500/30">
+                  <div className="absolute -top-3 -right-3 px-3.5 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[11px] font-extrabold rounded-full shadow-lg shadow-amber-500/30 animate-pulse">
                     {s.tag}
                   </div>
                 )}
@@ -530,7 +530,7 @@ function ShopPreview() {
           </div>
           <a
             href="/shop"
-            className="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-sm"
+            className="shimmer-btn mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-sm"
           >
             <span>Explore All 22+ Products in Shop</span>
             <span>→</span>
@@ -539,10 +539,10 @@ function ShopPreview() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((item) => (
-            <div key={item.name} className="rounded-3xl border border-slate-100 bg-[#faf9f7] overflow-hidden p-4 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div key={item.name} className="group rounded-3xl border border-slate-100 bg-[#faf9f7] overflow-hidden p-4 flex flex-col justify-between transition-all duration-300 sheen-card card-hover-lift">
               <div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-slate-200">
-                  <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
+                  <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <span className="absolute top-2.5 left-2.5 bg-slate-900/90 text-amber-400 text-[10px] font-black uppercase px-2 py-0.5 rounded-full">
                     {item.tag}
                   </span>
@@ -557,7 +557,7 @@ function ShopPreview() {
                   href={item.wa}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20bd5a] transition flex items-center gap-1 shadow-sm"
+                  className="shimmer-btn px-3.5 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all flex items-center gap-1 shadow-sm"
                 >
                   <span>WhatsApp</span>
                 </a>
@@ -679,7 +679,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                   href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20would%20like%20to%20book%20a%20home%20visit%20in%20Lahore."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition-all shadow-sm"
+                  className="shimmer-btn inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-sm"
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
                   <span>Book via WhatsApp: +92 311 4899904</span>
@@ -700,7 +700,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                     <button
                       key={opt.id}
                       onClick={() => { setType(opt.id as any); setSelectedSlot(null); setStep(1); }}
-                      className={`relative p-4 rounded-2xl text-left transition-all ${type === opt.id ? "bg-white shadow-md border border-emerald-200/60" : "hover:bg-white/50"}`}
+                      className={`relative p-4 rounded-2xl text-left transition-all active:scale-95 ${type === opt.id ? "bg-white shadow-md border border-emerald-200/60" : "hover:bg-white/50"}`}
                     >
                       {type === opt.id && <div className="absolute inset-0 rounded-2xl ring-2 ring-amber-500" />}
                       <div className="flex items-center gap-3">
@@ -749,7 +749,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                           key={slot.time}
                           disabled={!slot.available}
                           onClick={() => setSelectedSlot(slot.time)}
-                          className={`relative p-3.5 rounded-xl border-2 text-sm font-bold transition-all ${
+                          className={`relative p-3.5 rounded-xl border-2 text-sm font-bold transition-all active:scale-95 ${
                             !slot.available
                               ? "bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed line-through font-normal"
                               : selectedSlot === slot.time
@@ -766,7 +766,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                     <button
                       disabled={!selectedSlot}
                       onClick={() => setStep(2)}
-                      className="mt-8 w-full py-4 rounded-xl bg-slate-900 text-white font-bold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-emerald-900 hover:-translate-y-0.5 transition-all shadow-lg"
+                      className="shimmer-btn mt-8 w-full py-4 rounded-xl bg-slate-900 text-white font-bold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-emerald-900 hover:-translate-y-0.5 active:scale-95 transition-all shadow-lg"
                     >
                       Continue — {selectedSlot ? slots.find(s => s.time === selectedSlot)?.label : "Select time"}
                     </button>
@@ -798,7 +798,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                     <button
                       onClick={handleBook}
                       disabled={!form.name || !form.phone || (type === "home" && !form.address) || booked}
-                      className="mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold disabled:opacity-40 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5"
+                      className="shimmer-btn mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold disabled:opacity-40 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 active:scale-95"
                     >
                       {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "home" ? "Home Visit" : "Video Call"} — ${type === "home" ? "PKR 1500 (1st free)" : "PKR 500 (1st free)"}`}
                     </button>
@@ -842,7 +842,7 @@ function Reviews() {
           {reviews.map((r, i) => (
             <div key={i} className="group relative" style={{ animationDelay: `${i * 100}ms` }}>
               <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-500/0 via-amber-500/25 to-emerald-500/0 rounded-[1.75rem] opacity-0 group-hover:opacity-100 blur-xl transition-all" />
-              <div className="relative bg-[#faf9f7] border border-emerald-100 rounded-[1.75rem] p-7 hover:-translate-y-1 hover:shadow-xl hover:border-emerald-200 transition-all">
+              <div className="relative bg-[#faf9f7] border border-emerald-100 rounded-[1.75rem] p-7 transition-all sheen-card card-hover-lift">
                 <div className="flex gap-1 mb-4">
                   {[...Array(r.rating)].map((_,i) => <span key={i} className="text-amber-500">★</span>)}
                 </div>
@@ -859,11 +859,11 @@ function Reviews() {
           ))}
         </div>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white border border-emerald-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-emerald-300 transition-all flex items-center gap-2 shadow-sm">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white border border-emerald-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 hover:border-emerald-300 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-sm">
             <span>Read more Google Reviews</span>
             <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all flex items-center gap-2 shadow-lg shadow-amber-500/25">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="shimmer-btn px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl hover:from-amber-600 hover:to-amber-700 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-amber-500/25">
             <span>⭐ Leave a Review</span>
           </a>
         </div>
@@ -878,7 +878,7 @@ function About() {
       <div className="max-w-7xl mx-auto px-5">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-emerald-200/50 rounded-[3rem] blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-emerald-200/50 rounded-[3rem] blur-2xl animate-pulse-glow" />
             <img src="https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&w=800&h=900&fit=crop" alt="Dr Rehman" className="relative w-full h-[520px] object-cover rounded-[2.5rem] shadow-2xl" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-2xl p-5 shadow-xl border border-emerald-100">
               <div className="flex items-center gap-4">
@@ -910,7 +910,7 @@ function About() {
                 { k: "All Lahore", v: "Service coverage" },
                 { k: "24/7", v: "Emergency support" },
               ].map(s => (
-                <div key={s.v} className="p-4 rounded-2xl bg-white border border-emerald-100/80 shadow-sm">
+                <div key={s.v} className="p-4 rounded-2xl bg-white border border-emerald-100/80 shadow-sm sheen-card card-hover-lift">
                   <div className="text-2xl font-black text-slate-900">{s.k}</div>
                   <div className="text-sm text-emerald-700 font-semibold">{s.v}</div>
                 </div>
@@ -928,21 +928,21 @@ function CTA() {
     <section className="py-16">
       <div className="max-w-6xl mx-auto px-5">
         <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 p-[1px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-emerald-500 to-amber-500 opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500 via-emerald-500 to-amber-500 opacity-60 animate-gradient-flow" />
           <div className="relative bg-slate-950 rounded-[2.5rem] px-8 py-14 md:px-14 md:py-16 text-center">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-xs font-extrabold text-amber-400 uppercase tracking-wider mb-5">Available now</div>
             <h3 className="text-[clamp(28px,4vw,44px)] font-extrabold text-white leading-tight">Worried about your pet right now?</h3>
             <p className="mt-3 text-slate-300 text-lg max-w-2xl mx-auto">Start a video call in 2 minutes, or book a home visit for today. I'm on call across Lahore.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="#book" className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 rounded-2xl font-black shadow-lg shadow-amber-500/25 hover:-translate-y-0.5 transition-all">Book Online</a>
-              <a href="tel:+923114899904" className="px-8 py-4 bg-white/10 backdrop-blur border border-white/20 text-white rounded-2xl font-bold hover:bg-white/15 transition-all flex items-center justify-center gap-2">
+              <a href="#book" className="shimmer-btn px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 rounded-2xl font-black shadow-lg shadow-amber-500/25 hover:-translate-y-0.5 hover:scale-105 active:scale-95 transition-all">Book Online</a>
+              <a href="tel:+923114899904" className="px-8 py-4 bg-white/10 backdrop-blur border border-white/20 text-white rounded-2xl font-bold hover:bg-white/15 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
                 <svg className="w-4 h-4 text-amber-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z" />
                 </svg>
                 <span>Call: +92 311 4899904</span>
               </a>
-              <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet." target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/25 hover:-translate-y-0.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+              <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Rehman,%20I%20need%20a%20consultation%20for%20my%20pet." target="_blank" rel="noopener noreferrer" className="shimmer-btn px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/25 hover:-translate-y-0.5 hover:scale-105 active:scale-95">
+                <span className="w-2.5 h-2.5 rounded-full bg-white animate-radar" />
                 <span>WhatsApp (24/7)</span>
               </a>
             </div>
