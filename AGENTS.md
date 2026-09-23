@@ -28,6 +28,8 @@
 3. **CURRENCY & LOCAL FOCUS:**
    - All store prices must be displayed in **PKR (Rs.)**.
    - Lahore is the primary delivery hub with 16 dedicated neighborhood delivery sectors.
+4. **FOOTER & HEADER DESKTOP LAYOUT:**
+   - Desktop views for headers and footers should keep navigation columns in a single, well-aligned row rather than breaking into multiple rows unless strictly necessary for mobile responsiveness.
 
 ---
 
