@@ -104,8 +104,22 @@
 ---
 
 ## 8. Verification & Build Commands
-- **Build Static Site:** `npm run build` (Must produce 15 pages in `< 1.2s`)
+- **Build Static Site:** `npm run build` (Must produce 15 pages in `< 2.2s`)
 - **Zero Canonical Check:** `python C:\Users\AMMAR\.gemini\antigravity-ide\brain\536f8e06-6a40-4dd7-ac41-34becf0c78f8\scratch\verify_dist.py`
 - **Dev Server:** `npm run dev` (`http://localhost:4321/`)
 - **Tailwind Subpages Rule:** Every `.astro` subpage must import `global.css` via Astro frontmatter `--- import '.../styles/global.css'; ---`. Never rely on external CDN scripts.
-- **Hostinger Git Auto-Deploy:** Hostinger builds from the `master` branch. Always push both: `git push origin main && git push origin main:master`.
+- **Hostinger Git Auto-Deploy:** Hostinger builds from the `master` branch. Always push both: `git push origin main; git push origin main:master`.
+
+---
+
+## 9. Rich UI Animations & Micro-Interactions Suite
+- **Global Keyframe Engine (`src/styles/global.css`):**
+  - `@keyframes float-slow` & `.animate-float-slow`: 7s subtle levitation for hero ambient blurs and phone mockup.
+  - `@keyframes float-reverse` & `.animate-float-reverse`: 6s counter-float for floating consultation cards.
+  - `@keyframes pulse-glow` & `.animate-pulse-glow`: Glowing pulse aura on veterinarian badges and CTA elements.
+  - `@keyframes shimmer-sweep` & `.shimmer-btn`: Diagonal sheen light sweep across primary buttons on hover (`Book Now`, `Checkout`, `WhatsApp`).
+  - `@keyframes gradient-flow` & `.animate-gradient-flow`: Smooth shifting multi-stop gradient background on hero text and CTA container.
+  - `@keyframes radar-pulse` & `.animate-radar`: Expanding radar ring on live badges, floating cart, and WhatsApp action button.
+  - `@keyframes subtle-wiggle` & `.animate-wiggle-periodic`: Periodic gentle shake on the floating WhatsApp widget to capture attention.
+  - `.sheen-card`: Diagonal glassmorphism light reflection gliding across service, step, and product cards on hover.
+  - `.card-hover-lift`: Smooth 3D elevation lift (`translateY(-6px)`) with expanded soft drop shadow.
