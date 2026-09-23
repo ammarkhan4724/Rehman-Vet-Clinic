@@ -107,3 +107,5 @@
 - **Build Static Site:** `npm run build` (Must produce 15 pages in `< 1.2s`)
 - **Zero Canonical Check:** `python C:\Users\AMMAR\.gemini\antigravity-ide\brain\536f8e06-6a40-4dd7-ac41-34becf0c78f8\scratch\verify_dist.py`
 - **Dev Server:** `npm run dev` (`http://localhost:4321/`)
+- **Tailwind Subpages Rule:** Every `.astro` subpage must import `global.css` via Astro frontmatter `--- import '.../styles/global.css'; ---`. Never rely on external CDN scripts.
+- **Hostinger Git Auto-Deploy:** Hostinger builds from the `master` branch. Always push both: `git push origin main && git push origin main:master`.
