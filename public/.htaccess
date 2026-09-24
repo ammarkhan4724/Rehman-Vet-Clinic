@@ -19,9 +19,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Force non-www to fix GSC duplicate issue
+  # Force HTTPS and non-www
+  RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\.rehmanvetclinic\.com [NC]
   RewriteRule ^(.*)$ https://rehmanvetclinic.com/$1 [L,R=301]
+
+  # Redirect malformed /& URLs to home page
+  RewriteRule ^&$ / [L,R=301]
+
 
   # Redirect .html to non-.html to enforce a single canonical URL structure
   RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
