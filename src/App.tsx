@@ -808,6 +808,19 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                     <button onClick={() => setStep(1)} className="mb-4 text-sm font-medium text-emerald-800 hover:text-emerald-950 flex items-center gap-1">
                       ← Back to times
                     </button>
+                    
+                    {type === "home" && (
+                      <div className="mb-6 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900 space-y-2">
+                        <div className="font-bold flex items-center gap-2"><span>💡</span> Please Note:</div>
+                        <ul className="space-y-1 ml-6 list-disc text-[13px]">
+                          <li><strong>Clinic Location:</strong> 124-D Zanjani Rd, Block O Gulberg 2, Lahore.</li>
+                          <li><strong>Visiting Timings:</strong> 12 PM to 9 PM just.</li>
+                          <li><strong>Promotional Offers:</strong> 1st video call FREE for the 1st 50 customers. 1st 20 customers who visit our clinic from the website get a FREE consultation.</li>
+                          <li><strong>Pricing:</strong> Standard clinic visit price is Rs. 2,000. This covers the visit charges only; medication charges are separate and not free.</li>
+                        </ul>
+                      </div>
+                    )}
+
                     <h3 className="text-xl font-bold text-slate-900 mb-1">Your details</h3>
                     <p className="text-sm text-slate-600 mb-6">
                       {type === "clinic" ? "Clinic Visit" : type === "home" ? "Home visit" : "Video call"} • {new Date(date + "T12:00:00").toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at {slots.find(s => s.time === selectedSlot)?.label}
@@ -830,7 +843,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                       disabled={!form.name || !form.phone || (type === "home" && !form.address) || booked}
                       className="shimmer-btn mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold disabled:opacity-40 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 active:scale-95"
                     >
-                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "clinic" ? "Clinic Visit" : type === "home" ? "Home Visit" : "Video Call"} — ${type === "clinic" ? "PKR 2,000 (1st 20 free)" : type === "home" ? "PKR 3,500" : "PKR 500 (1st 50 free)"}`}
+                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "clinic" ? "Clinic Visit" : type === "home" ? "Home Visit" : "Video Call"} — ${type === "clinic" ? "PKR 2,000 (1st 20 free)" : type === "home" ? "PKR 2,000" : "PKR 500 (1st 50 free)"}`}
                     </button>
                     <p className="mt-3 text-xs text-center text-slate-500">You'll get SMS confirmation instantly. Pay after visit.</p>
                   </div>
