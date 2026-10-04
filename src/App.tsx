@@ -803,7 +803,6 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                       ← Back to times
                     </button>
                     
-                    {type === "home" && (
                       <div className="mb-6 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900 space-y-2">
                         <div className="font-bold flex items-center gap-2"><span>💡</span> Please Note:</div>
                         <ul className="space-y-1 ml-6 list-disc text-[13px]">
@@ -813,7 +812,6 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                           <li><strong>Pricing:</strong> Standard clinic visit price is Rs. 2,000. This covers the visit charges only; medication charges are separate and not free.</li>
                         </ul>
                       </div>
-                    )}
 
                     <h3 className="text-xl font-bold text-slate-900 mb-1">Your details</h3>
                     <p className="text-sm text-slate-600 mb-6">
