@@ -32,7 +32,7 @@ function getLocalDate(): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 }
 
-function generateSlots(date: string, type: "home" | "video") {
+function generateSlots(date: string, type: "home" | "video" | "clinic") {
   // Append T12:00:00 so Date parses as LOCAL noon (not UTC midnight)
   // This prevents day-of-week bugs across timezones
   const d = new Date(date + "T12:00:00");
@@ -62,24 +62,23 @@ function generateSlots(date: string, type: "home" | "video") {
     }));
   }
 
-  // Home visits: 8am–7pm, fewer on weekends
+  // Clinic and Home visits: 12 PM to 9 PM
   const baseSlots = [
-    { time: "08:00", label: "8:00 AM" },
-    { time: "09:30", label: "9:30 AM" },
-    { time: "11:00", label: "11:00 AM" },
-    { time: "12:30", label: "12:30 PM" },
-    { time: "14:00", label: "2:00 PM" },
-    { time: "15:30", label: "3:30 PM" },
-    { time: "17:00", label: "5:00 PM" },
-    { time: "18:30", label: "6:30 PM" },
+    { time: "12:00", label: "12:00 PM" },
+    { time: "13:30", label: "1:30 PM" },
+    { time: "15:00", label: "3:00 PM" },
+    { time: "16:30", label: "4:30 PM" },
+    { time: "18:00", label: "6:00 PM" },
+    { time: "19:30", label: "7:30 PM" },
+    { time: "21:00", label: "9:00 PM" },
   ];
 
   return baseSlots.map(s => ({
     ...s,
     // Weekdays ~65% free, weekends ~40% free (deterministic)
     available: isWeekend
-      ? seededRandom(`home-${date}-${s.time}`) > 0.6
-      : seededRandom(`home-${date}-${s.time}`) > 0.35,
+      ? seededRandom(`${type}-${date}-${s.time}`) > 0.6
+      : seededRandom(`${type}-${date}-${s.time}`) > 0.35,
   }));
 }
 
@@ -424,12 +423,12 @@ function HowItWorks() {
 
 function Services() {
   const services = [
-    { icon: "🏠", title: "Home Visit Exam", price: "PKR 1500 (1st free)", desc: "Full physical exam at your home. Vaccines, blood draw, nail trim.", tag: "Most booked" },
-    { icon: "📹", title: "24/7 Video Consult", price: "PKR 500 (1st free)", desc: "Instant video for vomiting, limping, skin, behavior. 10 min.", tag: "Instant" },
-    { icon: "💉", title: "Vaccines at Home", price: "PKR 8,500", desc: "Core vaccines, no clinic stress. Certificate emailed.", tag: null },
-    { icon: "🩸", title: "Lab Work Mobile", price: "PKR 14,000", desc: "Blood, urine, cytology collected at home. Results in 24h.", tag: null },
-    { icon: "🐾", title: "Senior Pet Care", price: "PKR 15,000", desc: "Arthritis, kidney, thyroid management at home.", tag: null },
-    { icon: "🚨", title: "Urgent Home Visit", price: "PKR 19,000", desc: "Same-day priority for emergencies. Call first.", tag: "24/7" },
+    { icon: "🏥", title: "Clinic Visit Exam", price: "PKR 2,000 (1st 20 free)", desc: "Consultation at our clinic. Medication charges are separate.", tag: "Most booked" },
+    { icon: "📹", title: "24/7 Video Consult", price: "PKR 500 (1st 50 free)", desc: "Instant video for vomiting, limping, skin, behavior. 10 min.", tag: "Instant" },
+    { icon: "🏠", title: "Home Visit Exam", price: "PKR 3,500", desc: "Full physical exam at your home. Vaccines, blood draw, nail trim.", tag: null },
+    { icon: "💉", title: "Vaccines", price: "PKR 8,500", desc: "Core vaccines, no clinic stress. Certificate emailed.", tag: null },
+    { icon: "🩸", title: "Lab Work", price: "PKR 14,000", desc: "Blood, urine, cytology collected. Results in 24h.", tag: null },
+    { icon: "🚨", title: "Urgent Visit", price: "PKR 19,000", desc: "Same-day priority for emergencies. Call first.", tag: "24/7" },
   ];
 
   return (
@@ -571,7 +570,7 @@ function ShopPreview() {
 }
 
 function Booking() {
-  const [type, setType] = useState<"home" | "video">("home");
+  const [type, setType] = useState<"home" | "video" | "clinic">("clinic");
   const [date, setDate] = useState(getLocalDate());
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [step, setStep] = useState(1);
@@ -590,8 +589,8 @@ function Booking() {
     // --- Send Email via Web3Forms ---
     const formData = new FormData();
     formData.append("access_key", "04fada0c-09d8-4609-a37c-ebd774dad98d");
-    formData.append("subject", `New Appointment: ${form.name} (${type === "home" ? "Home Visit" : "Video Call"})`);
-    formData.append("Type", type === "home" ? "Home Visit" : "Video Call");
+    formData.append("subject", `New Appointment: ${form.name} (${type === "home" ? "Home Visit" : type === "clinic" ? "Clinic Visit" : "Video Call"})`);
+    formData.append("Type", type === "home" ? "Home Visit" : type === "clinic" ? "Clinic Visit" : "Video Call");
     formData.append("Date", date);
     formData.append("Time", slotLabel as string);
     formData.append("Name", form.name);
@@ -611,7 +610,7 @@ function Booking() {
 
     // --- WhatsApp Redirect (Kept as requested earlier) ---
     const message = `*New Appointment Request* 🐾
-*Type:* ${type === "home" ? "Home Visit" : "Video Call"}
+*Type:* ${type === "home" ? "Home Visit" : type === "clinic" ? "Clinic Visit" : "Video Call"}
 *Date:* ${date}
 *Time:* ${slotLabel}
 *Name:* ${form.name}
@@ -692,22 +691,23 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
             <div className="bg-white rounded-[2rem] shadow-2xl shadow-emerald-950/5 border border-emerald-100/80 overflow-hidden">
               {/* Type selector */}
               <div className="p-2 bg-emerald-50/40 border-b border-emerald-100">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   {[
+                    { id: "clinic", label: "Clinic Visit", icon: "🏥", desc: "Visit our clinic" },
                     { id: "home", label: "Home Visit", icon: "🏠", desc: "I come to you" },
                     { id: "video", label: "Video Call", icon: "📹", desc: "24/7 instant" },
                   ].map(opt => (
                     <button
                       key={opt.id}
                       onClick={() => { setType(opt.id as any); setSelectedSlot(null); setStep(1); }}
-                      className={`relative p-4 rounded-2xl text-left transition-all active:scale-95 ${type === opt.id ? "bg-white shadow-md border border-emerald-200/60" : "hover:bg-white/50"}`}
+                      className={`relative p-2 md:p-4 rounded-2xl text-left transition-all active:scale-95 ${type === opt.id ? "bg-white shadow-md border border-emerald-200/60" : "hover:bg-white/50"}`}
                     >
                       {type === opt.id && <div className="absolute inset-0 rounded-2xl ring-2 ring-amber-500" />}
-                      <div className="flex items-center gap-3">
-                        <div className="text-2xl">{opt.icon}</div>
+                      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+                        <div className="text-xl md:text-2xl">{opt.icon}</div>
                         <div>
-                          <div className="font-bold text-slate-900">{opt.label}</div>
-                          <div className="text-xs text-slate-500">{opt.desc}</div>
+                          <div className="font-bold text-[13px] md:text-base text-slate-900">{opt.label}</div>
+                          <div className="text-[10px] md:text-xs text-slate-500">{opt.desc}</div>
                         </div>
                       </div>
                     </button>
@@ -736,10 +736,10 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                       className="w-full px-4 py-3 rounded-xl border border-emerald-200/80 bg-emerald-50/30 focus:bg-white focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 outline-none font-medium mb-4"
                     />
 
-                    {type === "home" && [0, 6].includes(new Date(date + "T12:00:00").getDay()) && (
+                    {type !== "video" && [0, 6].includes(new Date(date + "T12:00:00").getDay()) && (
                       <div className="mb-4 flex items-center gap-2 px-3 py-2 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900">
                         <span>💡</span>
-                        <span>Fewer home-visit slots on weekends. Try <button onClick={() => setType("video")} className="font-bold underline text-amber-700">video call</button> for more availability.</span>
+                        <span>Fewer in-person slots on weekends. Try <button onClick={() => setType("video")} className="font-bold underline text-amber-700">video call</button> for more availability.</span>
                       </div>
                     )}
 
@@ -780,7 +780,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                     </button>
                     <h3 className="text-xl font-bold text-slate-900 mb-1">Your details</h3>
                     <p className="text-sm text-slate-600 mb-6">
-                      {type === "home" ? "Home visit" : "Video call"} • {new Date(date + "T12:00:00").toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at {slots.find(s => s.time === selectedSlot)?.label}
+                      {type === "clinic" ? "Clinic Visit" : type === "home" ? "Home visit" : "Video call"} • {new Date(date + "T12:00:00").toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at {slots.find(s => s.time === selectedSlot)?.label}
                     </p>
 
                     <div className="space-y-4">
@@ -800,7 +800,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                       disabled={!form.name || !form.phone || (type === "home" && !form.address) || booked}
                       className="shimmer-btn mt-6 w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold disabled:opacity-40 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl hover:shadow-amber-500/35 hover:-translate-y-0.5 active:scale-95"
                     >
-                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "home" ? "Home Visit" : "Video Call"} — ${type === "home" ? "PKR 1500 (1st free)" : "PKR 500 (1st free)"}`}
+                      {booked ? "✓ Booked! Confirmation sent" : `Confirm ${type === "clinic" ? "Clinic Visit" : type === "home" ? "Home Visit" : "Video Call"} — ${type === "clinic" ? "PKR 2,000 (1st 20 free)" : type === "home" ? "PKR 3,500" : "PKR 500 (1st 50 free)"}`}
                     </button>
                     <p className="mt-3 text-xs text-center text-slate-500">You'll get SMS confirmation instantly. Pay after visit.</p>
                   </div>
@@ -1024,6 +1024,13 @@ function Footer() {
                 </a>
               </div>
               <div>
+                <span className="block text-[11px] font-semibold text-slate-500 mt-2">Clinic Location (12 PM - 9 PM):</span>
+                <a href="https://www.google.com/maps/dir/31.5474718,74.2751517/Rehman+Veterinary+Clinic,+124-D+Zanjani+Rd,+near+Zahoor+Elahi+Road,+Block+O+Gulberg+2,+Lahore,+54660,+Pakistan/@31.5386331,74.2677338,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3919052a2486c3b1:0xeb1352f830013652!2m2!1d74.3421795!2d31.5230616?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-emerald-400 transition-colors text-xs flex flex-col mt-1">
+                  Rehman Veterinary Clinic, 124-D Zanjani Rd, near Zahoor Elahi Road, Block O Gulberg 2, Lahore, 54660, Pakistan
+                  <span className="text-amber-400 mt-1 inline-block">🗺️ Get Directions</span>
+                </a>
+              </div>
+              <div className="pt-2">
                 <ul className="space-y-1.5 text-slate-400">
                   <li><a href="/services/emergency-veterinary-care" className="hover:text-emerald-400 transition">24/7 Emergency Care</a></li>
                   <li><a href="/services/pet-vaccination-center" className="hover:text-emerald-400 transition">Pet Vaccination Center</a></li>
@@ -1037,10 +1044,14 @@ function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.</div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a href="/about-us" className="hover:text-emerald-400 transition-colors">About Us</a>
             <a href="/privacy-policy" className="hover:text-emerald-400 transition-colors">Privacy Policy</a>
             <a href="/terms-and-conditions" className="hover:text-emerald-400 transition-colors">Terms of Service</a>
-            <span className="inline-flex items-center gap-1.5 text-emerald-500 font-semibold">
+            <a href="/refund-policy" className="hover:text-emerald-400 transition-colors">Refund Policy</a>
+            <a href="/disclaimer" className="hover:text-emerald-400 transition-colors">Disclaimer</a>
+            <a href="/cookie-policy" className="hover:text-emerald-400 transition-colors">Cookie Policy</a>
+            <span className="inline-flex items-center gap-1.5 text-emerald-500 font-semibold w-full sm:w-auto justify-center mt-2 sm:mt-0">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Serving All Lahore Neighborhoods 24/7
             </span>
