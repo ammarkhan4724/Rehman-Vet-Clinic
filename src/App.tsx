@@ -806,7 +806,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                       <div className="mb-6 px-4 py-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900 space-y-2">
                         <div className="font-bold flex items-center gap-2"><span>💡</span> Please Note:</div>
                         <ul className="space-y-1 ml-6 list-disc text-[13px]">
-                          <li><strong>Clinic Location:</strong> 124-D Zanjani Rd, Block O Gulberg 2, Lahore.</li>
+                          <li><strong>Clinic Location:</strong> <a href="https://www.google.com/maps/dir/31.5474718,74.2751517/Rehman+Veterinary+Clinic,+124-D+Zanjani+Rd,+near+Zahoor+Elahi+Road,+Block+O+Gulberg+2,+Lahore,+54660,+Pakistan/@31.5386331,74.2677338,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3919052a2486c3b1:0xeb1352f830013652!2m2!1d74.3421795!2d31.5230616?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-700">124-D Zanjani Rd, Block O Gulberg 2, Lahore.</a></li>
                           <li><strong>Visiting Timings:</strong> 12 PM to 9 PM just.</li>
                           <li><strong>Promotional Offers:</strong> 1st video call FREE for the 1st 50 customers. 1st 20 customers who visit our clinic from the website get a FREE consultation.</li>
                           <li><strong>Pricing:</strong> Standard clinic visit price is Rs. 2,000. This covers the visit charges only; medication charges are separate and not free.</li>
