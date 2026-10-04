@@ -654,14 +654,8 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                 See my real availability. Book instantly.
               </h2>
               <div className="mt-6 space-y-3 text-[15px] text-slate-700 bg-emerald-50/70 p-5 rounded-2xl border border-emerald-100/60 leading-relaxed">
-                <p>📍 <strong>Clinic Location:</strong> 124-D Zanjani Rd, Block O Gulberg 2, Lahore.</p>
-                <p>🕒 <strong>Visiting Timings:</strong> 12 PM to 9 PM just.</p>
-                <p>🎁 <strong>Promotional Offers:</strong></p>
-                <ul className="list-disc ml-5 space-y-1">
-                  <li><strong>1st video call FREE</strong> for the 1st 50 customers.</li>
-                  <li><strong>1st 20 customers</strong> who visit our clinic from the website get a <strong>FREE consultation</strong>.</li>
-                </ul>
-                <p>💰 <strong>Pricing:</strong> Standard clinic visit price is Rs. 2,000. This covers the visit charges only; medication charges are separate and not free.</p>
+                <p><strong>Mobile Veterinary Services & Clinic Diagnostics</strong></p>
+                <p>Welcome to Rehman Veterinary Clinic, offering 24/7 care. Book a time slot to see Dr. Saif's real-time availability for video consultations, home visits, or in-clinic diagnostics.</p>
 
                 <div className="mt-5 rounded-2xl overflow-hidden border border-emerald-100 shadow-sm">
                   <iframe 
