@@ -662,6 +662,19 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
                   <li><strong>1st 20 customers</strong> who visit our clinic from the website get a <strong>FREE consultation</strong>.</li>
                 </ul>
                 <p>💰 <strong>Pricing:</strong> Standard clinic visit price is Rs. 2,000. This covers the visit charges only; medication charges are separate and not free.</p>
+
+                <div className="mt-5 rounded-2xl overflow-hidden border border-emerald-100 shadow-sm">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13606.313886576757!2d74.33129532551406!3d31.523363065463777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919052a2486c3b1%3A0xeb1352f830013652!2sRehman%20Veterinary%20Clinic!5e0!3m2!1sen!2s!4v1714578165154!5m2!1sen!2s" 
+                    width="100%" 
+                    height="200" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={false} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+
               </div>
 
               <div className="mt-8 space-y-3">

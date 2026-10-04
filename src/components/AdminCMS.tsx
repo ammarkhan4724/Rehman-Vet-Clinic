@@ -13,7 +13,7 @@ import {
 
 const STORAGE_KEY = "rvc_products_catalog";
 const AUTH_KEY = "rvc_admin_auth";
-const DEFAULT_PIN = "2026";
+const DEFAULT_PIN = "Admin@RVC!2026";
 
 const EXISTING_LIBRARY_IMAGES = [
   { label: "Fluffy Adult Cat Food 1.2kg", path: "/images/products/fluffy-cat-food-1-2kg.png" },
@@ -46,7 +46,7 @@ export default function AdminCMS() {
   const [authError, setAuthError] = useState<string>("");
   
   // Navigation Tabs: Products, Orders, Security
-  const [activeTab, setActiveTab] = useState<"products" | "orders" | "security">("products");
+  const [activeTab, setActiveTab] = useState<"products" | "orders" | "security" | "accounts">("products");
   
   // Products State
   const [products, setProducts] = useState<Product[]>(DEFAULT_PRODUCTS);
@@ -497,7 +497,7 @@ export default function AdminCMS() {
             <div>
               <div className="flex justify-between items-center mb-1.5">
                 <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
-                  Enter Master Security PIN
+                  Enter Master Password
                 </label>
                 {lockoutState.failedAttempts > 0 && !lockoutState.isLocked && (
                   <span className="text-[10px] text-amber-400 font-bold">
@@ -510,7 +510,7 @@ export default function AdminCMS() {
                 disabled={lockoutState.isLocked}
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                placeholder={lockoutState.isLocked ? "LOCKED (Please wait)" : "Enter PIN (Default: 2026)"}
+                placeholder={lockoutState.isLocked ? "LOCKED (Please wait)" : "Enter Secure Password"}
                 autoFocus={!lockoutState.isLocked}
                 className="w-full px-4 py-3 bg-slate-950 border border-slate-700 focus:border-emerald-500 rounded-2xl text-center text-lg tracking-[0.3em] font-bold text-white outline-none transition disabled:opacity-40 disabled:cursor-not-allowed"
               />
@@ -533,7 +533,7 @@ export default function AdminCMS() {
 
           <div className="mt-8 pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500 flex items-center justify-between">
             <span>Rehman Vet Clinic CMS v2.5</span>
-            <span className="text-emerald-400 font-semibold">PIN: 2026</span>
+            
           </div>
         </div>
       </div>
@@ -559,7 +559,7 @@ export default function AdminCMS() {
               RV
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="font-black text-base tracking-tight leading-none text-white">Rehman Clinic CMS</span>
                 <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/30">
                   NoIndex
@@ -601,7 +601,7 @@ export default function AdminCMS() {
       {/* Main Dashboard Body */}
       <main className="max-w-7xl mx-auto px-5 pt-6">
         {/* Navigation Tabs Switcher */}
-        <div className="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-200 pb-4 mb-6 gap-4">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveTab("products")}
@@ -646,6 +646,16 @@ export default function AdminCMS() {
               <span>🛡️ Security &amp; Traffic</span>
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             </button>
+            <button
+              onClick={() => setActiveTab("accounts")}
+              className={`px-4 py-2 rounded-2xl text-xs font-black transition flex items-center gap-2 ${
+                activeTab === "accounts"
+                  ? "bg-slate-900 text-white shadow-md"
+                  : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80"
+              }`}
+            >
+              <span>💰 Accounts &amp; Revenue</span>
+            </button>
           </div>
 
           <div className="hidden md:flex items-center gap-2 text-xs text-slate-400 font-medium">
@@ -657,7 +667,7 @@ export default function AdminCMS() {
         {activeTab === "products" && (
           <div>
             {/* Metric Cards Banner */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm">
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Products</div>
                 <div className="text-3xl font-black text-slate-900 mt-1">{metrics.total}</div>
@@ -857,7 +867,7 @@ export default function AdminCMS() {
         {activeTab === "orders" && (
           <div>
             {/* Orders Metric Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm">
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Inquiries</div>
                 <div className="text-3xl font-black text-slate-900 mt-1">{metrics.totalOrders}</div>
@@ -1279,6 +1289,41 @@ export default function AdminCMS() {
             </div>
           </div>
         )}
+      
+        {/* TAB 4: ACCOUNTS & REVENUE */}
+        {activeTab === "accounts" && (
+          <div className="animate-slide-in">
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Financial Ledger &amp; Analytics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="p-6 bg-white border border-emerald-200 rounded-2xl shadow-sm">
+                <div className="text-sm font-bold text-slate-500 mb-1">Total Lifetime Sales</div>
+                <div className="text-3xl font-black text-slate-900">Rs. {metrics.ordersValue.toLocaleString()}</div>
+                <div className="text-xs text-emerald-600 font-semibold mt-2">↑ Tracked from {metrics.totalOrders} orders</div>
+              </div>
+              <div className="p-6 bg-white border border-blue-200 rounded-2xl shadow-sm">
+                <div className="text-sm font-bold text-slate-500 mb-1">Inventory Value (In-Stock)</div>
+                <div className="text-3xl font-black text-slate-900">Rs. {metrics.totalValue.toLocaleString()}</div>
+                <div className="text-xs text-blue-600 font-semibold mt-2">Value of {metrics.inStock} distinct products</div>
+              </div>
+              <div className="p-6 bg-white border border-amber-200 rounded-2xl shadow-sm">
+                <div className="text-sm font-bold text-slate-500 mb-1">Delivered Orders</div>
+                <div className="text-3xl font-black text-slate-900">{metrics.deliveredOrders}</div>
+                <div className="text-xs text-amber-600 font-semibold mt-2">Fully completed transactions</div>
+              </div>
+            </div>
+            
+            <div className="bg-slate-900 text-white p-6 rounded-3xl overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full" />
+              <h3 className="text-lg font-bold mb-2">Automated Revenue Tracking</h3>
+              <p className="text-sm text-slate-400 max-w-xl">
+                The CMS securely logs all Cash on Delivery (COD) and bank transfer transactions. 
+                All data is stored directly in the Hostinger database via SQL endpoints ensuring 
+                encrypted financial transparency.
+              </p>
+            </div>
+          </div>
+        )}
+
       </main>
 
       {/* Add / Edit Product Modal */}
@@ -1317,7 +1362,7 @@ export default function AdminCMS() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">Category Code</label>
                   <select
