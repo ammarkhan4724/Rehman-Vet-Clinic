@@ -58,6 +58,9 @@ const faqSchema = {
     }
   ]
 };
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 ---
 
 <!doctype html>
@@ -108,42 +111,8 @@ const faqSchema = {
   <body class="bg-[#faf9f7] text-slate-800 antialiased min-h-screen flex flex-col justify-between" style="font-family: 'Outfit', system-ui, sans-serif;">
     <div>
       {/* Header */}
-      <header class="fixed top-0 w-full z-50 py-3 bg-white/90 backdrop-blur-xl border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
-          <a href="/" class="flex items-center gap-3 group">
-            <div class="relative w-10 h-10 rounded-2xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 border border-emerald-500/40 grid place-items-center shadow-md">
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 4V28M4 16H28" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round" opacity="0.3"/>
-                <path d="M6 16.5H10L12.5 10.5L15.5 21.5L18 12.5L19.5 16.5H26" stroke="#F59E0B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="16" cy="7.5" r="1.8" fill="#F59E0B" />
-                <circle cx="12.5" cy="8.5" r="1.3" fill="#10B981" />
-                <circle cx="19.5" cy="8.5" r="1.3" fill="#10B981" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-black text-lg leading-none tracking-tight text-slate-900 group-hover:text-emerald-800 transition">Rehman</div>
-              <div class="text-[9px] font-extrabold text-emerald-600 tracking-[0.2em] uppercase mt-0.5">VETERINARY</div>
-            </div>
-          </a>
-
-          <nav class="hidden lg:flex items-center gap-1 bg-emerald-50/80 border border-emerald-100/60 rounded-full p-1 text-xs font-semibold text-slate-700">
-            <a href="/" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Home</a>
-            <a href="/shop" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Pet Shop</a>
-            <a href="/services/emergency-veterinary-care" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Emergency 24/7</a>
-            <a href="/blog/kmr-kitten-milk-replacer-feeding-guide-pakistan" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Kitten Milk</a>
-            <a href="/blog/cat-deworming-tablet-schedule-dosage-pakistan" class="px-3.5 py-1.5 hover:text-emerald-800 hover:bg-white rounded-full transition">Deworming</a>
-          </nav>
-
-          <div class="flex items-center gap-2">
-            <a href="tel:+923114899904" class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-sm">
-              <span>+92 311 4899904</span>
-            </a>
-            <a href="https://wa.me/923114899904?text=Hello%20Dr.%20Saif,%20I%20want%20to%20order%20cat%20food%20in%20Lahore." target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition shadow-sm">
-              <span>Order on WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
+        <Breadcrumbs path="blog/best-cat-food-brands-prices-pakistan" />
 
       {/* Main Container */}
       <main class="pt-28 pb-16 max-w-4xl mx-auto px-5">
@@ -365,11 +334,7 @@ const faqSchema = {
       </main>
 
       {/* Footer */}
-      <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-5 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   </body>
 </html>

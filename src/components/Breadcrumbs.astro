@@ -1,0 +1,24 @@
+---
+const { path } = Astro.props;
+// path looks like "blog/parvovirus-treatment-cost-survival-pakistan"
+let parts = path ? path.split('/').filter(Boolean) : [];
+let currentPath = '';
+const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ');
+---
+<nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-5 pt-24 pb-4 text-xs text-slate-500 flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+  <a href="/" class="hover:text-emerald-700 transition font-medium">Home</a>
+  {parts.map((part, index) => {
+    currentPath += '/' + part;
+    const isLast = index === parts.length - 1;
+    return (
+      <>
+        <span class="text-slate-300">/</span>
+        {isLast ? (
+          <span class="text-slate-800 font-semibold truncate max-w-[200px] sm:max-w-none">{capitalize(part)}</span>
+        ) : (
+          <a href={currentPath} class="hover:text-emerald-700 transition font-medium capitalize">{part.replace(/-/g, ' ')}</a>
+        )}
+      </>
+    );
+  })}
+</nav>
