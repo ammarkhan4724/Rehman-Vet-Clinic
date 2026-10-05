@@ -9,7 +9,7 @@
 ---
 
 ## 1. Core Architecture & Stack
-- **Framework:** Astro v7 (SSG static build, 15 compiled HTML routes)
+- **Framework:** Astro v7 (SSG static build, 19 compiled HTML routes)
 - **Interactive Islands:** React 19 (`@astrojs/react`)
 - **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`)
 - **Database Engine:** Supabase (PostgreSQL) via `@supabase/supabase-js` (`^2.117.0`)
@@ -106,7 +106,7 @@
 ---
 
 ## 8. Verification & Build Commands
-- **Build Static Site:** `npm run build` (Must produce 15 pages in `< 2.2s`)
+- **Build Static Site:** `npm run build` (Must produce 19 pages in `< 2.2s`)
 - **Zero Canonical Check:** `python C:\Users\AMMAR\.gemini\antigravity-ide\brain\536f8e06-6a40-4dd7-ac41-34becf0c78f8\scratch\verify_dist.py`
 - **Dev Server:** `npm run dev` (`http://localhost:4321/`)
 - **Tailwind Subpages Rule:** Every `.astro` subpage must import `global.css` via Astro frontmatter `--- import '.../styles/global.css'; ---`. Never rely on external CDN scripts.
