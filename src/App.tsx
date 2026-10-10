@@ -9,7 +9,7 @@ const NAV = [
   { label: "Vaccinations", href: "/services/pet-vaccination-center" },
   { label: "Home Visits", href: "/services/home-visit-veterinary" },
   { label: "DHA Lahore", href: "/locations/dha-lahore-veterinary-clinic" },
-  { label: "Blog", href: "/blog/parvovirus-treatment-cost-survival-pakistan" },
+  { label: "Blog", href: "/blog" },
   { label: "Reviews", href: "/#reviews" },
   { label: "About", href: "/#about" },
 ];
@@ -366,7 +366,7 @@ function Hero() {
             <div className="absolute bottom-20 -right-4 md:right-10 z-30 animate-float-slow" style={{ animationDelay: "1.5s" }}>
               <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100 sheen-card card-hover-lift cursor-pointer">
                 <div className="flex items-center gap-3">
-                  <img src="/images/dr-saif-examining-dog-grey.jpg" className="w-12 h-12 rounded-xl object-cover object-top" alt="Dr. Saif checking a dog's health for a home visit" />
+                  <img src="/images/dr_saif_treating_cat_1791603275758.jpg" className="w-12 h-12 rounded-xl object-cover object-top" alt="Dr. Saif checking a cat's health for a home visit" />
                   <div>
                     <div className="text-xs text-slate-500">Next home visit</div>
                     <div className="font-bold text-slate-900">Today, 4:30 PM</div>
@@ -694,7 +694,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
 
               <div className="mt-10 p-5 bg-white rounded-2xl border border-emerald-100 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <img src="/images/dr-saif-lion-cub.jpg" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover object-top" />
+                  <img src="/images/dr_saif_treating_dog_1791603289339.jpg" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover object-top" />
                   <div>
                     <div className="font-bold text-slate-900">Dr. Saif Ur Rehman, DVM</div>
                     <div className="text-sm text-slate-600">Mobile Vet • Lahore Practice • 9+ Yrs Exp</div>
