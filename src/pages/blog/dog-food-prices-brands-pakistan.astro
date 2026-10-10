@@ -1,0 +1,277 @@
+---
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Dog Food Prices & Best Brands in Pakistan (2026) — Woof, Nutragold & More",
+  "description": "Explore the ultimate 2026 guide to dog food in Pakistan. Compare prices, discover top local and imported brands like Woof and Nutragold, and learn how to choose the best nutrition for your canine companion.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Saif Ur Rehman, DVM",
+    "jobTitle": "Chief Veterinary Surgeon",
+    "affiliation": "Rehman Veterinary Clinic Lahore"
+  },
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Rehman Veterinary Clinic",
+    "url": "https://rehmanvetclinic.com"
+  },
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average dog food price in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The dog food price in Pakistan varies widely. Local economy brands cost around Rs. 1,500 to Rs. 3,500 per bag, while premium imported brands can range from Rs. 8,000 to Rs. 25,000+ depending on the size and formula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Woof dog food a good choice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Woof dog food is an excellent, highly accessible local brand in Pakistan. It offers balanced nutrition tailored to different breeds and is widely recommended by veterinarians for its affordability and quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I find dog food near me in Lahore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can easily find dog food near you by ordering directly from Rehman Veterinary Clinic's online pet pharmacy. We provide fast, reliable delivery across 16 major sectors in Lahore."
+      }
+    }
+  ]
+};
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RT8KMREC6"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7RT8KMREC6');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Food Prices & Brands in Pakistan (2026) — Woof, Nutragold</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Discover the best dog food brands in Pakistan. Compare prices for Woof, Nutragold, and other top choices. Find reliable 'dog food near me' with quick delivery." />
+    <meta name="keywords" content="dog food price in pakistan, woof dog food, dog food near me, nutragold dog food, best dog food brands" />
+    <meta name="author" content="Dr. Saif Ur Rehman, DVM" />
+    <meta name="geo.region" content="PK-PB" />
+    <meta name="geo.placename" content="Lahore" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dog Food Prices & Best Brands in Pakistan (2026)" />
+    <meta property="og:description" content="Explore top canine nutrition options in Pakistan, including Woof and Nutragold, with our comprehensive 2026 price guide." />
+    <meta property="og:site_name" content="Rehman Veterinary Clinic" />
+    <meta property="og:image" content="https://rehmanvetclinic.com/images/products/woof-dog-food-3kg.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Best Dog Food in Pakistan - 2026 Guide" />
+    <meta name="twitter:description" content="Get the latest updates on dog food prices in Pakistan. Find top brands like Woof and Nutragold delivered to your door." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body class="bg-[#faf9f7] text-slate-800 antialiased min-h-screen flex flex-col justify-between" style="font-family: 'Outfit', system-ui, sans-serif;">
+    <div>
+      {/* Header */}
+      <SiteHeader />
+        <Breadcrumbs path="blog/dog-food-prices-brands-pakistan" />
+
+      {/* Main Content */}
+      <main class="pt-28 pb-16 max-w-4xl mx-auto px-5">
+        {/* Breadcrumb */}
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
+          <a href="/" class="hover:text-emerald-700 transition">Home</a>
+          <span>/</span>
+          <a href="/shop?category=dog-supplies" class="hover:text-emerald-700 transition">Shop Guides</a>
+          <span>/</span>
+          <span class="text-slate-900">Dog Food Guide</span>
+        </div>
+
+        {/* Title & Metadata */}
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider mb-4 border border-orange-200">
+            Canine Nutrition
+          </div>
+          <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Dog Food Prices & Best Brands in Pakistan (2026): Woof, Nutragold & More
+          </h1>
+          <div class="flex items-center gap-4 mt-5 pt-4 border-t border-slate-200 text-xs text-slate-600">
+            <div><strong>Author:</strong> Dr. Saif Ur Rehman, DVM</div>
+            <div>•</div>
+            <div><strong>Category:</strong> Pet Nutrition</div>
+            <div>•</div>
+            <div><strong>Updated:</strong> October 2026</div>
+          </div>
+        </div>
+
+        {/* Call to Action Banner */}
+        <div class="bg-amber-50 border-2 border-amber-200 rounded-3xl p-6 mb-10 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div class="space-y-1">
+            <div class="font-black text-amber-900 text-base flex items-center gap-2">
+              <span>🚚</span>
+              <span>Looking for "dog food near me" with fast delivery?</span>
+            </div>
+            <p class="text-xs text-amber-800 leading-relaxed max-w-xl">
+              We deliver premium dog food right to your doorstep in Lahore. Ensure your dog gets the nutrition they deserve without leaving your home.
+            </p>
+          </div>
+          <a
+            href="/shop?category=dog-supplies"
+            class="px-5 py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-black uppercase tracking-wider whitespace-nowrap shadow-md transition hover:-translate-y-0.5"
+          >
+            Order Dog Food Now
+          </a>
+        </div>
+
+        {/* Article Body */}
+        <article class="prose prose-slate max-w-none space-y-8 text-sm md:text-base leading-relaxed text-slate-700">
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">1. Choosing the Right Dog Food in Pakistan</h2>
+            <p>
+              Proper nutrition is the foundation of a healthy, active, and long life for your dog. With a rapidly growing pet industry in Pakistan, owners now have access to a wide spectrum of canine diets, ranging from high-quality local kibbles to premium imported grain-free formulas.
+            </p>
+            <p class="mt-3">
+              The challenge lies in balancing nutritional value with your monthly budget, especially given fluctuating import costs. Whether you have a highly active German Shepherd or a small, indoor Shih Tzu, selecting the right brand ensures healthy joints, a shiny coat, and robust immunity.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">2. Top Local Choice: Woof Dog Food</h2>
+            <p>
+              In recent years, local brands have significantly improved their formulations. <strong>Woof dog food</strong> stands out as a highly reliable option for Pakistani pet owners.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc list-inside mt-3">
+              <li><strong>Formulated for Local Climates:</strong> Balances energy needs for dogs living in hot, humid conditions.</li>
+              <li><strong>Cost-Effective:</strong> Eliminates high import taxes, offering premium nutrition at an accessible price point.</li>
+              <li><strong>Readily Available:</strong> Easy to find, ensuring you never face sudden stock shortages.</li>
+              <li><strong>Veterinary Approved:</strong> Meets essential protein and fat requirements for adult maintenance.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">3. Premium Imported Option: Nutragold Dog Food</h2>
+            <p>
+              For owners looking for holistic, specialized diets, <strong>Nutragold dog food</strong> is a leading imported choice. Known for its high real-meat content and grain-free options, it caters perfectly to dogs with sensitive stomachs or specific allergies. While it sits at a higher price tier, the concentrated nutrition often means smaller serving sizes.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">4. Current Dog Food Prices in Pakistan (2026)</h2>
+            <p>
+              Understanding the <strong>dog food price in Pakistan</strong> helps you plan your pet care budget effectively. Here is a general breakdown of what to expect in 2026:
+            </p>
+            <div class="overflow-x-auto mt-4">
+              <table class="w-full text-xs text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                <thead class="bg-slate-900 text-white uppercase text-[10px] tracking-wider">
+                  <tr>
+                    <th class="py-3 px-4">Brand / Category</th>
+                    <th class="py-3 px-4">Bag Size</th>
+                    <th class="py-3 px-4 text-right">Approximate Price (PKR)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-slate-700">
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Woof (Adult/Puppy)</td>
+                    <td class="py-3 px-4">3 kg</td>
+                    <td class="py-3 px-4 text-right">Rs. 2,000 – Rs. 3,500</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Woof (Large Bags)</td>
+                    <td class="py-3 px-4">15 kg</td>
+                    <td class="py-3 px-4 text-right">Rs. 9,000 – Rs. 12,000</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Nutragold</td>
+                    <td class="py-3 px-4">3 kg</td>
+                    <td class="py-3 px-4 text-right">Rs. 5,500 – Rs. 7,500</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Nutragold (Breeder Bags)</td>
+                    <td class="py-3 px-4">15 kg</td>
+                    <td class="py-3 px-4 text-right">Rs. 22,000 – Rs. 28,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">5. Finding "Dog Food Near Me"</h2>
+            <p>
+              Running out of dog food can be stressful. If you frequently search for <strong>"dog food near me"</strong>, Rehman Veterinary Clinic offers a convenient solution for Lahore residents. We stock a carefully curated selection of both Woof and imported brands, available for rapid delivery across our 16 designated local sectors.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">6. Frequently Asked Questions (FAQ)</h2>
+            <div class="space-y-4">
+              {faqSchema.mainEntity.map((faq) => (
+                <div class="p-5 rounded-2xl bg-white border border-slate-200">
+                  <h3 class="font-bold text-slate-900 text-sm mb-2">{faq.name}</h3>
+                  <p class="text-xs text-slate-600 leading-relaxed">{faq.acceptedAnswer.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* Doctor Author Bio Box */}
+        <div class="mt-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-6">
+          <div class="w-20 h-20 rounded-2xl bg-emerald-950 border-2 border-emerald-500 text-white grid place-items-center font-black text-2xl shrink-0 shadow-md">
+            SR
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-black text-slate-900 text-lg">Dr. Saif Ur Rehman, DVM</h3>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
+                PVMC Registered
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">
+              Chief Veterinary Surgeon at Rehman Veterinary Clinic. Dedicated to guiding pet owners on optimal canine nutrition and holistic health management.
+            </p>
+            <div class="mt-3 flex items-center gap-3 text-xs font-bold">
+              <a href="tel:+923114899904" class="text-slate-900 hover:text-emerald-700 transition">📞 +92 311 4899904</a>
+              <span>•</span>
+              <a href="https://wa.me/923114899904" class="text-[#25D366] hover:underline">WhatsApp Direct</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <SiteFooter />
+    </div>
+  </body>
+</html>

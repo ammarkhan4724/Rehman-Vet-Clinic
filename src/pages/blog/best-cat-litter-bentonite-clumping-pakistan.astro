@@ -1,0 +1,290 @@
+---
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Cat Litter in Pakistan (2026) — Bentonite, Clumping & Prices",
+  "description": "A comprehensive guide on choosing the best cat litter in Pakistan. Discover the benefits of bentonite clumping litter, like Klumpy, along with litter box setups, hygiene tips, and current market prices.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Saif Ur Rehman, DVM",
+    "jobTitle": "Chief Veterinary Surgeon",
+    "affiliation": "Rehman Veterinary Clinic Lahore"
+  },
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Rehman Veterinary Clinic",
+    "url": "https://rehmanvetclinic.com"
+  },
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best cat litter type in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bentonite clumping cat litter is widely considered the best for its high absorbency, firm odor control, and easy scooping. Brands like Klumpy are top favorites among pet owners in Pakistan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does cat litter cost in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The price of standard bentonite cat litter in Pakistan ranges from Rs. 600 to Rs. 1,500 per 5-liter bag, depending on the brand and quality, such as Klumpy or other imported options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of litter box is best for kittens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A shallow, open litter tray is ideal for kittens. As they grow, transitioning to a standard or covered litter box with higher sides helps prevent scattering."
+      }
+    }
+  ]
+};
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RT8KMREC6"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7RT8KMREC6');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Cat Litter in Pakistan (2026) — Bentonite, Clumping & Box Setup</title>
+    
+    <!-- Core SEO Meta Tags -->
+    <meta name="description" content="Ultimate guide on cat litter in Pakistan. Learn about bentonite clumping litter, Klumpy brand, litter box sizes, and prices. Ensure perfect hygiene for your indoor cat." />
+    <meta name="keywords" content="klumpy cat litter, cat litter box, litter box for cats, cat litter price in pakistan, bentonite cat litter, clumpy cat litter, kitten litter box" />
+    <meta name="author" content="Dr. Saif Ur Rehman, DVM" />
+    <meta name="geo.region" content="PK-PB" />
+    <meta name="geo.placename" content="Lahore" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Best Cat Litter in Pakistan (2026) — Klumpy & Bentonite Guide" />
+    <meta property="og:description" content="Discover the best bentonite clumping cat litters in Pakistan, including pricing, Klumpy reviews, and litter box hygiene tips." />
+    <meta property="og:site_name" content="Rehman Veterinary Clinic" />
+    <meta property="og:image" content="https://rehmanvetclinic.com/images/products/klumpy-cat-litter.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Best Cat Litter & Boxes in Pakistan" />
+    <meta name="twitter:description" content="Maintain perfect indoor hygiene with our guide to bentonite cat litters and box setups in Pakistan." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body class="bg-[#faf9f7] text-slate-800 antialiased min-h-screen flex flex-col justify-between" style="font-family: 'Outfit', system-ui, sans-serif;">
+    <div>
+      {/* Header */}
+      <SiteHeader />
+        <Breadcrumbs path="blog/best-cat-litter-bentonite-clumping-pakistan" />
+
+      {/* Main Content */}
+      <main class="pt-28 pb-16 max-w-4xl mx-auto px-5">
+        {/* Breadcrumb */}
+        <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
+          <a href="/" class="hover:text-emerald-700 transition">Home</a>
+          <span>/</span>
+          <a href="/shop?category=litter-hygiene" class="hover:text-emerald-700 transition">Shop Guides</a>
+          <span>/</span>
+          <span class="text-slate-900">Cat Litter Guide</span>
+        </div>
+
+        {/* Title & Metadata */}
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200">
+            Cat Hygiene & Care
+          </div>
+          <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Best Cat Litter in Pakistan (2026): Bentonite, Clumping & Klumpy Guide
+          </h1>
+          <div class="flex items-center gap-4 mt-5 pt-4 border-t border-slate-200 text-xs text-slate-600">
+            <div><strong>Author:</strong> Dr. Saif Ur Rehman, DVM</div>
+            <div>•</div>
+            <div><strong>Category:</strong> Pet Care Essentials</div>
+            <div>•</div>
+            <div><strong>Updated:</strong> October 2026</div>
+          </div>
+        </div>
+
+        {/* Call to Action Banner */}
+        <div class="bg-indigo-50 border-2 border-indigo-200 rounded-3xl p-6 mb-10 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div class="space-y-1">
+            <div class="font-black text-indigo-900 text-base flex items-center gap-2">
+              <span>🛒</span>
+              <span>Need high-quality cat litter delivered today in Lahore?</span>
+            </div>
+            <p class="text-xs text-indigo-800 leading-relaxed max-w-xl">
+              Stock up on highly absorbent, low-dust bentonite clumping litter. We offer same-day delivery across 16 DHA & Lahore sectors.
+            </p>
+          </div>
+          <a
+            href="/shop?category=litter-hygiene"
+            class="px-5 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black uppercase tracking-wider whitespace-nowrap shadow-md transition hover:-translate-y-0.5"
+          >
+            Shop Cat Litter
+          </a>
+        </div>
+
+        {/* Article Body */}
+        <article class="prose prose-slate max-w-none space-y-8 text-sm md:text-base leading-relaxed text-slate-700">
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">1. Why Indoor Hygiene Matters for Your Cat</h2>
+            <p>
+              Maintaining proper litter box hygiene isn't just about controlling odors in your home; it's a critical component of your cat's health. Poor litter setups can lead to stress, urinary tract infections (UTIs), and behavioral issues like going outside the box. Selecting the right <strong>cat litter</strong> makes scooping easy and keeps your feline friend happy.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">2. The Power of Bentonite Clumping Cat Litter</h2>
+            <p>
+              When navigating the pet market in Pakistan, you'll encounter a variety of substrates, from wood pellets to silica gel. However, the golden standard remains <strong>bentonite cat litter</strong>.
+            </p>
+            <p class="mt-3">
+              Bentonite clay naturally absorbs liquid and forms solid, impenetrable clumps. This allows you to easily scoop away waste while leaving the surrounding litter clean and dry. This "clumpy cat litter" action not only traps odors instantly but is also remarkably cost-effective because you only throw away the soiled portions.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">3. Spotlight: Klumpy Cat Litter</h2>
+            <p>
+              Among local and imported brands available in Pakistan, <strong>Klumpy Cat Litter</strong> has earned a strong reputation among pet owners. It offers:
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc list-inside mt-3">
+              <li><strong>Rapid Clumping:</strong> Instantly locks in moisture.</li>
+              <li><strong>Low Dust Formula:</strong> Protects your cat's sensitive respiratory system.</li>
+              <li><strong>Superior Odor Control:</strong> Often enriched with mild scents like lavender or lemon to neutralize ammonia.</li>
+              <li><strong>Affordability:</strong> Excellent value compared to expensive European imports.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">4. Cat Litter Price in Pakistan (2026 Updates)</h2>
+            <p>
+              Budgeting for your cat's bathroom needs is straightforward. Standard <strong>cat litter prices in Pakistan</strong> generally fall into these brackets:
+            </p>
+            <div class="overflow-x-auto mt-4">
+              <table class="w-full text-xs text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                <thead class="bg-slate-900 text-white uppercase text-[10px] tracking-wider">
+                  <tr>
+                    <th class="py-3 px-4">Litter Category</th>
+                    <th class="py-3 px-4">Common Brands</th>
+                    <th class="py-3 px-4 text-right">Approximate Price (5L - 10L)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 text-slate-700">
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Economy Bentonite</td>
+                    <td class="py-3 px-4">Local Clumping Brands</td>
+                    <td class="py-3 px-4 text-right">Rs. 600 – Rs. 900</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Premium Clumping</td>
+                    <td class="py-3 px-4">Klumpy, Fancy Litter</td>
+                    <td class="py-3 px-4 text-right">Rs. 1,000 – Rs. 1,800</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-bold bg-slate-50">Silica / Crystal</td>
+                    <td class="py-3 px-4">Various Imported</td>
+                    <td class="py-3 px-4 text-right">Rs. 1,500 – Rs. 2,500</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">5. Setting Up the Perfect Litter Box for Cats</h2>
+            <p>
+              Having the best litter is only half the battle. Your <strong>litter box</strong> setup dictates how consistently your cat will use it.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-black uppercase tracking-wider text-indigo-600 mb-2">For Kittens</div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  A dedicated <strong>kitten litter box</strong> should have low sides (around 2-3 inches high) so tiny legs can step in easily. Introduce them to the box immediately after meals to establish the routine.
+                </p>
+              </div>
+
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-black uppercase tracking-wider text-indigo-600 mb-2">For Adult Cats</div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Adults need space to turn around comfortably. The box should be at least 1.5 times the length of your cat. Whether you choose an open tray or a covered hood depends entirely on your cat's privacy preference.
+                </p>
+              </div>
+            </div>
+            <p class="mt-4">
+              <strong>Veterinary Rule of Thumb:</strong> Always have one more litter box than the number of cats you own (e.g., 2 cats = 3 boxes) and clean them daily to prevent behavioral issues.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-black text-slate-900 mb-3">6. Frequently Asked Questions (FAQ)</h2>
+            <div class="space-y-4">
+              {faqSchema.mainEntity.map((faq) => (
+                <div class="p-5 rounded-2xl bg-white border border-slate-200">
+                  <h3 class="font-bold text-slate-900 text-sm mb-2">{faq.name}</h3>
+                  <p class="text-xs text-slate-600 leading-relaxed">{faq.acceptedAnswer.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* Doctor Author Bio Box */}
+        <div class="mt-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-6">
+          <div class="w-20 h-20 rounded-2xl bg-emerald-950 border-2 border-emerald-500 text-white grid place-items-center font-black text-2xl shrink-0 shadow-md">
+            SR
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-black text-slate-900 text-lg">Dr. Saif Ur Rehman, DVM</h3>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
+                PVMC Registered
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">
+              Chief Veterinary Surgeon at Rehman Veterinary Clinic. Passionate about preventive care, feline hygiene, and educating pet parents across Lahore.
+            </p>
+            <div class="mt-3 flex items-center gap-3 text-xs font-bold">
+              <a href="tel:+923114899904" class="text-slate-900 hover:text-emerald-700 transition">📞 +92 311 4899904</a>
+              <span>•</span>
+              <a href="https://wa.me/923114899904" class="text-[#25D366] hover:underline">WhatsApp Direct</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <SiteFooter />
+    </div>
+  </body>
+</html>
