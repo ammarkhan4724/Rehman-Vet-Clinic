@@ -26,5 +26,10 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "overrides": {
+    "sharp": "^0.35.5",
+    "source-map-js": "^1.2.2",
+    "smol-toml": "^1.9.0"
   }
 }
