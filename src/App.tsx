@@ -301,10 +301,10 @@ function Hero() {
               <div>
                 <div className="flex -space-x-3">
                   {[
-                    { src: "/images/dr-saif-examining-dog-grey.jpg", alt: "Dr. Saif examining a golden dog" },
-                    { src: "/images/dr-saif-playing-cat.jpg", alt: "Dr. Saif playing with a cat" },
-                    { src: "/images/dr-saif-treating-bird.jpg", alt: "Dr. Saif holding a macaw parrot" },
-                    { src: "/images/dr-saif-treating-dog.jpg", alt: "Dr. Saif treating a dog on a clinic table" },
+                    { src: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=120&h=120&q=80", alt: "Happy pet dog patient" },
+                    { src: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=120&h=120&q=80", alt: "Treated pet cat" },
+                    { src: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=120&h=120&q=80", alt: "Healthy puppy patient" },
+                    { src: "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=120&h=120&q=80", alt: "Recovered kitten patient" },
                   ].map((img, i) => (
                     <img key={i} src={img.src} alt={img.alt} className="w-10 h-10 rounded-full border-[3px] border-white object-cover object-top shadow-md hover:scale-125 hover:z-30 transition-transform duration-300 cursor-pointer" />
                   ))}
@@ -694,7 +694,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
 
               <div className="mt-10 p-5 bg-white rounded-2xl border border-emerald-100 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <img src="/images/dr_saif_treating_dog_1791603289339.jpg" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover object-top" />
+                  <img src="/images/dr_saif_treating_bird_1791603304108.jpg" alt="Dr. Saif Ur Rehman" className="w-12 h-12 rounded-xl object-cover object-top" />
                   <div>
                     <div className="font-bold text-slate-900">Dr. Saif Ur Rehman, DVM</div>
                     <div className="text-sm text-slate-600">Mobile Vet • Lahore Practice • 9+ Yrs Exp</div>
@@ -932,7 +932,7 @@ function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-emerald-200/50 rounded-[3rem] blur-2xl animate-pulse-glow" />
-            <img src="/images/dr-saif-lion-cub.jpg" alt="Dr Rehman" className="relative w-full h-[520px] object-cover rounded-[2.5rem] shadow-2xl" />
+            <img src="/images/dr_saif_treating_dog_1791603289339.jpg" alt="Dr. Saif Ur Rehman" className="relative w-full h-[520px] object-cover object-top rounded-[2.5rem] shadow-2xl" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-2xl p-5 shadow-xl border border-emerald-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 grid place-items-center font-black">DVM</div>

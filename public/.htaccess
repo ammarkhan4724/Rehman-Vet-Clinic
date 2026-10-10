@@ -37,10 +37,19 @@
   RewriteCond %{REQUEST_URI} (.+)/$
   RewriteRule ^ %1 [L,R=301]
 
+  # Explicitly map /blog and /blog/ to blog.html
+  RewriteRule ^blog/?$ blog.html [L]
+
   # Internally rewrite non-html to .html if the file exists
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{DOCUMENT_ROOT}/$1\.html -f
   RewriteRule ^(.*)$ $1.html [L]
+
+  # If a directory has no index.html but [dirname].html exists, serve [dirname].html
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1\.html -f
+  RewriteRule ^(.*)/?$ $1.html [L]
 
   # Block common SQL injection payloads in query strings
   RewriteCond %{QUERY_STRING} (select|union|insert|drop|truncate|alter|delete|update) [NC,OR]
@@ -55,5 +64,6 @@
   RewriteRule .* - [F,L]
 </IfModule>
 
-# Disable Directory Browsing
+# Default Indexes and Disable Directory Browsing
+DirectoryIndex index.html blog.html index.php
 Options -Indexes
