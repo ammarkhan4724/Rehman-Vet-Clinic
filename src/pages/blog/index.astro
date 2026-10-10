@@ -1,0 +1,104 @@
+---
+import '../../styles/global.css';
+
+const blogs = [
+  {
+    title: "Best Cat Litter in Pakistan (2026): Bentonite, Clumping & Klumpy Guide",
+    url: "/blog/best-cat-litter-bentonite-clumping-pakistan",
+    description: "Educates pet owners on the health benefits of bentonite clay litter, breaks down market pricing, and offers practical veterinary advice.",
+    image: "/images/dr-saif-playing-cat.jpg"
+  },
+  {
+    title: "Dog Food Prices & Best Brands in Pakistan (2026): Woof, Nutragold & More",
+    url: "/blog/dog-food-prices-brands-pakistan",
+    description: "Compares the affordability of high-quality local diets like Woof against premium imported grain-free brands like Nutragold.",
+    image: "/images/dr-saif-treating-dog.jpg"
+  },
+  {
+    title: "Exotic Pet Care: A Guide to Macaws and Parrots in Pakistan",
+    url: "#",
+    description: "Basic husbandry, dietary needs, and common health issues for exotic birds and large parrots like Macaws.",
+    image: "/images/dr-saif-treating-bird.jpg"
+  },
+  {
+    title: "Canine Distemper in Pakistan (2026) — Symptoms & Treatment",
+    url: "/blog/canine-distemper-symptoms-treatment-pakistan",
+    description: "Comprehensive veterinary medical guide on canine distemper virus (CDV) in dogs across Pakistan by Dr. Saif Ur Rehman.",
+    image: "https://images.pexels.com/photos/6235650/pexels-photo-6235650.jpeg?auto=compress&w=600&h=400&fit=crop"
+  },
+  {
+    title: "Cat Deworming Tablets & Schedule Pakistan",
+    url: "/blog/cat-deworming-tablet-schedule-dosage-pakistan",
+    description: "Learn about the best deworming tablets for cats in Pakistan, dosage guidelines, and when to treat.",
+    image: "https://images.pexels.com/photos/14440674/pexels-photo-14440674.jpeg?auto=compress&w=600&h=400&fit=crop"
+  },
+  {
+    title: "Best Cat Food Brands & Prices Pakistan",
+    url: "/blog/best-cat-food-brands-prices-pakistan",
+    description: "A comprehensive guide to cat food brands available in Pakistan and their 2026 prices.",
+    image: "https://images.pexels.com/photos/18414753/pexels-photo-18414753.jpeg?auto=compress&w=600&h=400&fit=crop"
+  },
+  {
+    title: "KMR Kitten Milk Replacer Feeding Guide",
+    url: "/blog/kmr-kitten-milk-replacer-feeding-guide-pakistan",
+    description: "Step-by-step veterinary guide to bottle feeding orphaned kittens using KMR Milk Replacer.",
+    image: "https://images.pexels.com/photos/29358402/pexels-photo-29358402.jpeg?auto=compress&w=600&h=400&fit=crop"
+  },
+  {
+    title: "Parvovirus Treatment Cost & Survival Pakistan",
+    url: "/blog/parvovirus-treatment-cost-survival-pakistan",
+    description: "Detailed protocol on Canine Parvovirus treatment, costs, and survival rates in Pakistan.",
+    image: "https://images.pexels.com/photos/34027685/pexels-photo-34027685.jpeg?auto=compress&w=600&h=400&fit=crop"
+  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veterinary Blog — Pet Care Guides & Tips by Dr. Saif</title>
+    <meta name="description" content="Explore expert veterinary guides, pet care tips, and medical advice by Dr. Saif Ur Rehman, covering dogs, cats, and birds in Pakistan." />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen bg-[#faf9f7] text-slate-800 antialiased font-['Outfit']">
+    <header class="py-4 border-b border-emerald-100 bg-white sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+        <a href="/" class="font-bold text-slate-900 text-xl tracking-tight">Rehman<span class="text-emerald-600">Vet</span></a>
+        <a href="/" class="text-sm font-semibold text-slate-600 hover:text-slate-900">← Back to Clinic</a>
+      </div>
+    </header>
+
+    <main class="py-20 max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Pet Care &amp; Medical Guides</h1>
+        <p class="text-lg text-slate-600">Written by Dr. Saif Ur Rehman to keep your pets happy, healthy, and thriving in Pakistan.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogs.map((blog) => (
+          <a href={blog.url} class="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div class="aspect-[4/3] overflow-hidden relative bg-slate-200">
+              <img src={blog.image} alt={blog.title} class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h2 class="text-xl font-bold text-slate-900 mb-2 leading-snug group-hover:text-emerald-700 transition-colors">{blog.title}</h2>
+              <p class="text-slate-600 text-sm mb-4 line-clamp-3">{blog.description}</p>
+              <div class="mt-auto pt-4 border-t border-slate-100 font-semibold text-emerald-600 text-sm flex items-center justify-between">
+                Read Article
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 text-slate-400 py-10 mt-20">
+      <div class="max-w-7xl mx-auto px-5 text-center text-sm">
+        <p>© {new Date().getFullYear()} Rehman Veterinary Clinic. All rights reserved. Dr. Saif Ur Rehman, DVM.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -301,12 +301,12 @@ function Hero() {
               <div>
                 <div className="flex -space-x-3">
                   {[
-                    "https://images.pexels.com/photos/34027685/pexels-photo-34027685.jpeg?auto=compress&w=80&h=80&fit=crop",
-                    "https://images.pexels.com/photos/18414753/pexels-photo-18414753.jpeg?auto=compress&w=80&h=80&fit=crop",
-                    "https://images.pexels.com/photos/29358402/pexels-photo-29358402.jpeg?auto=compress&w=80&h=80&fit=crop",
-                    "https://images.pexels.com/photos/14440674/pexels-photo-14440674.jpeg?auto=compress&w=80&h=80&fit=crop",
-                  ].map((src, i) => (
-                    <img key={i} src={src} alt="" className="w-10 h-10 rounded-full border-[3px] border-white object-cover shadow-md hover:scale-125 hover:z-30 transition-transform duration-300 cursor-pointer" />
+                    { src: "/images/dr-saif-examining-dog-grey.jpg", alt: "Dr. Saif examining a golden dog" },
+                    { src: "/images/dr-saif-playing-cat.jpg", alt: "Dr. Saif playing with a cat" },
+                    { src: "/images/dr-saif-treating-bird.jpg", alt: "Dr. Saif holding a macaw parrot" },
+                    { src: "/images/dr-saif-treating-dog.jpg", alt: "Dr. Saif treating a dog on a clinic table" },
+                  ].map((img, i) => (
+                    <img key={i} src={img.src} alt={img.alt} className="w-10 h-10 rounded-full border-[3px] border-white object-cover object-top shadow-md hover:scale-125 hover:z-30 transition-transform duration-300 cursor-pointer" />
                   ))}
                   <div className="w-10 h-10 rounded-full border-[3px] border-white bg-slate-900 text-white grid place-items-center text-[11px] font-bold shadow-md hover:scale-110 transition-transform cursor-pointer">1.2k+</div>
                 </div>
@@ -329,7 +329,7 @@ function Hero() {
               <div className="relative bg-slate-900 rounded-[3rem] p-3 shadow-2xl shadow-slate-900/30">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden">
                   <div className="h-[600px] relative">
-                    <img src="https://images.pexels.com/photos/6235650/pexels-photo-6235650.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=800" alt="Vet" width="600" height="800" fetchPriority="high" loading="eager" className="w-full h-full object-cover" />
+                    <img src="/images/dr-saif-lion-cub.jpg" alt="Vet" width="600" height="800" fetchPriority="high" loading="eager" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
                     <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-full" />
                     <div className="absolute bottom-0 inset-x-0 p-6 text-white">
@@ -366,7 +366,7 @@ function Hero() {
             <div className="absolute bottom-20 -right-4 md:right-10 z-30 animate-float-slow" style={{ animationDelay: "1.5s" }}>
               <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100 sheen-card card-hover-lift cursor-pointer">
                 <div className="flex items-center gap-3">
-                  <img src="https://images.pexels.com/photos/7469228/pexels-photo-7469228.jpeg?auto=compress&w=100&h=100&fit=crop" className="w-12 h-12 rounded-xl object-cover" alt="" />
+                  <img src="/images/dr-saif-examining-dog-grey.jpg" className="w-12 h-12 rounded-xl object-cover object-top" alt="Dr. Saif checking a dog's health for a home visit" />
                   <div>
                     <div className="text-xs text-slate-500">Next home visit</div>
                     <div className="font-bold text-slate-900">Today, 4:30 PM</div>
@@ -694,7 +694,7 @@ ${type === "home" ? `*Address:* ${form.address}\n` : ""}*Concern:* ${form.concer
 
               <div className="mt-10 p-5 bg-white rounded-2xl border border-emerald-100 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <img src="https://images.pexels.com/photos/32788234/pexels-photo-32788234.jpeg?auto=compress&w=100&h=100&fit=crop" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover" />
+                  <img src="/images/dr-saif-lion-cub.jpg" alt="Dr Rehman" className="w-12 h-12 rounded-xl object-cover object-top" />
                   <div>
                     <div className="font-bold text-slate-900">Dr. Saif Ur Rehman, DVM</div>
                     <div className="text-sm text-slate-600">Mobile Vet • Lahore Practice • 9+ Yrs Exp</div>
@@ -932,7 +932,7 @@ function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-emerald-200/50 rounded-[3rem] blur-2xl animate-pulse-glow" />
-            <img src="https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&w=800&h=900&fit=crop" alt="Dr Rehman" className="relative w-full h-[520px] object-cover rounded-[2.5rem] shadow-2xl" />
+            <img src="/images/dr-saif-lion-cub.jpg" alt="Dr Rehman" className="relative w-full h-[520px] object-cover rounded-[2.5rem] shadow-2xl" />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-2xl p-5 shadow-xl border border-emerald-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 grid place-items-center font-black">DVM</div>
